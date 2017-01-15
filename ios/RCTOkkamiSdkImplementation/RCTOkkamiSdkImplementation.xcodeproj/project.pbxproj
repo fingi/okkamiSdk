@@ -7,10 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FEC8D128E18DD71A6A1C386 /* Pods_RCTOkkamiSdkImplementationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571304ACED649B08B31A45B7 /* Pods_RCTOkkamiSdkImplementationTests.framework */; };
+		EDF3DA9694F5D867CEE49B5F /* Pods_RCTOkkamiSdkImplementation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F6BC9533622D932DE51BC6 /* Pods_RCTOkkamiSdkImplementation.framework */; };
+		FAA6CF851E2BC8D4006C0FD7 /* GitHubEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CF841E2BC8D4006C0FD7 /* GitHubEndPoint.swift */; };
+		FAA6CFB51E2BD9FF006C0FD7 /* IssueTrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CFB41E2BD9FF006C0FD7 /* IssueTrackerModel.swift */; };
+		FAA6CFB71E2BE0CC006C0FD7 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CFB61E2BE0CC006C0FD7 /* Resource.swift */; };
+		FAA6CFB91E2BE1B6006C0FD7 /* CountriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CFB81E2BE1B6006C0FD7 /* CountriesAPI.swift */; };
+		FAA6CFBB1E2BE25C006C0FD7 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CFBA1E2BE25C006C0FD7 /* JSONDecodable.swift */; };
+		FAA6CFBD1E2BE375006C0FD7 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CFBC1E2BE375006C0FD7 /* CountryModel.swift */; };
+		FAA6CFBF1E2BE3AC006C0FD7 /* APIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CFBE1E2BE3AC006C0FD7 /* APIClientError.swift */; };
+		FAA6CFC31E2BE3EA006C0FD7 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CFC21E2BE3EA006C0FD7 /* ApiClient.swift */; };
+		FAA6CFC71E2BE933006C0FD7 /* BorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CFC61E2BE933006C0FD7 /* BorderViewModel.swift */; };
+		FAA6CFE71E2BF8EF006C0FD7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAA6CFE61E2BF8EF006C0FD7 /* Info.plist */; };
+		FAA6CFE91E2BF920006C0FD7 /* RCTOkkamiMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CFE81E2BF920006C0FD7 /* RCTOkkamiMain.swift */; };
+		FAA6CFEE1E2BF979006C0FD7 /* RCTOkkamiSdkImplementation.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA6CFED1E2BF979006C0FD7 /* RCTOkkamiSdkImplementation.h */; };
+		FAA6CFF21E2BF9C4006C0FD7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAA6CFF11E2BF9C4006C0FD7 /* Info.plist */; };
+		FAA6CFF41E2BFBB8006C0FD7 /* RCTOkkamiSdkImplementationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CFF31E2BFBB8006C0FD7 /* RCTOkkamiSdkImplementationTests.swift */; };
+		FAB065AA1E2BB1C900E820D8 /* Pods_RCTOkkamiSdkImplementationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB065A91E2BB1C900E820D8 /* Pods_RCTOkkamiSdkImplementationTests.framework */; };
 		FAC9F8D81E14EC5800EEFC1B /* RCTOkkamiSdkImplementation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC9F8CE1E14EC5700EEFC1B /* RCTOkkamiSdkImplementation.framework */; };
-		FAC9F8DD1E14EC5800EEFC1B /* RCTOkkamiSdkImplementationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9F8DC1E14EC5800EEFC1B /* RCTOkkamiSdkImplementationTests.swift */; };
-		FAC9F8DF1E14EC5800EEFC1B /* RCTOkkamiSdkImplementation.h in Headers */ = {isa = PBXBuildFile; fileRef = FAC9F8D11E14EC5700EEFC1B /* RCTOkkamiSdkImplementation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FAC9F8E91E14EC9800EEFC1B /* RCTOkkamiMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9F8E81E14EC9800EEFC1B /* RCTOkkamiMain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,13 +38,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00F6BC9533622D932DE51BC6 /* Pods_RCTOkkamiSdkImplementation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RCTOkkamiSdkImplementation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2983931BA3F16723F98DFAC4 /* Pods-RCTOkkamiSdkImplementationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCTOkkamiSdkImplementationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCTOkkamiSdkImplementationTests/Pods-RCTOkkamiSdkImplementationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		571304ACED649B08B31A45B7 /* Pods_RCTOkkamiSdkImplementationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RCTOkkamiSdkImplementationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3BB32370AD5A7AA44EC4EC /* Pods-RCTOkkamiSdkImplementation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCTOkkamiSdkImplementation.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCTOkkamiSdkImplementation/Pods-RCTOkkamiSdkImplementation.release.xcconfig"; sourceTree = "<group>"; };
+		65BB26EA3773A012C8DB36E2 /* Pods-RCTOkkamiSdkImplementation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCTOkkamiSdkImplementation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCTOkkamiSdkImplementation/Pods-RCTOkkamiSdkImplementation.debug.xcconfig"; sourceTree = "<group>"; };
+		C1073A7995A1234FE27F8D08 /* Pods-RCTOkkamiSdkImplementationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCTOkkamiSdkImplementationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCTOkkamiSdkImplementationTests/Pods-RCTOkkamiSdkImplementationTests.release.xcconfig"; sourceTree = "<group>"; };
+		FAA6CF841E2BC8D4006C0FD7 /* GitHubEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubEndPoint.swift; sourceTree = "<group>"; };
+		FAA6CFB41E2BD9FF006C0FD7 /* IssueTrackerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueTrackerModel.swift; sourceTree = "<group>"; };
+		FAA6CFB61E2BE0CC006C0FD7 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		FAA6CFB81E2BE1B6006C0FD7 /* CountriesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesAPI.swift; sourceTree = "<group>"; };
+		FAA6CFBA1E2BE25C006C0FD7 /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
+		FAA6CFBC1E2BE375006C0FD7 /* CountryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		FAA6CFBE1E2BE3AC006C0FD7 /* APIClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientError.swift; sourceTree = "<group>"; };
+		FAA6CFC21E2BE3EA006C0FD7 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		FAA6CFC61E2BE933006C0FD7 /* BorderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderViewModel.swift; sourceTree = "<group>"; };
+		FAA6CFE61E2BF8EF006C0FD7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA6CFE81E2BF920006C0FD7 /* RCTOkkamiMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTOkkamiMain.swift; sourceTree = "<group>"; };
+		FAA6CFED1E2BF979006C0FD7 /* RCTOkkamiSdkImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTOkkamiSdkImplementation.h; sourceTree = "<group>"; };
+		FAA6CFF11E2BF9C4006C0FD7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA6CFF31E2BFBB8006C0FD7 /* RCTOkkamiSdkImplementationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTOkkamiSdkImplementationTests.swift; sourceTree = "<group>"; };
+		FAB065A91E2BB1C900E820D8 /* Pods_RCTOkkamiSdkImplementationTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_RCTOkkamiSdkImplementationTests.framework; path = "Pods/../build/Debug-iphoneos/Pods_RCTOkkamiSdkImplementationTests.framework"; sourceTree = "<group>"; };
 		FAC9F8CE1E14EC5700EEFC1B /* RCTOkkamiSdkImplementation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RCTOkkamiSdkImplementation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAC9F8D11E14EC5700EEFC1B /* RCTOkkamiSdkImplementation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTOkkamiSdkImplementation.h; sourceTree = "<group>"; };
-		FAC9F8D21E14EC5700EEFC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAC9F8D71E14EC5800EEFC1B /* RCTOkkamiSdkImplementationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCTOkkamiSdkImplementationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAC9F8DC1E14EC5800EEFC1B /* RCTOkkamiSdkImplementationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTOkkamiSdkImplementationTests.swift; sourceTree = "<group>"; };
-		FAC9F8DE1E14EC5800EEFC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAC9F8E81E14EC9800EEFC1B /* RCTOkkamiMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTOkkamiMain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB065AA1E2BB1C900E820D8 /* Pods_RCTOkkamiSdkImplementationTests.framework in Frameworks */,
+				EDF3DA9694F5D867CEE49B5F /* Pods_RCTOkkamiSdkImplementation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,18 +78,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC9F8D81E14EC5800EEFC1B /* RCTOkkamiSdkImplementation.framework in Frameworks */,
+				3FEC8D128E18DD71A6A1C386 /* Pods_RCTOkkamiSdkImplementationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9900551DEDB6ACF4E1712F1F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65BB26EA3773A012C8DB36E2 /* Pods-RCTOkkamiSdkImplementation.debug.xcconfig */,
+				5B3BB32370AD5A7AA44EC4EC /* Pods-RCTOkkamiSdkImplementation.release.xcconfig */,
+				2983931BA3F16723F98DFAC4 /* Pods-RCTOkkamiSdkImplementationTests.debug.xcconfig */,
+				C1073A7995A1234FE27F8D08 /* Pods-RCTOkkamiSdkImplementationTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DAAC0BD1BEC8378B6EA828DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAB065A91E2BB1C900E820D8 /* Pods_RCTOkkamiSdkImplementationTests.framework */,
+				00F6BC9533622D932DE51BC6 /* Pods_RCTOkkamiSdkImplementation.framework */,
+				571304ACED649B08B31A45B7 /* Pods_RCTOkkamiSdkImplementationTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FAC9F8C41E14EC5700EEFC1B = {
 			isa = PBXGroup;
 			children = (
 				FAC9F8D01E14EC5700EEFC1B /* RCTOkkamiSdkImplementation */,
 				FAC9F8DB1E14EC5800EEFC1B /* RCTOkkamiSdkImplementationTests */,
 				FAC9F8CF1E14EC5700EEFC1B /* Products */,
+				9900551DEDB6ACF4E1712F1F /* Pods */,
+				DAAC0BD1BEC8378B6EA828DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,9 +129,18 @@
 		FAC9F8D01E14EC5700EEFC1B /* RCTOkkamiSdkImplementation */ = {
 			isa = PBXGroup;
 			children = (
-				FAC9F8D11E14EC5700EEFC1B /* RCTOkkamiSdkImplementation.h */,
-				FAC9F8E81E14EC9800EEFC1B /* RCTOkkamiMain.swift */,
-				FAC9F8D21E14EC5700EEFC1B /* Info.plist */,
+				FAA6CFE61E2BF8EF006C0FD7 /* Info.plist */,
+				FAA6CFED1E2BF979006C0FD7 /* RCTOkkamiSdkImplementation.h */,
+				FAA6CF841E2BC8D4006C0FD7 /* GitHubEndPoint.swift */,
+				FAA6CFB41E2BD9FF006C0FD7 /* IssueTrackerModel.swift */,
+				FAA6CFE81E2BF920006C0FD7 /* RCTOkkamiMain.swift */,
+				FAA6CFB61E2BE0CC006C0FD7 /* Resource.swift */,
+				FAA6CFB81E2BE1B6006C0FD7 /* CountriesAPI.swift */,
+				FAA6CFBA1E2BE25C006C0FD7 /* JSONDecodable.swift */,
+				FAA6CFBC1E2BE375006C0FD7 /* CountryModel.swift */,
+				FAA6CFBE1E2BE3AC006C0FD7 /* APIClientError.swift */,
+				FAA6CFC21E2BE3EA006C0FD7 /* ApiClient.swift */,
+				FAA6CFC61E2BE933006C0FD7 /* BorderViewModel.swift */,
 			);
 			path = RCTOkkamiSdkImplementation;
 			sourceTree = "<group>";
@@ -83,8 +148,8 @@
 		FAC9F8DB1E14EC5800EEFC1B /* RCTOkkamiSdkImplementationTests */ = {
 			isa = PBXGroup;
 			children = (
-				FAC9F8DC1E14EC5800EEFC1B /* RCTOkkamiSdkImplementationTests.swift */,
-				FAC9F8DE1E14EC5800EEFC1B /* Info.plist */,
+				FAA6CFF31E2BFBB8006C0FD7 /* RCTOkkamiSdkImplementationTests.swift */,
+				FAA6CFF11E2BF9C4006C0FD7 /* Info.plist */,
 			);
 			path = RCTOkkamiSdkImplementationTests;
 			sourceTree = "<group>";
@@ -96,7 +161,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAC9F8DF1E14EC5800EEFC1B /* RCTOkkamiSdkImplementation.h in Headers */,
+				FAA6CFEE1E2BF979006C0FD7 /* RCTOkkamiSdkImplementation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,10 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAC9F8E21E14EC5800EEFC1B /* Build configuration list for PBXNativeTarget "RCTOkkamiSdkImplementation" */;
 			buildPhases = (
+				01093298BE8E14AFC2953B38 /* [CP] Check Pods Manifest.lock */,
 				FAC9F8C91E14EC5700EEFC1B /* Sources */,
 				FAC9F8CA1E14EC5700EEFC1B /* Frameworks */,
 				FAC9F8CB1E14EC5700EEFC1B /* Headers */,
 				FAC9F8CC1E14EC5700EEFC1B /* Resources */,
+				17428B2BA019D3CEE5230DC8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAC9F8E51E14EC5800EEFC1B /* Build configuration list for PBXNativeTarget "RCTOkkamiSdkImplementationTests" */;
 			buildPhases = (
+				9E6E347418E5094BD13880B8 /* [CP] Check Pods Manifest.lock */,
 				FAC9F8D31E14EC5800EEFC1B /* Sources */,
 				FAC9F8D41E14EC5800EEFC1B /* Frameworks */,
 				FAC9F8D51E14EC5800EEFC1B /* Resources */,
+				87FB2BE8E8EEBCA1FADA4F54 /* [CP] Embed Pods Frameworks */,
+				7FA1A13C2F8AE1D6B246B6A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,6 +228,7 @@
 					FAC9F8D61E14EC5800EEFC1B = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 7K2N7LUDL8;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -185,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA6CFE71E2BF8EF006C0FD7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,17 +264,105 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA6CFF21E2BF9C4006C0FD7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01093298BE8E14AFC2953B38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		17428B2BA019D3CEE5230DC8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCTOkkamiSdkImplementation/Pods-RCTOkkamiSdkImplementation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FA1A13C2F8AE1D6B246B6A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCTOkkamiSdkImplementationTests/Pods-RCTOkkamiSdkImplementationTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87FB2BE8E8EEBCA1FADA4F54 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCTOkkamiSdkImplementationTests/Pods-RCTOkkamiSdkImplementationTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E6E347418E5094BD13880B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FAC9F8C91E14EC5700EEFC1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAC9F8E91E14EC9800EEFC1B /* RCTOkkamiMain.swift in Sources */,
+				FAA6CFBD1E2BE375006C0FD7 /* CountryModel.swift in Sources */,
+				FAA6CFB91E2BE1B6006C0FD7 /* CountriesAPI.swift in Sources */,
+				FAA6CFBF1E2BE3AC006C0FD7 /* APIClientError.swift in Sources */,
+				FAA6CFC71E2BE933006C0FD7 /* BorderViewModel.swift in Sources */,
+				FAA6CFB71E2BE0CC006C0FD7 /* Resource.swift in Sources */,
+				FAA6CFBB1E2BE25C006C0FD7 /* JSONDecodable.swift in Sources */,
+				FAA6CFB51E2BD9FF006C0FD7 /* IssueTrackerModel.swift in Sources */,
+				FAA6CF851E2BC8D4006C0FD7 /* GitHubEndPoint.swift in Sources */,
+				FAA6CFE91E2BF920006C0FD7 /* RCTOkkamiMain.swift in Sources */,
+				FAA6CFC31E2BE3EA006C0FD7 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAC9F8DD1E14EC5800EEFC1B /* RCTOkkamiSdkImplementationTests.swift in Sources */,
+				FAA6CFF41E2BFBB8006C0FD7 /* RCTOkkamiSdkImplementationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +427,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -316,7 +476,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_INCLUDE_PATHS = "";
@@ -330,6 +490,7 @@
 		};
 		FAC9F8E31E14EC5800EEFC1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65BB26EA3773A012C8DB36E2 /* Pods-RCTOkkamiSdkImplementation.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -340,6 +501,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../../node_modules/react-native/React/**",
@@ -357,6 +522,7 @@
 		};
 		FAC9F8E41E14EC5800EEFC1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B3BB32370AD5A7AA44EC4EC /* Pods-RCTOkkamiSdkImplementation.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -367,6 +533,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../../node_modules/react-native/React/**",
@@ -383,26 +553,33 @@
 		};
 		FAC9F8E61E14EC5800EEFC1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2983931BA3F16723F98DFAC4 /* Pods-RCTOkkamiSdkImplementationTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7K2N7LUDL8;
 				INFOPLIST_FILE = RCTOkkamiSdkImplementationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = michael.RCTOkkamiSdkImplementationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RCTOkkamiSdkImplementationTests/RCTOkkamiSdkImplementationTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		FAC9F8E71E14EC5800EEFC1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1073A7995A1234FE27F8D08 /* Pods-RCTOkkamiSdkImplementationTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7K2N7LUDL8;
 				INFOPLIST_FILE = RCTOkkamiSdkImplementationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = michael.RCTOkkamiSdkImplementationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RCTOkkamiSdkImplementationTests/RCTOkkamiSdkImplementationTests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
