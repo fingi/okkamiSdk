@@ -1,6 +1,7 @@
 package com.okkamisdktest;
 
 import android.app.Application;
+import android.content.Context;
 import android.util.Log;
 
 import com.facebook.react.ReactApplication;
@@ -12,6 +13,8 @@ import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
+import com.okkami.android.sdk.SDK;
+import com.okkami.android.sdk.config.MockConfig;
 import com.okkami.okkamisdk.OkkamiSdkPackage;
 import com.brentvatne.react.ReactVideoPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
@@ -19,6 +22,8 @@ import com.magus.fblogin.FacebookLoginPackage;
 
 import java.util.Arrays;
 import java.util.List;
+
+import lombok.Getter;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -49,4 +54,5 @@ public class MainApplication extends Application implements ReactApplication {
   public ReactNativeHost getReactNativeHost() {
       return mReactNativeHost;
   }
+
 }
