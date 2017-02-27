@@ -6,10 +6,32 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Promise;
+import com.okkami.android.sdk.SDK;
+import com.okkami.android.sdk.config.MockConfig;
+
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import lombok.Getter;
+import okhttp3.ResponseBody;
+import retrofit2.Response;
 
 class OkkamiSdkModule extends ReactContextBaseJavaModule {
     private Context context;
     private static final String TAG = "OKKAMISDK";
+
+    @Getter
+    private static MockConfig mock;
+    @Getter
+    private static SDK mSdk;
+
+    private SDK initSDK() {
+        if (this.mSdk == null) {
+            this.mSdk = new SDK().init(this.context, mock.getBASE_URL());
+        }
+
+        return this.mSdk;
+    }
 
     public OkkamiSdkModule(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -46,7 +68,72 @@ class OkkamiSdkModule extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void executeCoreRESTCall(String endPoint, String getPost, String payload, Promise downloadFromCorePromise) {
+        mPromise = downloadFromCorePromise;
+        this.mSdk = initSDK();
 
+        if (method.equalsIgnoreCase(POST)){
+            mSdk.getBACKEND_SERVICE_MODULE()
+                    .doCorePostCall(endPoint, method, payload, mock.getCOMPANY_AUTH())
+                    .subscribeOn(io.reactivex.schedulers.Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Observer<Response<ResponseBody>>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                            System.out.println("Disposable method.");
+                        }
+
+                        @Override
+                        public void onNext(Response<ResponseBody> value) {
+                            mPromise.resolve(value.message());
+//                        try {
+//                            handlePreconnectResponse(value);
+//                        } catch (Exception e) {
+//                            sdk.getLoggerModule().logE("" + e);
+//                        }
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+//                        sdk.getLoggerModule().logE("" + e);
+                        }
+
+                        @Override
+                        public void onComplete() {
+                            // Nothing for now.
+                        }
+                    });
+        } else {
+            mSdk.getBACKEND_SERVICE_MODULE()
+                    .doCoreGetCall(endPoint, method, payload, mock.getCOMPANY_AUTH())
+                    .subscribeOn(io.reactivex.schedulers.Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Observer<Response<ResponseBody>>() {
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                            System.out.println("Disposable method.");
+                        }
+
+                        @Override
+                        public void onNext(Response<ResponseBody> value) {
+                            mPromise.resolve(value.message());
+//                        try {
+//                            handlePreconnectResponse(value);
+//                        } catch (Exception e) {
+//                            sdk.getLoggerModule().logE("" + e);
+//                        }
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+//                        sdk.getLoggerModule().logE("" + e);
+                        }
+
+                        @Override
+                        public void onComplete() {
+                            // Nothing for now.
+                        }
+                    });
+        }
     }
 
     /*-------------------------------------- Hub -------------------------------------------------*/
