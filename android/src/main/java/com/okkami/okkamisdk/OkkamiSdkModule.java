@@ -1,6 +1,7 @@
 package com.okkami.okkamisdk;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -8,6 +9,9 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Promise;
 import com.okkami.android.sdk.SDK;
 import com.okkami.android.sdk.config.MockConfig;
+import com.okkami.android.sdk.helper.CommonUtil;
+
+import java.io.IOException;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -19,11 +23,18 @@ import retrofit2.Response;
 class OkkamiSdkModule extends ReactContextBaseJavaModule {
     private Context context;
     private static final String TAG = "OKKAMISDK";
-
-    @Getter
+    private static final String POST = "POST";
+    private Promise mPromise;
     private static MockConfig mock;
-    @Getter
     private static SDK mSdk;
+
+    private void initMockData() {
+        try {
+            mock = new MockConfig(this.context, CommonUtil.loadProperty(this.context));
+        } catch (IOException e) {
+            Log.e("ERR", "Couldn't load mock config...");
+        }
+    }
 
     private SDK initSDK() {
         if (this.mSdk == null) {
@@ -47,7 +58,10 @@ class OkkamiSdkModule extends ReactContextBaseJavaModule {
         return "OkkamiSdk";
     }
 
-
+    @ReactMethod
+    public void getNName(Promise namePromise) {
+        namePromise.resolve("OkkamiSdk");
+    }
      /*-------------------------------------- Utility   --------------------------------------------------*/
 
 
@@ -62,77 +76,84 @@ class OkkamiSdkModule extends ReactContextBaseJavaModule {
      * on failure:  downloadFromCorePromise.reject(Throwable e)
      *
      * @param endPoint                full core url . https://api.fingi.com/devices/v1/register
-     * @param getPost                 "GET" or "POST"
+     * @param method                 "GET" or "POST"
      * @param payload                 JSON encoded payload if it is POST
      * @param downloadFromCorePromise
      */
     @ReactMethod
-    public void executeCoreRESTCall(String endPoint, String getPost, String payload, Promise downloadFromCorePromise) {
+    public void executeCoreRESTCall(String endPoint, String method, String payload, Promise downloadFromCorePromise) {
         mPromise = downloadFromCorePromise;
+        initMockData();
         this.mSdk = initSDK();
 
-        if (method.equalsIgnoreCase(POST)){
-            mSdk.getBACKEND_SERVICE_MODULE()
-                    .doCorePostCall(endPoint, method, payload, mock.getCOMPANY_AUTH())
-                    .subscribeOn(io.reactivex.schedulers.Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new Observer<Response<ResponseBody>>() {
-                        @Override
-                        public void onSubscribe(Disposable d) {
-                            System.out.println("Disposable method.");
-                        }
+        try {
+            if (method.equalsIgnoreCase(POST)){
+                mSdk.getBACKEND_SERVICE_MODULE()
+                        .doCorePostCall(endPoint, method, payload, mock.getCOMPANY_AUTH())
+                        .subscribeOn(io.reactivex.schedulers.Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Observer<Response<ResponseBody>>() {
+                            @Override
+                            public void onSubscribe(Disposable d) {
+                                System.out.println("Disposable method.");
+                            }
 
-                        @Override
-                        public void onNext(Response<ResponseBody> value) {
-                            mPromise.resolve(value.message());
+                            @Override
+                            public void onNext(Response<ResponseBody> value) {
+                                mPromise.resolve(value.message());
 //                        try {
 //                            handlePreconnectResponse(value);
 //                        } catch (Exception e) {
 //                            sdk.getLoggerModule().logE("" + e);
 //                        }
-                        }
+                            }
 
-                        @Override
-                        public void onError(Throwable e) {
+                            @Override
+                            public void onError(Throwable e) {
+                                System.out.println(e.toString());
 //                        sdk.getLoggerModule().logE("" + e);
-                        }
+                            }
 
-                        @Override
-                        public void onComplete() {
-                            // Nothing for now.
-                        }
-                    });
-        } else {
-            mSdk.getBACKEND_SERVICE_MODULE()
-                    .doCoreGetCall(endPoint, method, payload, mock.getCOMPANY_AUTH())
-                    .subscribeOn(io.reactivex.schedulers.Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new Observer<Response<ResponseBody>>() {
-                        @Override
-                        public void onSubscribe(Disposable d) {
-                            System.out.println("Disposable method.");
-                        }
+                            @Override
+                            public void onComplete() {
+                                System.out.println("onComplete");
+                                // Nothing for now.
+                            }
+                        });
+            } else {
+                mSdk.getBACKEND_SERVICE_MODULE()
+                        .doCoreGetCall(endPoint, method, payload, mock.getCOMPANY_AUTH())
+                        .subscribeOn(io.reactivex.schedulers.Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Observer<Response<ResponseBody>>() {
+                            @Override
+                            public void onSubscribe(Disposable d) {
+                                System.out.println("Disposable method.");
+                            }
 
-                        @Override
-                        public void onNext(Response<ResponseBody> value) {
-                            mPromise.resolve(value.message());
+                            @Override
+                            public void onNext(Response<ResponseBody> value) {
+                                mPromise.resolve(value.message());
 //                        try {
 //                            handlePreconnectResponse(value);
 //                        } catch (Exception e) {
 //                            sdk.getLoggerModule().logE("" + e);
 //                        }
-                        }
+                            }
 
-                        @Override
-                        public void onError(Throwable e) {
+                            @Override
+                            public void onError(Throwable e) {
 //                        sdk.getLoggerModule().logE("" + e);
-                        }
+                            }
 
-                        @Override
-                        public void onComplete() {
-                            // Nothing for now.
-                        }
-                    });
+                            @Override
+                            public void onComplete() {
+                                // Nothing for now.
+                            }
+                        });
+            }
+        } catch (Exception e){
+
         }
     }
 

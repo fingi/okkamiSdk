@@ -2,6 +2,7 @@ package com.okkamisdktest;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.facebook.react.ReactApplication;
@@ -49,6 +50,12 @@ public class MainApplication extends Application implements ReactApplication {
       );
     }
   };
+
+  @Override
+  protected void attachBaseContext(Context base) {
+    super.attachBaseContext(base);
+    MultiDex.install(this);
+  }
 
   @Override
   public ReactNativeHost getReactNativeHost() {

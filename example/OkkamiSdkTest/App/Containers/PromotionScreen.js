@@ -3,6 +3,7 @@ import {
   View,
   Text,
   TouchableOpacity,
+  NativeModules,
   Image,
   StyleSheet
 } from 'react-native'
@@ -17,6 +18,8 @@ import {FBLoginManager} from 'react-native-facebook-login'
 // I18n
 import I18n from 'react-native-i18n'
 
+const { OkkamiSdk } = NativeModules;
+
 class PromotionScreen extends React.Component {
 
   constructor(props) {
@@ -24,6 +27,20 @@ class PromotionScreen extends React.Component {
     this.state = {
       items: []
     }
+    this.onPreConnect = this.onPreConnect.bind(this);
+  }
+
+  onPreConnect() {
+    console.log(OkkamiSdk);
+    console.log("Start");
+    // OkkamiSdk.getNName().then((name) => {
+    //   console.log("Native Module Name:", name);
+    // });
+    OkkamiSdk.executeCoreRESTCall("https://api.fingi.com/v1/preconnect", "POST", "{\"uid\": \"12345678123456781234567812345678\"}")
+      .then((res) => {
+        console.log("Response:", res);
+      });
+    console.log("Finish");
   }
 
   componentWillMount () {
@@ -72,7 +89,7 @@ class PromotionScreen extends React.Component {
           })}
         </Swiper>
         <View style={Styles.mainButton} >
-            <TouchableOpacity style={Styles.button} onPress={NavigationActions.signUpScreen}>
+            <TouchableOpacity style={Styles.button} onPress={this.onPreConnect}>
               <Text style={Styles.buttonText}>Sign Up</Text>
             </TouchableOpacity>
             <TouchableOpacity style={Styles.button} onPress={NavigationActions.signInScreen}>
