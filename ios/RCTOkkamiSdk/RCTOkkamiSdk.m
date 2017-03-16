@@ -14,16 +14,13 @@ RCT_EXPORT_MODULE();
 
 -(id)init {
     if ( self = [super init] ) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            
-//        });
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
         self.locationManager.distanceFilter = kCLDistanceFilterNone;
         [self.locationManager startUpdatingLocation];
         [self.locationManager requestWhenInUseAuthorization];
-        [self.locationManager requestAlwaysAuthorization];
+        //[self.locationManager requestAlwaysAuthorization];
         
         /*if ([CLLocationManager locationServicesEnabled]){
             CLGeocoder *reverseGeocoder = [[CLGeocoder alloc] init];
@@ -144,7 +141,25 @@ RCT_EXPORT_METHOD(executeCoreRESTCall
                   :(RCTPromiseResolveBlock)resolve
                   :(RCTPromiseRejectBlock)reject)
 {
-    if ([endPoint containsString:@"location_services"]) {
+    RCTOkkamiMain *main = [RCTOkkamiMain newInstance];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [main executeCoreRESTCallWithApicore:endPoint apifunc:getPost payload:payLoad secret:secret token:token force:force completion:^(NSString* callback, NSError* error) {
+            
+            NSLog(@"callback %@", callback);
+            NSLog(@"error %@", error);
+            
+            if (error == NULL) {
+                resolve(callback);
+                [self.bridge.eventDispatcher sendAppEventWithName:@"executeCoreRESTCall" body:callback];
+            }else{
+                reject([NSString stringWithFormat:@"%ld", error.code],error.description, error);
+            }
+            
+        }];
+    });
+    
+    /*if ([endPoint containsString:@"location_services"]) {
         
         if (![CLLocationManager locationServicesEnabled]) {
             NSMutableDictionary* details = [NSMutableDictionary dictionary];
@@ -159,6 +174,9 @@ RCT_EXPORT_METHOD(executeCoreRESTCall
         //use below only for testing using simulator
         //NSString *newEndPoint =[NSString stringWithFormat:@"%@lat=13.7441961&lng=100.5568176", endPoint];
         NSLog(@"%@",newEndPoint);
+        
+        
+        
         [main executeCoreRESTCallWithApicore:newEndPoint apifunc:getPost payload:payLoad secret:secret token:token force:force completion:^(NSString* callback, NSError* error) {
             
             NSLog(@"callback %@", callback);
@@ -188,21 +206,7 @@ RCT_EXPORT_METHOD(executeCoreRESTCall
             }
             
         }];
-    }
-    
-    /*if([getPost isEqualToString:@"LINE"]){
-        [LineSDKLogin sharedInstance].delegate = self;
-        NSLog(@"equal to line");
-        [[LineSDKLogin sharedInstance] startLogin];
-        self.loginResolver = resolve;
-        self.loginRejecter = reject;
-    }else{
-        
     }*/
-    /*[self.bridge.eventDispatcher sendAppEventWithName:@"executeCoreRESTCall" body:nil];
-    //ok xxx
-    resolve(@YES);
-    */
 }
 
 /**
@@ -471,6 +475,61 @@ RCT_EXPORT_METHOD(isHubConnected
     }
     
 }
+
+
+RCT_EXPORT_METHOD(smoochChat
+                  
+                  :(NSString*)appToken
+                  :(NSString*)userID
+                  
+                  :(RCTPromiseResolveBlock)resolve
+                  :(RCTPromiseRejectBlock)reject)
+{
+    
+    /*if (self.smooch == nil) {
+        OkkamiSmoochChat *smooch = [OkkamiSmoochChat newInstanceWithAppToken:appToken];
+        self.smooch = smooch;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.smooch smoochChat];
+        });
+    }else{
+        if ([self.smooch.appToken isEqualToString:appToken]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.smooch smoochChat];
+            });
+        }else{
+            OkkamiSmoochChat *smooch = [OkkamiSmoochChat newInstanceWithAppToken:appToken];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [smooch smoochChat];
+            });
+        }
+    }*/
+    if (self.smooch == nil) {
+        OkkamiSmoochChat *smooch = [OkkamiSmoochChat newInstance];
+        self.smooch = smooch;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.smooch smoochChatWithAppToken:appToken user:userID];
+        });
+    }else{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.smooch smoochChatWithAppToken:appToken user:userID];
+        });
+    }
+    
+}
+
+RCT_EXPORT_METHOD(smoochLogout
+                  
+                  :(RCTPromiseResolveBlock)resolve
+                  :(RCTPromiseRejectBlock)reject)
+{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.smooch smoochChat];
+    });
+}
+
+
 
 
 

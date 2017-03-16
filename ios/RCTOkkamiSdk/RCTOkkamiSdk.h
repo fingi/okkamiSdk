@@ -16,5 +16,6 @@
 @property (strong, nonatomic) RCTPromiseResolveBlock loginResolver;
 @property (strong, nonatomic) RCTPromiseRejectBlock loginRejecter;
 @property (strong, nonatomic) RCTOkkamiMain* main;
+@property (strong, nonatomic) OkkamiSmoochChat* smooch;
 @property (strong, nonatomic) RCTEventDispatcher* event;
 @end

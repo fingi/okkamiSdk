@@ -18,9 +18,15 @@ class OkkamiSdk {
         return OkkamiSdkManager.lineLogin();
     }
 
+    smoochChat(appToken, userID) {
+      return OkkamiSdkManager.smoochChat(appToken, userID);
+    }
+
+    smoochLogout() {
+      return OkkamiSdkManager.smoochLogout();
+    }
+
     executeCoreRESTCall (endPoint,getPost,payLoad,secret,token,force) {
-        console.log("executeCoreRESTCall : endpoing = ",endPoint," ",
-          "getPost = ",getPost," payload = ",payLoad," secret = ",secret," token = " ,token , " force = ",force )
         return OkkamiSdkManager.executeCoreRESTCall(endPoint,getPost,payLoad,secret,token,force);
     }
 
