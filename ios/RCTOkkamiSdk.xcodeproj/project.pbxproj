@@ -9,6 +9,82 @@
 /* Begin PBXBuildFile section */
 		5D72D2EC1C16249000E22EC1 /* RCTOkkamiSdk.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5D72D2EB1C16249000E22EC1 /* RCTOkkamiSdk.h */; };
 		5D72D2EE1C16249000E22EC1 /* RCTOkkamiSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D72D2ED1C16249000E22EC1 /* RCTOkkamiSdk.m */; };
+		FA1F02C31E7BB1B10010C77D /* Smooch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F02C21E7BB1B10010C77D /* Smooch.framework */; };
+		FA1F02C51E7BB1C90010C77D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F02C41E7BB1C90010C77D /* AssetsLibrary.framework */; };
+		FA1F02C71E7BB1D50010C77D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F02C61E7BB1D50010C77D /* AVFoundation.framework */; };
+		FA1F02C91E7BB1DE0010C77D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F02C81E7BB1DE0010C77D /* CFNetwork.framework */; };
+		FA1F02CB1E7BB1E30010C77D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F02CA1E7BB1E30010C77D /* CoreGraphics.framework */; };
+		FA1F02CE1E7BB1EE0010C77D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F02CC1E7BB1EE0010C77D /* CoreTelephony.framework */; };
+		FA1F02CF1E7BB1EE0010C77D /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F02CD1E7BB1EE0010C77D /* CoreText.framework */; };
+		FA1F02D11E7BB1F80010C77D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F02D01E7BB1F80010C77D /* Foundation.framework */; };
+		FA1F02D31E7BB1FF0010C77D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F02D21E7BB1FF0010C77D /* Photos.framework */; };
+		FA1F02D51E7BB2080010C77D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F02D41E7BB2080010C77D /* QuartzCore.framework */; };
+		FA1F02D71E7BB20C0010C77D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F02D61E7BB20C0010C77D /* SystemConfiguration.framework */; };
+		FA1F02D91E7BB2140010C77D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F02D81E7BB2140010C77D /* UIKit.framework */; };
+		FA1F038D1E7BC2750010C77D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F038C1E7BC2750010C77D /* OpenGLES.framework */; };
+		FA1F038E1E7BC6170010C77D /* SHKApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02E11E7BB26A0010C77D /* SHKApiClient.m */; };
+		FA1F038F1E7BC6170010C77D /* SHKJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02E31E7BB26A0010C77D /* SHKJSONSerializer.m */; };
+		FA1F03901E7BC6170010C77D /* SHKQueryStringSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02E51E7BB26A0010C77D /* SHKQueryStringSerializer.m */; };
+		FA1F03911E7BC6170010C77D /* SHKRecommendations.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02E81E7BB26A0010C77D /* SHKRecommendations.m */; };
+		FA1F03921E7BC6170010C77D /* SHKRecommendationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02EA1E7BB26A0010C77D /* SHKRecommendationsManager.m */; };
+		FA1F03931E7BC6170010C77D /* SHKRecommendationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02EC1E7BB26A0010C77D /* SHKRecommendationsViewController.m */; };
+		FA1F03941E7BC6170010C77D /* SHKAjaxEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02F01E7BB26A0010C77D /* SHKAjaxEndpoint.m */; };
+		FA1F03951E7BC6170010C77D /* SHKHelpCenterAjaxEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02F21E7BB26A0010C77D /* SHKHelpCenterAjaxEndpoint.m */; };
+		FA1F03961E7BC6170010C77D /* SHKHelpCenterRestEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02F41E7BB26A0010C77D /* SHKHelpCenterRestEndpoint.m */; };
+		FA1F03971E7BC6170010C77D /* SHKLegacyAjaxEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02F61E7BB26A0010C77D /* SHKLegacyAjaxEndpoint.m */; };
+		FA1F03981E7BC6170010C77D /* SHKLegacyRestEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02F81E7BB26A0010C77D /* SHKLegacyRestEndpoint.m */; };
+		FA1F03991E7BC6170010C77D /* SHKRestEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02FA1E7BB26A0010C77D /* SHKRestEndpoint.m */; };
+		FA1F039A1E7BC6170010C77D /* SHKSearchClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02FD1E7BB26A0010C77D /* SHKSearchClient.m */; };
+		FA1F039B1E7BC6170010C77D /* SHKSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F02FF1E7BB26A0010C77D /* SHKSearchController.m */; };
+		FA1F039C1E7BC6170010C77D /* SHKSearchEndpointFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03011E7BB26A0010C77D /* SHKSearchEndpointFactory.m */; };
+		FA1F039D1E7BC6170010C77D /* SHKSearchFallbackStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03031E7BB26A0010C77D /* SHKSearchFallbackStrategy.m */; };
+		FA1F039E1E7BC6170010C77D /* SHKSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03051E7BB26A0010C77D /* SHKSearchResult.m */; };
+		FA1F039F1E7BC6170010C77D /* SHKTableCellVendingMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03071E7BB26A0010C77D /* SHKTableCellVendingMachine.m */; };
+		FA1F03A01E7BC6170010C77D /* SHKZendeskSearchResultsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03091E7BB26A0010C77D /* SHKZendeskSearchResultsFilter.m */; };
+		FA1F03A11E7BC6170010C77D /* SHKAppColorExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F030B1E7BB26A0010C77D /* SHKAppColorExtractor.m */; };
+		FA1F03A21E7BC6170010C77D /* SHKAppWideGestureHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F030D1E7BB26A0010C77D /* SHKAppWideGestureHandler.m */; };
+		FA1F03A31E7BC6170010C77D /* SHKArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F030F1E7BB26A0010C77D /* SHKArticleViewController.m */; };
+		FA1F03A41E7BC6170010C77D /* SHKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03111E7BB26A0010C77D /* SHKBaseViewController.m */; };
+		FA1F03A51E7BC6170010C77D /* SHKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03131E7BB26A0010C77D /* SHKHomeViewController.m */; };
+		FA1F03A61E7BC6170010C77D /* SHKImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03151E7BB26A0010C77D /* SHKImageLoader.m */; };
+		FA1F03A71E7BC6170010C77D /* SHKLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03171E7BB26A0010C77D /* SHKLocalization.m */; };
+		FA1F03A81E7BC6170010C77D /* SHKNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03191E7BB26A0010C77D /* SHKNavigationViewController.m */; };
+		FA1F03A91E7BC6170010C77D /* SHKOffsetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F031B1E7BB26A0010C77D /* SHKOffsetManager.m */; };
+		FA1F03AA1E7BC6170010C77D /* SHKOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F031D1E7BB26A0010C77D /* SHKOverlayWindow.m */; };
+		FA1F03AB1E7BC6170010C77D /* SHKSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03201E7BB26A0010C77D /* SHKSettings.m */; };
+		FA1F03AC1E7BC6170010C77D /* SHKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03221E7BB26A0010C77D /* SHKStateMachine.m */; };
+		FA1F03AD1E7BC6170010C77D /* SHKTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03241E7BB26A0010C77D /* SHKTransition.m */; };
+		FA1F03AE1E7BC6170010C77D /* SHKTwoFingerSwipeGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03261E7BB26A0010C77D /* SHKTwoFingerSwipeGestureRecognizer.m */; };
+		FA1F03AF1E7BC6170010C77D /* SHKUnderlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03281E7BB26A0010C77D /* SHKUnderlayViewController.m */; };
+		FA1F03B01E7BC6170010C77D /* SHKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F032A1E7BB26A0010C77D /* SHKUtility.m */; };
+		FA1F03B11E7BC6170010C77D /* SmoochHelpKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F032D1E7BB26A0010C77D /* SmoochHelpKit.m */; };
+		FA1F03B21E7BC6170010C77D /* SHKHTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03321E7BB26A0010C77D /* SHKHTMLNode.m */; };
+		FA1F03B31E7BC6170010C77D /* SHKHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03341E7BB26A0010C77D /* SHKHTMLParser.m */; };
+		FA1F03B41E7BC6170010C77D /* SHKLEColorPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03371E7BB26A0010C77D /* SHKLEColorPicker.m */; };
+		FA1F03B51E7BC6170010C77D /* SHKUIColor+YUVSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03391E7BB26A0010C77D /* SHKUIColor+YUVSpace.m */; };
+		FA1F03B61E7BC6170010C77D /* SHKM13BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F033C1E7BB26A0010C77D /* SHKM13BadgeView.m */; };
+		FA1F03B71E7BC6170010C77D /* SHKSwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F033F1E7BB26A0010C77D /* SHKSwipeView.m */; };
+		FA1F03B81E7BC6170010C77D /* SHKAlphaGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03421E7BB26A0010C77D /* SHKAlphaGradientLayer.m */; };
+		FA1F03B91E7BC6170010C77D /* SHKArticleScreenshotWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03441E7BB26A0010C77D /* SHKArticleScreenshotWebView.m */; };
+		FA1F03BA1E7BC6170010C77D /* SHKArticleWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03461E7BB26A0010C77D /* SHKArticleWebView.m */; };
+		FA1F03BB1E7BC6170010C77D /* SHKDimView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03481E7BB26A0010C77D /* SHKDimView.m */; };
+		FA1F03BC1E7BC6170010C77D /* SHKDropShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F034A1E7BB26A0010C77D /* SHKDropShadowView.m */; };
+		FA1F03BD1E7BC6170010C77D /* SHKGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F034C1E7BB26A0010C77D /* SHKGradientView.m */; };
+		FA1F03BE1E7BC6170010C77D /* SHKMessagesButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F034E1E7BB26A0010C77D /* SHKMessagesButtonView.m */; };
+		FA1F03BF1E7BC6170010C77D /* SHKNoNetworkView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03501E7BB26A0010C77D /* SHKNoNetworkView.m */; };
+		FA1F03C01E7BC6170010C77D /* SHKPulsingCircleContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03521E7BB26A0010C77D /* SHKPulsingCircleContainerView.m */; };
+		FA1F03C11E7BC6170010C77D /* SHKPulsingCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03541E7BB26A0010C77D /* SHKPulsingCircleView.m */; };
+		FA1F03C21E7BC6170010C77D /* SHKRecommendationPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03561E7BB26A0010C77D /* SHKRecommendationPreviewView.m */; };
+		FA1F03C31E7BC6170010C77D /* SHKRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03581E7BB26A0010C77D /* SHKRoundedButton.m */; };
+		FA1F03C41E7BC6170010C77D /* SHKSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F035A1E7BB26A0010C77D /* SHKSearchBarView.m */; };
+		FA1F03C51E7BC6170010C77D /* SHKSearchResultsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F035C1E7BB26A0010C77D /* SHKSearchResultsView.m */; };
+		FA1F03C61E7BC6170010C77D /* SHKTableBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F035E1E7BB26A0010C77D /* SHKTableBackgroundView.m */; };
+		FA1F03C71E7BC6170010C77D /* SHKTutorialOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03601E7BB26A0010C77D /* SHKTutorialOverlayView.m */; };
+		FA1F03C81E7BC6170010C77D /* SHKTutorialView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03621E7BB26A0010C77D /* SHKTutorialView.m */; };
+		FA1F03C91E7BC6170010C77D /* SHKVerticalProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03641E7BB26A0010C77D /* SHKVerticalProgressView.m */; };
+		FA1F03CA1E7BC6170010C77D /* SHKViewAboveKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03661E7BB26A0010C77D /* SHKViewAboveKeyboard.m */; };
+		FA1F03CB1E7BC6170010C77D /* SHKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F03681E7BB26A0010C77D /* SHKWebView.m */; };
+		FA1F03CC1E7BC6170010C77D /* SHKWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F036A1E7BB26A0010C77D /* SHKWindow.m */; };
 		FA3DC2351E6D954900866C11 /* LineSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3DC2341E6D954900866C11 /* LineSDK.framework */; };
 		FAF109061E48E2A0000B1E84 /* RCTOkkamiSdkImplementation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF109051E48E2A0000B1E84 /* RCTOkkamiSdkImplementation.framework */; };
 		FAF109081E48E2B9000B1E84 /* Pods_RCTOkkamiSdkImplementation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF109071E48E2B9000B1E84 /* Pods_RCTOkkamiSdkImplementation.framework */; };
@@ -32,6 +108,151 @@
 		5D72D2EB1C16249000E22EC1 /* RCTOkkamiSdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTOkkamiSdk.h; sourceTree = "<group>"; };
 		5D72D2ED1C16249000E22EC1 /* RCTOkkamiSdk.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTOkkamiSdk.m; sourceTree = "<group>"; };
 		FA1C0D621E486F0200304CEB /* RCTOkkamiSdkImplementation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RCTOkkamiSdkImplementation.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/OkkamiSdkTest-adkatmurlkonkheuvhkuieikzepk/Build/Products/Debug-iphonesimulator/RCTOkkamiSdkImplementation.framework"; sourceTree = "<group>"; };
+		FA1F02C21E7BB1B10010C77D /* Smooch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Smooch.framework; sourceTree = "<group>"; };
+		FA1F02C41E7BB1C90010C77D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		FA1F02C61E7BB1D50010C77D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FA1F02C81E7BB1DE0010C77D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		FA1F02CA1E7BB1E30010C77D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FA1F02CC1E7BB1EE0010C77D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		FA1F02CD1E7BB1EE0010C77D /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		FA1F02D01E7BB1F80010C77D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FA1F02D21E7BB1FF0010C77D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		FA1F02D41E7BB2080010C77D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FA1F02D61E7BB20C0010C77D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FA1F02D81E7BB2140010C77D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FA1F02DC1E7BB26A0010C77D /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		FA1F02DD1E7BB26A0010C77D /* SHKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SHKResources.bundle; sourceTree = "<group>"; };
+		FA1F02E01E7BB26A0010C77D /* SHKApiClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKApiClient.h; sourceTree = "<group>"; };
+		FA1F02E11E7BB26A0010C77D /* SHKApiClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKApiClient.m; sourceTree = "<group>"; };
+		FA1F02E21E7BB26A0010C77D /* SHKJSONSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKJSONSerializer.h; sourceTree = "<group>"; };
+		FA1F02E31E7BB26A0010C77D /* SHKJSONSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKJSONSerializer.m; sourceTree = "<group>"; };
+		FA1F02E41E7BB26A0010C77D /* SHKQueryStringSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKQueryStringSerializer.h; sourceTree = "<group>"; };
+		FA1F02E51E7BB26A0010C77D /* SHKQueryStringSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKQueryStringSerializer.m; sourceTree = "<group>"; };
+		FA1F02E71E7BB26A0010C77D /* SHKRecommendations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKRecommendations.h; sourceTree = "<group>"; };
+		FA1F02E81E7BB26A0010C77D /* SHKRecommendations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKRecommendations.m; sourceTree = "<group>"; };
+		FA1F02E91E7BB26A0010C77D /* SHKRecommendationsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKRecommendationsManager.h; sourceTree = "<group>"; };
+		FA1F02EA1E7BB26A0010C77D /* SHKRecommendationsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKRecommendationsManager.m; sourceTree = "<group>"; };
+		FA1F02EB1E7BB26A0010C77D /* SHKRecommendationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKRecommendationsViewController.h; sourceTree = "<group>"; };
+		FA1F02EC1E7BB26A0010C77D /* SHKRecommendationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKRecommendationsViewController.m; sourceTree = "<group>"; };
+		FA1F02EF1E7BB26A0010C77D /* SHKAjaxEndpoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKAjaxEndpoint.h; sourceTree = "<group>"; };
+		FA1F02F01E7BB26A0010C77D /* SHKAjaxEndpoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKAjaxEndpoint.m; sourceTree = "<group>"; };
+		FA1F02F11E7BB26A0010C77D /* SHKHelpCenterAjaxEndpoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKHelpCenterAjaxEndpoint.h; sourceTree = "<group>"; };
+		FA1F02F21E7BB26A0010C77D /* SHKHelpCenterAjaxEndpoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKHelpCenterAjaxEndpoint.m; sourceTree = "<group>"; };
+		FA1F02F31E7BB26A0010C77D /* SHKHelpCenterRestEndpoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKHelpCenterRestEndpoint.h; sourceTree = "<group>"; };
+		FA1F02F41E7BB26A0010C77D /* SHKHelpCenterRestEndpoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKHelpCenterRestEndpoint.m; sourceTree = "<group>"; };
+		FA1F02F51E7BB26A0010C77D /* SHKLegacyAjaxEndpoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKLegacyAjaxEndpoint.h; sourceTree = "<group>"; };
+		FA1F02F61E7BB26A0010C77D /* SHKLegacyAjaxEndpoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKLegacyAjaxEndpoint.m; sourceTree = "<group>"; };
+		FA1F02F71E7BB26A0010C77D /* SHKLegacyRestEndpoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKLegacyRestEndpoint.h; sourceTree = "<group>"; };
+		FA1F02F81E7BB26A0010C77D /* SHKLegacyRestEndpoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKLegacyRestEndpoint.m; sourceTree = "<group>"; };
+		FA1F02F91E7BB26A0010C77D /* SHKRestEndpoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKRestEndpoint.h; sourceTree = "<group>"; };
+		FA1F02FA1E7BB26A0010C77D /* SHKRestEndpoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKRestEndpoint.m; sourceTree = "<group>"; };
+		FA1F02FB1E7BB26A0010C77D /* SHKSearchEndpoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKSearchEndpoint.h; sourceTree = "<group>"; };
+		FA1F02FC1E7BB26A0010C77D /* SHKSearchClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKSearchClient.h; sourceTree = "<group>"; };
+		FA1F02FD1E7BB26A0010C77D /* SHKSearchClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKSearchClient.m; sourceTree = "<group>"; };
+		FA1F02FE1E7BB26A0010C77D /* SHKSearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKSearchController.h; sourceTree = "<group>"; };
+		FA1F02FF1E7BB26A0010C77D /* SHKSearchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKSearchController.m; sourceTree = "<group>"; };
+		FA1F03001E7BB26A0010C77D /* SHKSearchEndpointFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKSearchEndpointFactory.h; sourceTree = "<group>"; };
+		FA1F03011E7BB26A0010C77D /* SHKSearchEndpointFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKSearchEndpointFactory.m; sourceTree = "<group>"; };
+		FA1F03021E7BB26A0010C77D /* SHKSearchFallbackStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKSearchFallbackStrategy.h; sourceTree = "<group>"; };
+		FA1F03031E7BB26A0010C77D /* SHKSearchFallbackStrategy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKSearchFallbackStrategy.m; sourceTree = "<group>"; };
+		FA1F03041E7BB26A0010C77D /* SHKSearchResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKSearchResult.h; sourceTree = "<group>"; };
+		FA1F03051E7BB26A0010C77D /* SHKSearchResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKSearchResult.m; sourceTree = "<group>"; };
+		FA1F03061E7BB26A0010C77D /* SHKTableCellVendingMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKTableCellVendingMachine.h; sourceTree = "<group>"; };
+		FA1F03071E7BB26A0010C77D /* SHKTableCellVendingMachine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKTableCellVendingMachine.m; sourceTree = "<group>"; };
+		FA1F03081E7BB26A0010C77D /* SHKZendeskSearchResultsFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKZendeskSearchResultsFilter.h; sourceTree = "<group>"; };
+		FA1F03091E7BB26A0010C77D /* SHKZendeskSearchResultsFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKZendeskSearchResultsFilter.m; sourceTree = "<group>"; };
+		FA1F030A1E7BB26A0010C77D /* SHKAppColorExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKAppColorExtractor.h; sourceTree = "<group>"; };
+		FA1F030B1E7BB26A0010C77D /* SHKAppColorExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKAppColorExtractor.m; sourceTree = "<group>"; };
+		FA1F030C1E7BB26A0010C77D /* SHKAppWideGestureHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKAppWideGestureHandler.h; sourceTree = "<group>"; };
+		FA1F030D1E7BB26A0010C77D /* SHKAppWideGestureHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKAppWideGestureHandler.m; sourceTree = "<group>"; };
+		FA1F030E1E7BB26A0010C77D /* SHKArticleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKArticleViewController.h; sourceTree = "<group>"; };
+		FA1F030F1E7BB26A0010C77D /* SHKArticleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKArticleViewController.m; sourceTree = "<group>"; };
+		FA1F03101E7BB26A0010C77D /* SHKBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKBaseViewController.h; sourceTree = "<group>"; };
+		FA1F03111E7BB26A0010C77D /* SHKBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKBaseViewController.m; sourceTree = "<group>"; };
+		FA1F03121E7BB26A0010C77D /* SHKHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKHomeViewController.h; sourceTree = "<group>"; };
+		FA1F03131E7BB26A0010C77D /* SHKHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKHomeViewController.m; sourceTree = "<group>"; };
+		FA1F03141E7BB26A0010C77D /* SHKImageLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKImageLoader.h; sourceTree = "<group>"; };
+		FA1F03151E7BB26A0010C77D /* SHKImageLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKImageLoader.m; sourceTree = "<group>"; };
+		FA1F03161E7BB26A0010C77D /* SHKLocalization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKLocalization.h; sourceTree = "<group>"; };
+		FA1F03171E7BB26A0010C77D /* SHKLocalization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKLocalization.m; sourceTree = "<group>"; };
+		FA1F03181E7BB26A0010C77D /* SHKNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKNavigationViewController.h; sourceTree = "<group>"; };
+		FA1F03191E7BB26A0010C77D /* SHKNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKNavigationViewController.m; sourceTree = "<group>"; };
+		FA1F031A1E7BB26A0010C77D /* SHKOffsetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKOffsetManager.h; sourceTree = "<group>"; };
+		FA1F031B1E7BB26A0010C77D /* SHKOffsetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKOffsetManager.m; sourceTree = "<group>"; };
+		FA1F031C1E7BB26A0010C77D /* SHKOverlayWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKOverlayWindow.h; sourceTree = "<group>"; };
+		FA1F031D1E7BB26A0010C77D /* SHKOverlayWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKOverlayWindow.m; sourceTree = "<group>"; };
+		FA1F031E1E7BB26A0010C77D /* SHKSettings+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SHKSettings+Private.h"; sourceTree = "<group>"; };
+		FA1F031F1E7BB26A0010C77D /* SHKSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKSettings.h; sourceTree = "<group>"; };
+		FA1F03201E7BB26A0010C77D /* SHKSettings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKSettings.m; sourceTree = "<group>"; };
+		FA1F03211E7BB26A0010C77D /* SHKStateMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKStateMachine.h; sourceTree = "<group>"; };
+		FA1F03221E7BB26A0010C77D /* SHKStateMachine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKStateMachine.m; sourceTree = "<group>"; };
+		FA1F03231E7BB26A0010C77D /* SHKTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKTransition.h; sourceTree = "<group>"; };
+		FA1F03241E7BB26A0010C77D /* SHKTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKTransition.m; sourceTree = "<group>"; };
+		FA1F03251E7BB26A0010C77D /* SHKTwoFingerSwipeGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKTwoFingerSwipeGestureRecognizer.h; sourceTree = "<group>"; };
+		FA1F03261E7BB26A0010C77D /* SHKTwoFingerSwipeGestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKTwoFingerSwipeGestureRecognizer.m; sourceTree = "<group>"; };
+		FA1F03271E7BB26A0010C77D /* SHKUnderlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKUnderlayViewController.h; sourceTree = "<group>"; };
+		FA1F03281E7BB26A0010C77D /* SHKUnderlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKUnderlayViewController.m; sourceTree = "<group>"; };
+		FA1F03291E7BB26A0010C77D /* SHKUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKUtility.h; sourceTree = "<group>"; };
+		FA1F032A1E7BB26A0010C77D /* SHKUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKUtility.m; sourceTree = "<group>"; };
+		FA1F032B1E7BB26A0010C77D /* SmoochHelpKit+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmoochHelpKit+Private.h"; sourceTree = "<group>"; };
+		FA1F032C1E7BB26A0010C77D /* SmoochHelpKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmoochHelpKit.h; sourceTree = "<group>"; };
+		FA1F032D1E7BB26A0010C77D /* SmoochHelpKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmoochHelpKit.m; sourceTree = "<group>"; };
+		FA1F03301E7BB26A0010C77D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FA1F03311E7BB26A0010C77D /* SHKHTMLNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKHTMLNode.h; sourceTree = "<group>"; };
+		FA1F03321E7BB26A0010C77D /* SHKHTMLNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKHTMLNode.m; sourceTree = "<group>"; };
+		FA1F03331E7BB26A0010C77D /* SHKHTMLParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKHTMLParser.h; sourceTree = "<group>"; };
+		FA1F03341E7BB26A0010C77D /* SHKHTMLParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKHTMLParser.m; sourceTree = "<group>"; };
+		FA1F03361E7BB26A0010C77D /* SHKLEColorPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKLEColorPicker.h; sourceTree = "<group>"; };
+		FA1F03371E7BB26A0010C77D /* SHKLEColorPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKLEColorPicker.m; sourceTree = "<group>"; };
+		FA1F03381E7BB26A0010C77D /* SHKUIColor+YUVSpace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SHKUIColor+YUVSpace.h"; sourceTree = "<group>"; };
+		FA1F03391E7BB26A0010C77D /* SHKUIColor+YUVSpace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SHKUIColor+YUVSpace.m"; sourceTree = "<group>"; };
+		FA1F033B1E7BB26A0010C77D /* SHKM13BadgeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKM13BadgeView.h; sourceTree = "<group>"; };
+		FA1F033C1E7BB26A0010C77D /* SHKM13BadgeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKM13BadgeView.m; sourceTree = "<group>"; };
+		FA1F033E1E7BB26A0010C77D /* SHKSwipeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKSwipeView.h; sourceTree = "<group>"; };
+		FA1F033F1E7BB26A0010C77D /* SHKSwipeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKSwipeView.m; sourceTree = "<group>"; };
+		FA1F03411E7BB26A0010C77D /* SHKAlphaGradientLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKAlphaGradientLayer.h; sourceTree = "<group>"; };
+		FA1F03421E7BB26A0010C77D /* SHKAlphaGradientLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKAlphaGradientLayer.m; sourceTree = "<group>"; };
+		FA1F03431E7BB26A0010C77D /* SHKArticleScreenshotWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKArticleScreenshotWebView.h; sourceTree = "<group>"; };
+		FA1F03441E7BB26A0010C77D /* SHKArticleScreenshotWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKArticleScreenshotWebView.m; sourceTree = "<group>"; };
+		FA1F03451E7BB26A0010C77D /* SHKArticleWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKArticleWebView.h; sourceTree = "<group>"; };
+		FA1F03461E7BB26A0010C77D /* SHKArticleWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKArticleWebView.m; sourceTree = "<group>"; };
+		FA1F03471E7BB26A0010C77D /* SHKDimView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKDimView.h; sourceTree = "<group>"; };
+		FA1F03481E7BB26A0010C77D /* SHKDimView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKDimView.m; sourceTree = "<group>"; };
+		FA1F03491E7BB26A0010C77D /* SHKDropShadowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKDropShadowView.h; sourceTree = "<group>"; };
+		FA1F034A1E7BB26A0010C77D /* SHKDropShadowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKDropShadowView.m; sourceTree = "<group>"; };
+		FA1F034B1E7BB26A0010C77D /* SHKGradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKGradientView.h; sourceTree = "<group>"; };
+		FA1F034C1E7BB26A0010C77D /* SHKGradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKGradientView.m; sourceTree = "<group>"; };
+		FA1F034D1E7BB26A0010C77D /* SHKMessagesButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKMessagesButtonView.h; sourceTree = "<group>"; };
+		FA1F034E1E7BB26A0010C77D /* SHKMessagesButtonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKMessagesButtonView.m; sourceTree = "<group>"; };
+		FA1F034F1E7BB26A0010C77D /* SHKNoNetworkView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKNoNetworkView.h; sourceTree = "<group>"; };
+		FA1F03501E7BB26A0010C77D /* SHKNoNetworkView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKNoNetworkView.m; sourceTree = "<group>"; };
+		FA1F03511E7BB26A0010C77D /* SHKPulsingCircleContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKPulsingCircleContainerView.h; sourceTree = "<group>"; };
+		FA1F03521E7BB26A0010C77D /* SHKPulsingCircleContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKPulsingCircleContainerView.m; sourceTree = "<group>"; };
+		FA1F03531E7BB26A0010C77D /* SHKPulsingCircleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKPulsingCircleView.h; sourceTree = "<group>"; };
+		FA1F03541E7BB26A0010C77D /* SHKPulsingCircleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKPulsingCircleView.m; sourceTree = "<group>"; };
+		FA1F03551E7BB26A0010C77D /* SHKRecommendationPreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKRecommendationPreviewView.h; sourceTree = "<group>"; };
+		FA1F03561E7BB26A0010C77D /* SHKRecommendationPreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKRecommendationPreviewView.m; sourceTree = "<group>"; };
+		FA1F03571E7BB26A0010C77D /* SHKRoundedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKRoundedButton.h; sourceTree = "<group>"; };
+		FA1F03581E7BB26A0010C77D /* SHKRoundedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKRoundedButton.m; sourceTree = "<group>"; };
+		FA1F03591E7BB26A0010C77D /* SHKSearchBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKSearchBarView.h; sourceTree = "<group>"; };
+		FA1F035A1E7BB26A0010C77D /* SHKSearchBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKSearchBarView.m; sourceTree = "<group>"; };
+		FA1F035B1E7BB26A0010C77D /* SHKSearchResultsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKSearchResultsView.h; sourceTree = "<group>"; };
+		FA1F035C1E7BB26A0010C77D /* SHKSearchResultsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKSearchResultsView.m; sourceTree = "<group>"; };
+		FA1F035D1E7BB26A0010C77D /* SHKTableBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKTableBackgroundView.h; sourceTree = "<group>"; };
+		FA1F035E1E7BB26A0010C77D /* SHKTableBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKTableBackgroundView.m; sourceTree = "<group>"; };
+		FA1F035F1E7BB26A0010C77D /* SHKTutorialOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKTutorialOverlayView.h; sourceTree = "<group>"; };
+		FA1F03601E7BB26A0010C77D /* SHKTutorialOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKTutorialOverlayView.m; sourceTree = "<group>"; };
+		FA1F03611E7BB26A0010C77D /* SHKTutorialView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKTutorialView.h; sourceTree = "<group>"; };
+		FA1F03621E7BB26A0010C77D /* SHKTutorialView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKTutorialView.m; sourceTree = "<group>"; };
+		FA1F03631E7BB26A0010C77D /* SHKVerticalProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKVerticalProgressView.h; sourceTree = "<group>"; };
+		FA1F03641E7BB26A0010C77D /* SHKVerticalProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKVerticalProgressView.m; sourceTree = "<group>"; };
+		FA1F03651E7BB26A0010C77D /* SHKViewAboveKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKViewAboveKeyboard.h; sourceTree = "<group>"; };
+		FA1F03661E7BB26A0010C77D /* SHKViewAboveKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKViewAboveKeyboard.m; sourceTree = "<group>"; };
+		FA1F03671E7BB26A0010C77D /* SHKWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKWebView.h; sourceTree = "<group>"; };
+		FA1F03681E7BB26A0010C77D /* SHKWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKWebView.m; sourceTree = "<group>"; };
+		FA1F03691E7BB26A0010C77D /* SHKWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKWindow.h; sourceTree = "<group>"; };
+		FA1F036A1E7BB26A0010C77D /* SHKWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKWindow.m; sourceTree = "<group>"; };
+		FA1F038C1E7BC2750010C77D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		FA3DC2341E6D954900866C11 /* LineSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LineSDK.framework; sourceTree = "<group>"; };
 		FAC9F8F31E14F38100EEFC1B /* RCTOkkamiSdkImplementation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RCTOkkamiSdkImplementation.framework; path = "RCTOkkamiSdkImplementation/build/Debug-iphoneos/RCTOkkamiSdkImplementation.framework"; sourceTree = "<group>"; };
 		FAF109051E48E2A0000B1E84 /* RCTOkkamiSdkImplementation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RCTOkkamiSdkImplementation.framework; path = ../../../../../Desktop/RCTOkkamiSdkImplementation.framework; sourceTree = "<group>"; };
@@ -43,7 +264,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1F038D1E7BC2750010C77D /* OpenGLES.framework in Frameworks */,
+				FA1F02D91E7BB2140010C77D /* UIKit.framework in Frameworks */,
+				FA1F02D71E7BB20C0010C77D /* SystemConfiguration.framework in Frameworks */,
+				FA1F02D51E7BB2080010C77D /* QuartzCore.framework in Frameworks */,
+				FA1F02D31E7BB1FF0010C77D /* Photos.framework in Frameworks */,
+				FA1F02D11E7BB1F80010C77D /* Foundation.framework in Frameworks */,
+				FA1F02CE1E7BB1EE0010C77D /* CoreTelephony.framework in Frameworks */,
+				FA1F02CF1E7BB1EE0010C77D /* CoreText.framework in Frameworks */,
+				FA1F02CB1E7BB1E30010C77D /* CoreGraphics.framework in Frameworks */,
+				FA1F02C91E7BB1DE0010C77D /* CFNetwork.framework in Frameworks */,
+				FA1F02C71E7BB1D50010C77D /* AVFoundation.framework in Frameworks */,
+				FA1F02C51E7BB1C90010C77D /* AssetsLibrary.framework in Frameworks */,
 				FAF109081E48E2B9000B1E84 /* Pods_RCTOkkamiSdkImplementation.framework in Frameworks */,
+				FA1F02C31E7BB1B10010C77D /* Smooch.framework in Frameworks */,
 				FAF109061E48E2A0000B1E84 /* RCTOkkamiSdkImplementation.framework in Frameworks */,
 				FA3DC2351E6D954900866C11 /* LineSDK.framework in Frameworks */,
 			);
@@ -55,6 +289,7 @@
 		5D72D2DF1C16249000E22EC1 = {
 			isa = PBXGroup;
 			children = (
+				FA1F02DA1E7BB26A0010C77D /* SmoochHelpKit */,
 				5D72D2EA1C16249000E22EC1 /* RCTOkkamiSdk */,
 				5D72D2E91C16249000E22EC1 /* Products */,
 				FAF229A71E141BE800F3C9C1 /* Frameworks */,
@@ -78,9 +313,257 @@
 			path = RCTOkkamiSdk;
 			sourceTree = "<group>";
 		};
+		FA1F02DA1E7BB26A0010C77D /* SmoochHelpKit */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F02DB1E7BB26A0010C77D /* libxml */,
+				FA1F02DD1E7BB26A0010C77D /* SHKResources.bundle */,
+				FA1F02DE1E7BB26A0010C77D /* Source */,
+			);
+			path = SmoochHelpKit;
+			sourceTree = "<group>";
+		};
+		FA1F02DB1E7BB26A0010C77D /* libxml */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F02DC1E7BB26A0010C77D /* module.modulemap */,
+			);
+			path = libxml;
+			sourceTree = "<group>";
+		};
+		FA1F02DE1E7BB26A0010C77D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F02DF1E7BB26A0010C77D /* Networking */,
+				FA1F02E61E7BB26A0010C77D /* Recommendations */,
+				FA1F02ED1E7BB26A0010C77D /* Search */,
+				FA1F030A1E7BB26A0010C77D /* SHKAppColorExtractor.h */,
+				FA1F030B1E7BB26A0010C77D /* SHKAppColorExtractor.m */,
+				FA1F030C1E7BB26A0010C77D /* SHKAppWideGestureHandler.h */,
+				FA1F030D1E7BB26A0010C77D /* SHKAppWideGestureHandler.m */,
+				FA1F030E1E7BB26A0010C77D /* SHKArticleViewController.h */,
+				FA1F030F1E7BB26A0010C77D /* SHKArticleViewController.m */,
+				FA1F03101E7BB26A0010C77D /* SHKBaseViewController.h */,
+				FA1F03111E7BB26A0010C77D /* SHKBaseViewController.m */,
+				FA1F03121E7BB26A0010C77D /* SHKHomeViewController.h */,
+				FA1F03131E7BB26A0010C77D /* SHKHomeViewController.m */,
+				FA1F03141E7BB26A0010C77D /* SHKImageLoader.h */,
+				FA1F03151E7BB26A0010C77D /* SHKImageLoader.m */,
+				FA1F03161E7BB26A0010C77D /* SHKLocalization.h */,
+				FA1F03171E7BB26A0010C77D /* SHKLocalization.m */,
+				FA1F03181E7BB26A0010C77D /* SHKNavigationViewController.h */,
+				FA1F03191E7BB26A0010C77D /* SHKNavigationViewController.m */,
+				FA1F031A1E7BB26A0010C77D /* SHKOffsetManager.h */,
+				FA1F031B1E7BB26A0010C77D /* SHKOffsetManager.m */,
+				FA1F031C1E7BB26A0010C77D /* SHKOverlayWindow.h */,
+				FA1F031D1E7BB26A0010C77D /* SHKOverlayWindow.m */,
+				FA1F031E1E7BB26A0010C77D /* SHKSettings+Private.h */,
+				FA1F031F1E7BB26A0010C77D /* SHKSettings.h */,
+				FA1F03201E7BB26A0010C77D /* SHKSettings.m */,
+				FA1F03211E7BB26A0010C77D /* SHKStateMachine.h */,
+				FA1F03221E7BB26A0010C77D /* SHKStateMachine.m */,
+				FA1F03231E7BB26A0010C77D /* SHKTransition.h */,
+				FA1F03241E7BB26A0010C77D /* SHKTransition.m */,
+				FA1F03251E7BB26A0010C77D /* SHKTwoFingerSwipeGestureRecognizer.h */,
+				FA1F03261E7BB26A0010C77D /* SHKTwoFingerSwipeGestureRecognizer.m */,
+				FA1F03271E7BB26A0010C77D /* SHKUnderlayViewController.h */,
+				FA1F03281E7BB26A0010C77D /* SHKUnderlayViewController.m */,
+				FA1F03291E7BB26A0010C77D /* SHKUtility.h */,
+				FA1F032A1E7BB26A0010C77D /* SHKUtility.m */,
+				FA1F032B1E7BB26A0010C77D /* SmoochHelpKit+Private.h */,
+				FA1F032C1E7BB26A0010C77D /* SmoochHelpKit.h */,
+				FA1F032D1E7BB26A0010C77D /* SmoochHelpKit.m */,
+				FA1F032E1E7BB26A0010C77D /* ThirdParty */,
+				FA1F03401E7BB26A0010C77D /* Views */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		FA1F02DF1E7BB26A0010C77D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F02E01E7BB26A0010C77D /* SHKApiClient.h */,
+				FA1F02E11E7BB26A0010C77D /* SHKApiClient.m */,
+				FA1F02E21E7BB26A0010C77D /* SHKJSONSerializer.h */,
+				FA1F02E31E7BB26A0010C77D /* SHKJSONSerializer.m */,
+				FA1F02E41E7BB26A0010C77D /* SHKQueryStringSerializer.h */,
+				FA1F02E51E7BB26A0010C77D /* SHKQueryStringSerializer.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FA1F02E61E7BB26A0010C77D /* Recommendations */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F02E71E7BB26A0010C77D /* SHKRecommendations.h */,
+				FA1F02E81E7BB26A0010C77D /* SHKRecommendations.m */,
+				FA1F02E91E7BB26A0010C77D /* SHKRecommendationsManager.h */,
+				FA1F02EA1E7BB26A0010C77D /* SHKRecommendationsManager.m */,
+				FA1F02EB1E7BB26A0010C77D /* SHKRecommendationsViewController.h */,
+				FA1F02EC1E7BB26A0010C77D /* SHKRecommendationsViewController.m */,
+			);
+			path = Recommendations;
+			sourceTree = "<group>";
+		};
+		FA1F02ED1E7BB26A0010C77D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F02EE1E7BB26A0010C77D /* Endpoints */,
+				FA1F02FC1E7BB26A0010C77D /* SHKSearchClient.h */,
+				FA1F02FD1E7BB26A0010C77D /* SHKSearchClient.m */,
+				FA1F02FE1E7BB26A0010C77D /* SHKSearchController.h */,
+				FA1F02FF1E7BB26A0010C77D /* SHKSearchController.m */,
+				FA1F03001E7BB26A0010C77D /* SHKSearchEndpointFactory.h */,
+				FA1F03011E7BB26A0010C77D /* SHKSearchEndpointFactory.m */,
+				FA1F03021E7BB26A0010C77D /* SHKSearchFallbackStrategy.h */,
+				FA1F03031E7BB26A0010C77D /* SHKSearchFallbackStrategy.m */,
+				FA1F03041E7BB26A0010C77D /* SHKSearchResult.h */,
+				FA1F03051E7BB26A0010C77D /* SHKSearchResult.m */,
+				FA1F03061E7BB26A0010C77D /* SHKTableCellVendingMachine.h */,
+				FA1F03071E7BB26A0010C77D /* SHKTableCellVendingMachine.m */,
+				FA1F03081E7BB26A0010C77D /* SHKZendeskSearchResultsFilter.h */,
+				FA1F03091E7BB26A0010C77D /* SHKZendeskSearchResultsFilter.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		FA1F02EE1E7BB26A0010C77D /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F02EF1E7BB26A0010C77D /* SHKAjaxEndpoint.h */,
+				FA1F02F01E7BB26A0010C77D /* SHKAjaxEndpoint.m */,
+				FA1F02F11E7BB26A0010C77D /* SHKHelpCenterAjaxEndpoint.h */,
+				FA1F02F21E7BB26A0010C77D /* SHKHelpCenterAjaxEndpoint.m */,
+				FA1F02F31E7BB26A0010C77D /* SHKHelpCenterRestEndpoint.h */,
+				FA1F02F41E7BB26A0010C77D /* SHKHelpCenterRestEndpoint.m */,
+				FA1F02F51E7BB26A0010C77D /* SHKLegacyAjaxEndpoint.h */,
+				FA1F02F61E7BB26A0010C77D /* SHKLegacyAjaxEndpoint.m */,
+				FA1F02F71E7BB26A0010C77D /* SHKLegacyRestEndpoint.h */,
+				FA1F02F81E7BB26A0010C77D /* SHKLegacyRestEndpoint.m */,
+				FA1F02F91E7BB26A0010C77D /* SHKRestEndpoint.h */,
+				FA1F02FA1E7BB26A0010C77D /* SHKRestEndpoint.m */,
+				FA1F02FB1E7BB26A0010C77D /* SHKSearchEndpoint.h */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		FA1F032E1E7BB26A0010C77D /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F032F1E7BB26A0010C77D /* HTMLParser */,
+				FA1F03351E7BB26A0010C77D /* LEColorPicker */,
+				FA1F033A1E7BB26A0010C77D /* M13BadgeView */,
+				FA1F033D1E7BB26A0010C77D /* SwipeView */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		FA1F032F1E7BB26A0010C77D /* HTMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F03301E7BB26A0010C77D /* README.md */,
+				FA1F03311E7BB26A0010C77D /* SHKHTMLNode.h */,
+				FA1F03321E7BB26A0010C77D /* SHKHTMLNode.m */,
+				FA1F03331E7BB26A0010C77D /* SHKHTMLParser.h */,
+				FA1F03341E7BB26A0010C77D /* SHKHTMLParser.m */,
+			);
+			path = HTMLParser;
+			sourceTree = "<group>";
+		};
+		FA1F03351E7BB26A0010C77D /* LEColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F03361E7BB26A0010C77D /* SHKLEColorPicker.h */,
+				FA1F03371E7BB26A0010C77D /* SHKLEColorPicker.m */,
+				FA1F03381E7BB26A0010C77D /* SHKUIColor+YUVSpace.h */,
+				FA1F03391E7BB26A0010C77D /* SHKUIColor+YUVSpace.m */,
+			);
+			path = LEColorPicker;
+			sourceTree = "<group>";
+		};
+		FA1F033A1E7BB26A0010C77D /* M13BadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F033B1E7BB26A0010C77D /* SHKM13BadgeView.h */,
+				FA1F033C1E7BB26A0010C77D /* SHKM13BadgeView.m */,
+			);
+			path = M13BadgeView;
+			sourceTree = "<group>";
+		};
+		FA1F033D1E7BB26A0010C77D /* SwipeView */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F033E1E7BB26A0010C77D /* SHKSwipeView.h */,
+				FA1F033F1E7BB26A0010C77D /* SHKSwipeView.m */,
+			);
+			path = SwipeView;
+			sourceTree = "<group>";
+		};
+		FA1F03401E7BB26A0010C77D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F03411E7BB26A0010C77D /* SHKAlphaGradientLayer.h */,
+				FA1F03421E7BB26A0010C77D /* SHKAlphaGradientLayer.m */,
+				FA1F03431E7BB26A0010C77D /* SHKArticleScreenshotWebView.h */,
+				FA1F03441E7BB26A0010C77D /* SHKArticleScreenshotWebView.m */,
+				FA1F03451E7BB26A0010C77D /* SHKArticleWebView.h */,
+				FA1F03461E7BB26A0010C77D /* SHKArticleWebView.m */,
+				FA1F03471E7BB26A0010C77D /* SHKDimView.h */,
+				FA1F03481E7BB26A0010C77D /* SHKDimView.m */,
+				FA1F03491E7BB26A0010C77D /* SHKDropShadowView.h */,
+				FA1F034A1E7BB26A0010C77D /* SHKDropShadowView.m */,
+				FA1F034B1E7BB26A0010C77D /* SHKGradientView.h */,
+				FA1F034C1E7BB26A0010C77D /* SHKGradientView.m */,
+				FA1F034D1E7BB26A0010C77D /* SHKMessagesButtonView.h */,
+				FA1F034E1E7BB26A0010C77D /* SHKMessagesButtonView.m */,
+				FA1F034F1E7BB26A0010C77D /* SHKNoNetworkView.h */,
+				FA1F03501E7BB26A0010C77D /* SHKNoNetworkView.m */,
+				FA1F03511E7BB26A0010C77D /* SHKPulsingCircleContainerView.h */,
+				FA1F03521E7BB26A0010C77D /* SHKPulsingCircleContainerView.m */,
+				FA1F03531E7BB26A0010C77D /* SHKPulsingCircleView.h */,
+				FA1F03541E7BB26A0010C77D /* SHKPulsingCircleView.m */,
+				FA1F03551E7BB26A0010C77D /* SHKRecommendationPreviewView.h */,
+				FA1F03561E7BB26A0010C77D /* SHKRecommendationPreviewView.m */,
+				FA1F03571E7BB26A0010C77D /* SHKRoundedButton.h */,
+				FA1F03581E7BB26A0010C77D /* SHKRoundedButton.m */,
+				FA1F03591E7BB26A0010C77D /* SHKSearchBarView.h */,
+				FA1F035A1E7BB26A0010C77D /* SHKSearchBarView.m */,
+				FA1F035B1E7BB26A0010C77D /* SHKSearchResultsView.h */,
+				FA1F035C1E7BB26A0010C77D /* SHKSearchResultsView.m */,
+				FA1F035D1E7BB26A0010C77D /* SHKTableBackgroundView.h */,
+				FA1F035E1E7BB26A0010C77D /* SHKTableBackgroundView.m */,
+				FA1F035F1E7BB26A0010C77D /* SHKTutorialOverlayView.h */,
+				FA1F03601E7BB26A0010C77D /* SHKTutorialOverlayView.m */,
+				FA1F03611E7BB26A0010C77D /* SHKTutorialView.h */,
+				FA1F03621E7BB26A0010C77D /* SHKTutorialView.m */,
+				FA1F03631E7BB26A0010C77D /* SHKVerticalProgressView.h */,
+				FA1F03641E7BB26A0010C77D /* SHKVerticalProgressView.m */,
+				FA1F03651E7BB26A0010C77D /* SHKViewAboveKeyboard.h */,
+				FA1F03661E7BB26A0010C77D /* SHKViewAboveKeyboard.m */,
+				FA1F03671E7BB26A0010C77D /* SHKWebView.h */,
+				FA1F03681E7BB26A0010C77D /* SHKWebView.m */,
+				FA1F03691E7BB26A0010C77D /* SHKWindow.h */,
+				FA1F036A1E7BB26A0010C77D /* SHKWindow.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FAF229A71E141BE800F3C9C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA1F038C1E7BC2750010C77D /* OpenGLES.framework */,
+				FA1F02D81E7BB2140010C77D /* UIKit.framework */,
+				FA1F02D61E7BB20C0010C77D /* SystemConfiguration.framework */,
+				FA1F02D41E7BB2080010C77D /* QuartzCore.framework */,
+				FA1F02D21E7BB1FF0010C77D /* Photos.framework */,
+				FA1F02D01E7BB1F80010C77D /* Foundation.framework */,
+				FA1F02CC1E7BB1EE0010C77D /* CoreTelephony.framework */,
+				FA1F02CD1E7BB1EE0010C77D /* CoreText.framework */,
+				FA1F02CA1E7BB1E30010C77D /* CoreGraphics.framework */,
+				FA1F02C81E7BB1DE0010C77D /* CFNetwork.framework */,
+				FA1F02C61E7BB1D50010C77D /* AVFoundation.framework */,
+				FA1F02C41E7BB1C90010C77D /* AssetsLibrary.framework */,
+				FA1F02C21E7BB1B10010C77D /* Smooch.framework */,
 				FA3DC2341E6D954900866C11 /* LineSDK.framework */,
 				FAF109071E48E2B9000B1E84 /* Pods_RCTOkkamiSdkImplementation.framework */,
 				FAF109051E48E2A0000B1E84 /* RCTOkkamiSdkImplementation.framework */,
@@ -146,6 +629,69 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1F038E1E7BC6170010C77D /* SHKApiClient.m in Sources */,
+				FA1F038F1E7BC6170010C77D /* SHKJSONSerializer.m in Sources */,
+				FA1F03901E7BC6170010C77D /* SHKQueryStringSerializer.m in Sources */,
+				FA1F03911E7BC6170010C77D /* SHKRecommendations.m in Sources */,
+				FA1F03921E7BC6170010C77D /* SHKRecommendationsManager.m in Sources */,
+				FA1F03931E7BC6170010C77D /* SHKRecommendationsViewController.m in Sources */,
+				FA1F03941E7BC6170010C77D /* SHKAjaxEndpoint.m in Sources */,
+				FA1F03951E7BC6170010C77D /* SHKHelpCenterAjaxEndpoint.m in Sources */,
+				FA1F03961E7BC6170010C77D /* SHKHelpCenterRestEndpoint.m in Sources */,
+				FA1F03971E7BC6170010C77D /* SHKLegacyAjaxEndpoint.m in Sources */,
+				FA1F03981E7BC6170010C77D /* SHKLegacyRestEndpoint.m in Sources */,
+				FA1F03991E7BC6170010C77D /* SHKRestEndpoint.m in Sources */,
+				FA1F039A1E7BC6170010C77D /* SHKSearchClient.m in Sources */,
+				FA1F039B1E7BC6170010C77D /* SHKSearchController.m in Sources */,
+				FA1F039C1E7BC6170010C77D /* SHKSearchEndpointFactory.m in Sources */,
+				FA1F039D1E7BC6170010C77D /* SHKSearchFallbackStrategy.m in Sources */,
+				FA1F039E1E7BC6170010C77D /* SHKSearchResult.m in Sources */,
+				FA1F039F1E7BC6170010C77D /* SHKTableCellVendingMachine.m in Sources */,
+				FA1F03A01E7BC6170010C77D /* SHKZendeskSearchResultsFilter.m in Sources */,
+				FA1F03A11E7BC6170010C77D /* SHKAppColorExtractor.m in Sources */,
+				FA1F03A21E7BC6170010C77D /* SHKAppWideGestureHandler.m in Sources */,
+				FA1F03A31E7BC6170010C77D /* SHKArticleViewController.m in Sources */,
+				FA1F03A41E7BC6170010C77D /* SHKBaseViewController.m in Sources */,
+				FA1F03A51E7BC6170010C77D /* SHKHomeViewController.m in Sources */,
+				FA1F03A61E7BC6170010C77D /* SHKImageLoader.m in Sources */,
+				FA1F03A71E7BC6170010C77D /* SHKLocalization.m in Sources */,
+				FA1F03A81E7BC6170010C77D /* SHKNavigationViewController.m in Sources */,
+				FA1F03A91E7BC6170010C77D /* SHKOffsetManager.m in Sources */,
+				FA1F03AA1E7BC6170010C77D /* SHKOverlayWindow.m in Sources */,
+				FA1F03AB1E7BC6170010C77D /* SHKSettings.m in Sources */,
+				FA1F03AC1E7BC6170010C77D /* SHKStateMachine.m in Sources */,
+				FA1F03AD1E7BC6170010C77D /* SHKTransition.m in Sources */,
+				FA1F03AE1E7BC6170010C77D /* SHKTwoFingerSwipeGestureRecognizer.m in Sources */,
+				FA1F03AF1E7BC6170010C77D /* SHKUnderlayViewController.m in Sources */,
+				FA1F03B01E7BC6170010C77D /* SHKUtility.m in Sources */,
+				FA1F03B11E7BC6170010C77D /* SmoochHelpKit.m in Sources */,
+				FA1F03B21E7BC6170010C77D /* SHKHTMLNode.m in Sources */,
+				FA1F03B31E7BC6170010C77D /* SHKHTMLParser.m in Sources */,
+				FA1F03B41E7BC6170010C77D /* SHKLEColorPicker.m in Sources */,
+				FA1F03B51E7BC6170010C77D /* SHKUIColor+YUVSpace.m in Sources */,
+				FA1F03B61E7BC6170010C77D /* SHKM13BadgeView.m in Sources */,
+				FA1F03B71E7BC6170010C77D /* SHKSwipeView.m in Sources */,
+				FA1F03B81E7BC6170010C77D /* SHKAlphaGradientLayer.m in Sources */,
+				FA1F03B91E7BC6170010C77D /* SHKArticleScreenshotWebView.m in Sources */,
+				FA1F03BA1E7BC6170010C77D /* SHKArticleWebView.m in Sources */,
+				FA1F03BB1E7BC6170010C77D /* SHKDimView.m in Sources */,
+				FA1F03BC1E7BC6170010C77D /* SHKDropShadowView.m in Sources */,
+				FA1F03BD1E7BC6170010C77D /* SHKGradientView.m in Sources */,
+				FA1F03BE1E7BC6170010C77D /* SHKMessagesButtonView.m in Sources */,
+				FA1F03BF1E7BC6170010C77D /* SHKNoNetworkView.m in Sources */,
+				FA1F03C01E7BC6170010C77D /* SHKPulsingCircleContainerView.m in Sources */,
+				FA1F03C11E7BC6170010C77D /* SHKPulsingCircleView.m in Sources */,
+				FA1F03C21E7BC6170010C77D /* SHKRecommendationPreviewView.m in Sources */,
+				FA1F03C31E7BC6170010C77D /* SHKRoundedButton.m in Sources */,
+				FA1F03C41E7BC6170010C77D /* SHKSearchBarView.m in Sources */,
+				FA1F03C51E7BC6170010C77D /* SHKSearchResultsView.m in Sources */,
+				FA1F03C61E7BC6170010C77D /* SHKTableBackgroundView.m in Sources */,
+				FA1F03C71E7BC6170010C77D /* SHKTutorialOverlayView.m in Sources */,
+				FA1F03C81E7BC6170010C77D /* SHKTutorialView.m in Sources */,
+				FA1F03C91E7BC6170010C77D /* SHKVerticalProgressView.m in Sources */,
+				FA1F03CA1E7BC6170010C77D /* SHKViewAboveKeyboard.m in Sources */,
+				FA1F03CB1E7BC6170010C77D /* SHKWebView.m in Sources */,
+				FA1F03CC1E7BC6170010C77D /* SHKWindow.m in Sources */,
 				5D72D2EE1C16249000E22EC1 /* RCTOkkamiSdk.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,8 +798,15 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../node_modules/react-native/React/**",
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(SRCROOT)/SmoochHelpKit/libxml2",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-licucore",
+					"-lxml2",
+					"-lc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -272,8 +825,15 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../node_modules/react-native/React/**",
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(SRCROOT)/SmoochHelpKit/libxml2",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-licucore",
+					"-lxml2",
+					"-lc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

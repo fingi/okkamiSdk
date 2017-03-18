@@ -4,6 +4,8 @@
 #import "RCTBundleURLProvider.h"
 #import "RCTRootView.h"
 #import <CoreLocation/CoreLocation.h>
+#import "SmoochHelpKit.h"
+
 //#import <RCTOkkamiSdkImplementation/RCTOkkamiSdkImplementation-Swift.h>
 
 @implementation OkkamiSdk
@@ -20,6 +22,7 @@ RCT_EXPORT_MODULE();
         self.locationManager.distanceFilter = kCLDistanceFilterNone;
         [self.locationManager startUpdatingLocation];
         [self.locationManager requestWhenInUseAuthorization];
+        
         //[self.locationManager requestAlwaysAuthorization];
         
         /*if ([CLLocationManager locationServicesEnabled]){
@@ -486,6 +489,46 @@ RCT_EXPORT_METHOD(smoochChat
                   :(RCTPromiseRejectBlock)reject)
 {
     
+    
+    //[NSThread sleepForTimeInterval:5000];
+    /*dispatch_after(dispatch_time(DISPATCH_TIME_NOW,
+                                 5 * NSEC_PER_SEC),
+       dispatch_get_main_queue(),
+       ^{
+           OkkamiSmoochChat *smooch = [OkkamiSmoochChat newInstanceWithAppToken:appToken];
+           self.smooch = smooch;
+           dispatch_async(dispatch_get_main_queue(), ^{
+               [self.smooch smoochChat];
+           });
+       });*/
+    /*OkkamiSmoochChat *smooch = [OkkamiSmoochChat newInstanceWithAppToken:appToken];
+    self.smooch = smooch;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.smooch smoochChat];
+    });*/
+
+    if (self.smoochSettings != nil) {
+        [SmoochHelpKit destroy];
+        NSLog(@"destroy smooch");
+        self.smoochSettings = nil;
+        SHKSettings* settings = [SHKSettings settingsWithAppToken:appToken];
+        self.smoochSettings = settings;
+        [SmoochHelpKit initWithSettings:self.smoochSettings];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SmoochHelpKit loginSmooch:userID];
+            [SmoochHelpKit show];
+        });
+    }else{
+        SHKSettings* settings = [SHKSettings settingsWithAppToken:appToken];
+        self.smoochSettings = settings;
+        [SmoochHelpKit initWithSettings:self.smoochSettings];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SmoochHelpKit loginSmooch:userID];
+            [SmoochHelpKit show];
+        });
+    }
+
+    
     /*if (self.smooch == nil) {
         OkkamiSmoochChat *smooch = [OkkamiSmoochChat newInstanceWithAppToken:appToken];
         self.smooch = smooch;
@@ -504,7 +547,7 @@ RCT_EXPORT_METHOD(smoochChat
             });
         }
     }*/
-    if (self.smooch == nil) {
+    /*if (self.smooch == nil) {
         OkkamiSmoochChat *smooch = [OkkamiSmoochChat newInstance];
         self.smooch = smooch;
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -514,8 +557,42 @@ RCT_EXPORT_METHOD(smoochChat
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.smooch smoochChatWithAppToken:appToken user:userID];
         });
-    }
+    }*/
+    /*UIApplication*    app = [UIApplication sharedApplication];
+    task = [app beginBackgroundTaskWithExpirationHandler:^{
+        [app endBackgroundTask:task];
+        task = UIBackgroundTaskInvalid;
+    }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        OkkamiSmoochChat *smooch = [OkkamiSmoochChat newInstanceWithAppToken:appToken];
+        self.smooch = smooch;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.smooch smoochChatWithUser:userID];
+        });
+    });*/
     
+    /*dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        self.smooch = nil;
+        OkkamiSmoochChat *smooch = [OkkamiSmoochChat newInstanceWithAppToken:appToken];
+        self.smooch = smooch;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.smooch smoochChatWithUser:userID];
+        });
+    });*/
+    
+}
+
+- (void) beginBackgroundUpdateTask
+{
+    self.backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        [self endBackgroundUpdateTask];
+    }];
+}
+
+- (void) endBackgroundUpdateTask
+{
+    [[UIApplication sharedApplication] endBackgroundTask: self.backgroundTask];
+    self.backgroundTask = UIBackgroundTaskInvalid;
 }
 
 RCT_EXPORT_METHOD(smoochLogout
