@@ -121,10 +121,16 @@ class OkkamiSdkModule extends ReactContextBaseJavaModule implements OnHubCommand
                     // Do something...
                     JSONObject jObj = new JSONObject();
                     try {
+                        String picUrl;
+                        if (result.getLineProfile() != null && result.getLineProfile().getPictureUrl() != null){
+                            picUrl = result.getLineProfile().getPictureUrl().toString();
+                        } else {
+                            picUrl = "";
+                        }
                         jObj.put("accessToken", accessToken);
                         jObj.put("user_id", result.getLineProfile().getUserId());
                         jObj.put("display_name", result.getLineProfile().getDisplayName());
-                        jObj.put("picture", result.getLineProfile().getPictureUrl().toString());
+                        jObj.put("picture", picUrl);
                     } catch (JSONException e) {
                         e.printStackTrace();
                         lineLoginPromise.reject("error", e.getMessage());
