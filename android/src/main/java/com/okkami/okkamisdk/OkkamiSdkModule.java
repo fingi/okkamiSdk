@@ -1,19 +1,25 @@
 package com.okkami.okkamisdk;
 
+import static com.facebook.FacebookSdk.getApplicationContext;
+
 import android.app.Activity;
 import android.app.Application;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
 
 import com.facebook.FacebookSdk;
@@ -55,6 +61,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.TimeZone;
 
 import io.reactivex.Observer;
@@ -76,6 +83,8 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
     public interface MethodInvokeListener {
         void invoke(String methodName, String arg);
         void invokeUnsubscribePusher();
+        void setAppLocale(String locale);
+        String getAppLocale();
     }
 
     private MethodInvokeListener mMethodInvoker;
@@ -281,6 +290,19 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
         } else {
             //  same as: (unreadMsgNumber <= 0)
             ShortcutBadger.removeCount(this.mContext);
+        }
+    }
+
+    /**
+     * Set app's locale
+     *
+     * @param locale - a locale string to set in the app
+     */
+    @ReactMethod
+    public void setLanguage(String locale) {
+        Log.e(TAG, "setLanguage: "+locale );
+        if (locale != null) {
+            mMethodInvoker.setAppLocale(locale);
         }
     }
 
