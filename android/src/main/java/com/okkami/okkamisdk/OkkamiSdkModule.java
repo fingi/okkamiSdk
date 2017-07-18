@@ -773,6 +773,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
             for (int i = 0; i < smoochAllAppTokenArray.size(); i++) {
 
+                Smooch.destroy();
                 String appToken = smoochAllAppTokenArray.getString(i);
                 Settings settings = new Settings(appToken);
                 settings.setUserId(userId);
@@ -873,6 +874,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
             Log.d(TAG, "smoochAppToken=" + smoochAppToken);
             Log.d(TAG, "userId=" + userId);
 
+            Smooch.destroy();
             Settings settings = new Settings(smoochAppToken);
             settings.setUserId(userId);
             settings.setFirebaseCloudMessagingAutoRegistrationEnabled(false);
@@ -917,6 +919,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
     // React native calling as looping with different appTokens
     @ReactMethod
     public void loginChatWindow(String userId, String appToken) {
+        Smooch.destroy();
         Settings settings = new Settings(appToken);
         settings.setUserId(userId);
         settings.setFirebaseCloudMessagingAutoRegistrationEnabled(false);
@@ -935,6 +938,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
     @ReactMethod
     public void getUnreadMessageCount(String smoochAppToken, String userId, Promise getUnreadMessageCountPromise) {
         try {
+            Smooch.destroy();
             Smooch.init(mApp, smoochAppToken);
             Smooch.setFirebaseCloudMessagingToken("nan");
             Smooch.getSettings().setFirebaseCloudMessagingAutoRegistrationEnabled(false);
