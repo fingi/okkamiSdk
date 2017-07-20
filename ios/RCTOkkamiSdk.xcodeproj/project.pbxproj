@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45339CED1F20A7C2005480B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45339CC51F20A7C1005480B8 /* main.m */; };
+		45339CEE1F20A7C2005480B8 /* ntpAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45339CC81F20A7C1005480B8 /* ntpAppDelegate.m */; };
+		45339CEF1F20A7C2005480B8 /* ntpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45339CCA1F20A7C1005480B8 /* ntpViewController.m */; };
+		45339CF01F20A7C2005480B8 /* NetAssociation.m in Sources */ = {isa = PBXBuildFile; fileRef = 45339CCE1F20A7C1005480B8 /* NetAssociation.m */; };
+		45339CF11F20A7C2005480B8 /* NetworkClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 45339CD01F20A7C1005480B8 /* NetworkClock.m */; };
+		45339CF21F20A7C2005480B8 /* NSDate+NetworkClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 45339CD31F20A7C1005480B8 /* NSDate+NetworkClock.m */; };
+		45339CF31F20A7C2005480B8 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 45339CE51F20A7C2005480B8 /* GCDAsyncUdpSocket.m */; };
 		5D72D2EC1C16249000E22EC1 /* RCTOkkamiSdk.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5D72D2EB1C16249000E22EC1 /* RCTOkkamiSdk.h */; };
 		5D72D2EE1C16249000E22EC1 /* RCTOkkamiSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D72D2ED1C16249000E22EC1 /* RCTOkkamiSdk.m */; };
 		651237371EE48026004CD7F1 /* RCTokkamiiossdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651237361EE48026004CD7F1 /* RCTokkamiiossdk.framework */; };
@@ -49,6 +56,29 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		45339C5C1F20A2CF005480B8 /* NHNetworkTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NHNetworkTime.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/OKKAMI-efpboukvgyfazugfcdsqsukyowgu/Build/Products/Debug-iphonesimulator/NHNetworkTime/NHNetworkTime.framework"; sourceTree = "<group>"; };
+		45339CC51F20A7C1005480B8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		45339CC61F20A7C1005480B8 /* ntp.hosts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ntp.hosts; path = "../ios-ntp-1.1.5/ios-ntp-app/ntp.hosts"; sourceTree = "<group>"; };
+		45339CC71F20A7C1005480B8 /* ntpAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ntpAppDelegate.h; sourceTree = "<group>"; };
+		45339CC81F20A7C1005480B8 /* ntpAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ntpAppDelegate.m; sourceTree = "<group>"; };
+		45339CC91F20A7C1005480B8 /* ntpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ntpViewController.h; sourceTree = "<group>"; };
+		45339CCA1F20A7C1005480B8 /* ntpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ntpViewController.m; sourceTree = "<group>"; };
+		45339CCC1F20A7C1005480B8 /* ios-ntp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ios-ntp.h"; sourceTree = "<group>"; };
+		45339CCD1F20A7C1005480B8 /* NetAssociation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetAssociation.h; sourceTree = "<group>"; };
+		45339CCE1F20A7C1005480B8 /* NetAssociation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetAssociation.m; sourceTree = "<group>"; };
+		45339CCF1F20A7C1005480B8 /* NetworkClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkClock.h; sourceTree = "<group>"; };
+		45339CD01F20A7C1005480B8 /* NetworkClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkClock.m; sourceTree = "<group>"; };
+		45339CD11F20A7C1005480B8 /* Notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
+		45339CD21F20A7C1005480B8 /* NSDate+NetworkClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NetworkClock.h"; sourceTree = "<group>"; };
+		45339CD31F20A7C1005480B8 /* NSDate+NetworkClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NetworkClock.m"; sourceTree = "<group>"; };
+		45339CD41F20A7C1005480B8 /* ntp-log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ntp-log.h"; sourceTree = "<group>"; };
+		45339CD71F20A7C1005480B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		45339CD91F20A7C1005480B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ntpViewController.xib; sourceTree = "<group>"; };
+		45339CDB1F20A7C1005480B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
+		45339CDC1F20A7C1005480B8 /* ios-ntp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ios-ntp-Info.plist"; sourceTree = "<group>"; };
+		45339CDD1F20A7C1005480B8 /* ntp-app-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ntp-app-Info.plist"; sourceTree = "<group>"; };
+		45339CE41F20A7C2005480B8 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		45339CE51F20A7C2005480B8 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		5D72D2E81C16249000E22EC1 /* libRCTOkkamiSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTOkkamiSdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D72D2EB1C16249000E22EC1 /* RCTOkkamiSdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTOkkamiSdk.h; sourceTree = "<group>"; };
 		5D72D2ED1C16249000E22EC1 /* RCTOkkamiSdk.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTOkkamiSdk.m; sourceTree = "<group>"; };
@@ -165,9 +195,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45339CC11F20A7C1005480B8 /* ios-ntp-1.1.5 */ = {
+			isa = PBXGroup;
+			children = (
+				45339CC41F20A7C1005480B8 /* ios-ntp-app */,
+				45339CCB1F20A7C1005480B8 /* ios-ntp-lib */,
+				45339CD51F20A7C1005480B8 /* ios-ntp-rez */,
+				45339CE31F20A7C2005480B8 /* network-udp */,
+			);
+			path = "ios-ntp-1.1.5";
+			sourceTree = "<group>";
+		};
+		45339CC41F20A7C1005480B8 /* ios-ntp-app */ = {
+			isa = PBXGroup;
+			children = (
+				45339CC51F20A7C1005480B8 /* main.m */,
+				45339CC71F20A7C1005480B8 /* ntpAppDelegate.h */,
+				45339CC81F20A7C1005480B8 /* ntpAppDelegate.m */,
+				45339CC91F20A7C1005480B8 /* ntpViewController.h */,
+				45339CCA1F20A7C1005480B8 /* ntpViewController.m */,
+			);
+			path = "ios-ntp-app";
+			sourceTree = "<group>";
+		};
+		45339CCB1F20A7C1005480B8 /* ios-ntp-lib */ = {
+			isa = PBXGroup;
+			children = (
+				45339CCC1F20A7C1005480B8 /* ios-ntp.h */,
+				45339CCD1F20A7C1005480B8 /* NetAssociation.h */,
+				45339CCE1F20A7C1005480B8 /* NetAssociation.m */,
+				45339CCF1F20A7C1005480B8 /* NetworkClock.h */,
+				45339CD01F20A7C1005480B8 /* NetworkClock.m */,
+				45339CD11F20A7C1005480B8 /* Notes */,
+				45339CD21F20A7C1005480B8 /* NSDate+NetworkClock.h */,
+				45339CD31F20A7C1005480B8 /* NSDate+NetworkClock.m */,
+				45339CD41F20A7C1005480B8 /* ntp-log.h */,
+			);
+			path = "ios-ntp-lib";
+			sourceTree = "<group>";
+		};
+		45339CD51F20A7C1005480B8 /* ios-ntp-rez */ = {
+			isa = PBXGroup;
+			children = (
+				45339CD61F20A7C1005480B8 /* InfoPlist.strings */,
+				45339CD81F20A7C1005480B8 /* ntpViewController.xib */,
+				45339CDA1F20A7C1005480B8 /* Storyboard.storyboard */,
+				45339CDC1F20A7C1005480B8 /* ios-ntp-Info.plist */,
+				45339CDD1F20A7C1005480B8 /* ntp-app-Info.plist */,
+			);
+			path = "ios-ntp-rez";
+			sourceTree = "<group>";
+		};
+		45339CE31F20A7C2005480B8 /* network-udp */ = {
+			isa = PBXGroup;
+			children = (
+				45339CE41F20A7C2005480B8 /* GCDAsyncUdpSocket.h */,
+				45339CE51F20A7C2005480B8 /* GCDAsyncUdpSocket.m */,
+			);
+			path = "network-udp";
+			sourceTree = "<group>";
+		};
 		5D72D2DF1C16249000E22EC1 = {
 			isa = PBXGroup;
 			children = (
+				45339CC11F20A7C1005480B8 /* ios-ntp-1.1.5 */,
 				658956911ECFFF4B0080F354 /* SocketRocket */,
 				658956631ECFFF410080F354 /* libPusher */,
 				5D72D2EA1C16249000E22EC1 /* RCTOkkamiSdk */,
@@ -187,6 +278,7 @@
 		5D72D2EA1C16249000E22EC1 /* RCTOkkamiSdk */ = {
 			isa = PBXGroup;
 			children = (
+				45339CC61F20A7C1005480B8 /* ntp.hosts */,
 				5D72D2EB1C16249000E22EC1 /* RCTOkkamiSdk.h */,
 				5D72D2ED1C16249000E22EC1 /* RCTOkkamiSdk.m */,
 				654321431EFA541E00BF2027 /* Language.h */,
@@ -284,6 +376,7 @@
 		FAF229A71E141BE800F3C9C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45339C5C1F20A2CF005480B8 /* NHNetworkTime.framework */,
 				654321461EFA617D00BF2027 /* Smooch.framework */,
 				652ED7D51EE9A4960036635E /* libReactNativeConfig.a */,
 				651237361EE48026004CD7F1 /* RCTokkamiiossdk.framework */,
@@ -371,12 +464,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45339CF21F20A7C2005480B8 /* NSDate+NetworkClock.m in Sources */,
+				45339CF31F20A7C2005480B8 /* GCDAsyncUdpSocket.m in Sources */,
+				45339CF11F20A7C2005480B8 /* NetworkClock.m in Sources */,
 				5D72D2EE1C16249000E22EC1 /* RCTOkkamiSdk.m in Sources */,
+				45339CEF1F20A7C2005480B8 /* ntpViewController.m in Sources */,
+				45339CEE1F20A7C2005480B8 /* ntpAppDelegate.m in Sources */,
+				45339CED1F20A7C2005480B8 /* main.m in Sources */,
 				654321451EFA541F00BF2027 /* Language.m in Sources */,
+				45339CF01F20A7C2005480B8 /* NetAssociation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		45339CD61F20A7C1005480B8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45339CD71F20A7C1005480B8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		45339CD81F20A7C1005480B8 /* ntpViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45339CD91F20A7C1005480B8 /* en */,
+			);
+			name = ntpViewController.xib;
+			sourceTree = "<group>";
+		};
+		45339CDA1F20A7C1005480B8 /* Storyboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45339CDB1F20A7C1005480B8 /* en */,
+			);
+			name = Storyboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5D72D2EF1C16249000E22EC1 /* Debug */ = {
@@ -485,6 +612,7 @@
 					"$(SRCROOT)/../../ios/Pods/**",
 					"$(SRCROOT)/../../ios/OKKAMI/**",
 					"$(SRCROOT)/../../node_modules/react-native-config/**",
+					"$(SRCROOT)/../ios-ntp-1.1.5/**",
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
@@ -513,6 +641,7 @@
 					"$(SRCROOT)/../../ios/Pods/**",
 					"$(SRCROOT)/../../ios/OKKAMI/**",
 					"$(SRCROOT)/../../node_modules/react-native-config/**",
+					"$(SRCROOT)/../ios-ntp-1.1.5/**",
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";

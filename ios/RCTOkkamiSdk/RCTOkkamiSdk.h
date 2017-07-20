@@ -12,11 +12,13 @@
 #import "RCTRootView.h"
 #import "ReactNativeConfig.h"
 #import "Language.h"
+#import "ios-ntp.h"
+
 
 @import RCTokkamiiossdk;
 @class AppDelegate;
 
-@interface OkkamiSdk : NSObject <RCTBridgeModule, LineSDKLoginDelegate, CLLocationManagerDelegate,UNUserNotificationCenterDelegate, UIApplicationDelegate, SKTConversationDelegate, PTPusherDelegate, SFSafariViewControllerDelegate>
+@interface OkkamiSdk : NSObject <RCTBridgeModule, LineSDKLoginDelegate, CLLocationManagerDelegate,UNUserNotificationCenterDelegate, UIApplicationDelegate, SKTConversationDelegate, PTPusherDelegate, SFSafariViewControllerDelegate, NetAssociationDelegate>
 
 
 @property (nonatomic, copy)NSString * accessToken;
@@ -36,6 +38,8 @@
 @property (strong, nonatomic) RCTEventDispatcher* event;
 @property (strong, nonatomic) OkkamiSmoochChat* smooch;
 @property (strong, nonatomic) AppDelegate* appdel;
+@property (strong, nonatomic) NetworkClock* currentDate;
+@property (strong, nonatomic) NetAssociation* netAssociation;
 @property (strong, nonatomic) UIViewController* currentViewController;
 @property (nonatomic, assign)BOOL isSmoochShow;
 @property (nonatomic, assign)BOOL isCheckNotif;

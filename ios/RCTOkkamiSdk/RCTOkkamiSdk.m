@@ -27,6 +27,11 @@ RCT_EXPORT_MODULE();
         self.hotelName = SMOOCH_NAME;
         [self.locationManager startUpdatingLocation];
         [self.locationManager requestWhenInUseAuthorization];
+        NetworkClock * nc = [NetworkClock sharedNetworkClock];
+        self.currentDate = nc;
+        self.netAssociation = [[NetAssociation alloc] initWithServerName:[NetAssociation ipAddrFromName:@"time.apple.com"]];
+        self.netAssociation.delegate = self;
+        [self.netAssociation sendTimeQuery];
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
         center.delegate = self;
     }
@@ -80,6 +85,12 @@ RCT_EXPORT_MODULE();
 
 - (void)sendEvent: (NSString*)eventName :(NSDictionary*)eventBody {
     [self.bridge.eventDispatcher sendAppEventWithName:eventName body:eventBody];
+}
+
+- (void) reportFromDelegate {
+    NSLog(@"REPORT : %@", [NSString stringWithFormat:@"System ahead by: %5.3f mSec",
+                           self.netAssociation.offset * 1000.0]);
+    
 }
 
 #pragma mark Smooch Delegate
@@ -423,9 +434,10 @@ RCT_EXPORT_METHOD(executeCoreRESTCall
 {
     
     RCTOkkamiMain *main = [RCTOkkamiMain newInstance];
+    NSDate * date = [[NSDate date] dateByAddingTimeInterval:-self.netAssociation.offset];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [main executeCoreRESTCallWithApicore:endPoint apifunc:getPost payload:payLoad secret:secret token:token force:force completion:^(NSString* callback, NSError* error) {
+        [main executeCoreRESTCallWithApicore:endPoint apifunc:getPost payload:payLoad secret:secret token:token force:force date: date completion:^(NSString* callback, NSError* error) {
             
             NSLog(@"callback %@", callback);
             NSLog(@"error %@", error);
