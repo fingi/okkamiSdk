@@ -8,9 +8,9 @@ export default StyleSheet.create({
   container: {
     paddingTop: 50,
     backgroundColor: Colors.background,
-    flex: 1,
+    flex: 1
   },
-  item:{
+  item: {
     width: width,
     height: height
   },
@@ -22,7 +22,7 @@ export default StyleSheet.create({
     height: height
   },
   mainButton: {
-    position: "absolute",
+    position: 'absolute',
     width: width,
     height: 120,
     bottom: 50,
@@ -32,7 +32,7 @@ export default StyleSheet.create({
     backgroundColor: Colors.ember
   },
   button: {
-    width: width/3,
+    width: width / 3,
     height: 45,
     borderRadius: 5,
     marginHorizontal: Metrics.section,

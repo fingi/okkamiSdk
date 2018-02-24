@@ -16,23 +16,21 @@ import Img from './Styles/Images'
 import {Images, Metrics} from '../Themes'
 import {Actions as NavigationActions} from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import KeyboardSpacer from 'react-native-keyboard-spacer';
-
+import KeyboardSpacer from 'react-native-keyboard-spacer'
 
 // I18n
 import I18n from 'react-native-i18n'
 
-import Dimensions from 'Dimensions';
+import Dimensions from 'Dimensions'
 
 type Timer = number;
-
 
 class SocialConnectionSignInScreen extends React.Component {
 
   _timer: Timer;
 
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       selectLanguage: '',
       checkedFacebook: props.social.checkedFacebook,
@@ -44,65 +42,64 @@ class SocialConnectionSignInScreen extends React.Component {
   }
 
   handlePressSignup = () => {
-    NavigationActions.signUpScreen({type: "replace"})
+    NavigationActions.signUpScreen({type: 'replace'})
   }
 
-  componentWillUnmount() {
-   clearTimeout(this._timer);
+  componentWillUnmount () {
+    clearTimeout(this._timer)
   }
 
-  componentDidMount() {
+  componentDidMount () {
     // this.setToggleTimeout();
     this._timer = setTimeout(() => {
-      this.setState({animating: false});
-    }, 100);
+      this.setState({animating: false})
+    }, 100)
   }
 
-  clearToggleTimeout(){
+  clearToggleTimeout () {
     this._timer = setTimeout(() => {
-      this.setState({animating: false, renderCheck: true});
-      clearTimeout(this._timer);
+      this.setState({animating: false, renderCheck: true})
+      clearTimeout(this._timer)
       this._renderCheck
-    }, 5000);
+    }, 5000)
   }
 
-  setToggleTimeout() {
+  setToggleTimeout () {
     //  this.state.animating = !this.state.animating
     this._timer = setTimeout(() => {
-     this.setState({animating: true});
-    }, 100);
+      this.setState({animating: true})
+    }, 100)
     this.clearToggleTimeout()
   }
 
-  toggleRenderCheck(){
+  toggleRenderCheck () {
     this.setState({
       renderCheck: !this.state.renderCheck
-    });
+    })
   }
 
   _renderCheck = () => {
-    if(this.state.renderCheck){
+    if (this.state.renderCheck) {
       return (
         <View style={Styles.indicatorView}>
           <Icon name='check'
-                  size={180}
-                  color={"#5FBA7D"}
+            size={180}
+            color={'#5FBA7D'}
             />
         </View>
-      );
-    }else{
-      return null;
+      )
+    } else {
+      return null
     }
   }
 
-  render() {
-
+  render () {
     let image = Img.avatar
-    if(this.state.checkedFacebook) {
+    if (this.state.checkedFacebook) {
       image = Img.fbIcon
-    }else if(this.state.checkedLine){
+    } else if (this.state.checkedLine) {
       image = Img.lineIcon
-    }else if(this.state.checkedWechat){
+    } else if (this.state.checkedWechat) {
       image = Img.wechatIcon
     }
 
@@ -122,13 +119,13 @@ class SocialConnectionSignInScreen extends React.Component {
               style={Styles.textInput}
               keyboardType='default'
               placeholder={I18n.t('username')}
-              underlineColorAndroid='transparent'/>
+              underlineColorAndroid='transparent' />
             <TextInput
               ref='password'
               style={Styles.textInput}
               keyboardType='default'
               placeholder={I18n.t('password')}
-              underlineColorAndroid='transparent'/>
+              underlineColorAndroid='transparent' />
 
             <TouchableOpacity style={Styles.buttonFire} onPress={this.setToggleTimeout.bind(this)}>
               <Text style={Styles.buttonText}>Connect</Text>
@@ -138,7 +135,7 @@ class SocialConnectionSignInScreen extends React.Component {
               <Text style={Styles.buttonText}>Test check</Text>
             </TouchableOpacity> */}
 
-            <KeyboardSpacer/>
+            <KeyboardSpacer />
 
           </View>
 
@@ -146,7 +143,7 @@ class SocialConnectionSignInScreen extends React.Component {
             <ActivityIndicator
               animating={this.state.animating}
               style={[{alignItems: 'center', justifyContent: 'center', padding: 8}, {height: 80}]}
-              size="large"
+              size='large'
                />
           </View>
 

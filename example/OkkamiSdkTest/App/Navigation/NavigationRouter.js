@@ -33,7 +33,7 @@ class NavigationRouter extends Component {
       <Router>
         <Scene key='drawer' component={NavigationDrawer} open={false}>
           <Scene key='drawerChildrenWrapper' navigationBarStyle={Styles.navBar} titleStyle={Styles.title} leftButtonIconStyle={Styles.leftButton} rightButtonTextStyle={Styles.rightButton}>
-            <Scene initial key='HubConnectionDemoIOS' component={HubConnectionDemoIOS} title='Hub Connect' renderLeftButton={NavItems.hamburgerButton} />            
+            <Scene initial key='HubConnectionDemoIOS' component={HubConnectionDemoIOS} title='Hub Connect' renderLeftButton={NavItems.hamburgerButton} />
             <Scene key='presentationScreen' component={PresentationScreen} title='Ignite' />
             <Scene key='HubConnectionEventDemoIOS' component={HubConnectionEventDemoIOS} title='HubConnectionEventDemoIOS' />
             <Scene key='componentExamples' component={AllComponentsScreen} title='Components' />

@@ -1,76 +1,72 @@
-import {NativeModules, DeviceEventEmitter} from 'react-native';
+import {NativeModules, DeviceEventEmitter} from 'react-native'
 // import {convertRgbaToHex} from '../App/Lib/Utilities'
-const OkkamiSdkManager = NativeModules.OkkamiSdk;
-
+const OkkamiSdkManager = NativeModules.OkkamiSdk
 
 class OkkamiSdk {
-  constructor() {
+  constructor () {
 
   }
 
-  /*-------------------------------------- Utility   --------------------------------------------------*/
+  /* -------------------------------------- Utility   -------------------------------------------------- */
 
+  /* --------------------------------------------------------------------------------------------------- */
+  /* -------------------------------------- Hub & Core ------------------------------------------------- */
 
-  /*---------------------------------------------------------------------------------------------------*/
-  /*-------------------------------------- Hub & Core -------------------------------------------------*/
-
-  lineLogin() {
-    return OkkamiSdkManager.lineLogin();
+  lineLogin () {
+    return OkkamiSdkManager.lineLogin()
   }
 
-  executeCoreRESTCall (endPoint,getPost,payLoad,secret,token,force) {
+  executeCoreRESTCall (endPoint, getPost, payLoad, secret, token, force) {
+    console.log('Attemptng to cexecuteCoreRESTCall with endpoint : ', endPoint, ' method :',
+      getPost, ' using secret : ', secret,
+      ' and token : ', token, ' forcing : ', force)
 
-    console.log("Attemptng to cexecuteCoreRESTCall with endpoint : " , endPoint , " method :",
-      getPost, " using secret : " , secret ,
-      " and token : " , token , " forcing : ", force)
-
-    return OkkamiSdkManager.executeCoreRESTCall(endPoint,getPost,payLoad,secret,token,force);
+    return OkkamiSdkManager.executeCoreRESTCall(endPoint, getPost, payLoad, secret, token, force)
   }
 
-  connectToHub(uid, secret, token, hubUrl, hubPort) {
-    return OkkamiSdkManager.connectToHub(uid, secret, token, hubUrl, hubPort);
+  connectToHub (uid, secret, token, hubUrl, hubPort) {
+    return OkkamiSdkManager.connectToHub(uid, secret, token, hubUrl, hubPort)
   }
 
-  disconnectFromHub() {
-    return OkkamiSdkManager.disconnectFromHub();
+  disconnectFromHub () {
+    return OkkamiSdkManager.disconnectFromHub()
   }
 
-  reconnectToHub(userId) {
-    return OkkamiSdkManager.reconnectToHub(userId);
+  reconnectToHub (userId) {
+    return OkkamiSdkManager.reconnectToHub(userId)
   }
 
-  sendCommandToHub(command) {
-    return OkkamiSdkManager.sendCommandToHub(command);
+  sendCommandToHub (command) {
+    return OkkamiSdkManager.sendCommandToHub(command)
   }
 
-  setAppBadgeIcon(number){
-    return OkkamiSdkManager.setAppBadgeIcon(number);
+  setAppBadgeIcon (number) {
+    return OkkamiSdkManager.setAppBadgeIcon(number)
   }
 
-  setUserId(userId, brandId){
-    return OkkamiSdkManager.setUserId(userId, brandId);
+  setUserId (userId, brandId) {
+    return OkkamiSdkManager.setUserId(userId, brandId)
   }
 
-  async isHubLoggedIn() {
-    return await OkkamiSdkManager.isHubLoggedIn();
+  async isHubLoggedIn () {
+    return await OkkamiSdkManager.isHubLoggedIn()
   }
 
-  async isHubConnected() {
-    return await OkkamiSdkManager.isHubConnected();
+  async isHubConnected () {
+    return await OkkamiSdkManager.isHubConnected()
   }
 
-  checkNotif(){
-    return OkkamiSdkManager.checkNotif();
+  checkNotif () {
+    return OkkamiSdkManager.checkNotif()
   }
 
-  checkEvent(){
-    return OkkamiSdkManager.checkEvent();
+  checkEvent () {
+    return OkkamiSdkManager.checkEvent()
   }
 
-  setLanguage(language){
-    return OkkamiSdkManager.setLanguage(language);
+  setLanguage (language) {
+    return OkkamiSdkManager.setLanguage(language)
   }
-
 
   handleAuthOpenKey (token) {
     return OkkamiSdkManager.handleAuthOpenKey(token)
@@ -89,8 +85,7 @@ class OkkamiSdk {
   }
   /*---------------------------------------------------------------------------------------------------*/
 
-  /*-------------------------------------- SMOOCH --------------------------------------------*/
-
+  /* -------------------------------------- SMOOCH -------------------------------------------- */
 
   /**
    * Returns the list of conversations as shown in : https://projects.invisionapp.com/share/2XAK26Y4G#/screens/223142641
@@ -143,8 +138,8 @@ class OkkamiSdk {
    *
    * @returns {Promise}
    */
-  async getConversationsList(smoochAllAppTokenArray, userID) {
-    return await OkkamiSdkManager.getConversationsList(smoochAllAppTokenArray, userID);
+  async getConversationsList (smoochAllAppTokenArray, userID) {
+    return await OkkamiSdkManager.getConversationsList(smoochAllAppTokenArray, userID)
   }
 
   /**
@@ -152,18 +147,18 @@ class OkkamiSdk {
    * @param smoochAppToken
    * @returns {Promise.<void>}
    */
-  async openChatWindow(smoochAppToken, userID, hotelName, color, textColor, smoochUserJwt) {
-    console.log("smoochAppToken: "+smoochAppToken);
-    console.log("userID: "+userID);
-    console.log("userJWT: "+smoochUserJwt);
+  async openChatWindow (smoochAppToken, userID, hotelName, color, textColor, smoochUserJwt) {
+    console.log('smoochAppToken: ' + smoochAppToken)
+    console.log('userID: ' + userID)
+    console.log('userJWT: ' + smoochUserJwt)
     var newColor = color
     var newTextColor = textColor
     var rgbColor = false
     var rgbTextColor = false
-    if(!color.includes("#")){
+    if (!color.includes('#')) {
       rgbColor = true
     }
-    if(!textColor.includes("#")){
+    if (!textColor.includes('#')) {
       rgbTextColor = true
     }
 
@@ -193,9 +188,9 @@ class OkkamiSdk {
     //     console.log("r g b a: ",red,green,blue,opacity);
     //   }
     // }
-    //console.log("newColor: "+newColor);
-    //console.log("newTextColor: "+newTextColor);
-    return await OkkamiSdkManager.openChatWindow(smoochAppToken, userID, hotelName, newColor, newTextColor, rgbColor, rgbTextColor, smoochUserJwt);
+    // console.log("newColor: "+newColor);
+    // console.log("newTextColor: "+newTextColor);
+    return await OkkamiSdkManager.openChatWindow(smoochAppToken, userID, hotelName, newColor, newTextColor, rgbColor, rgbTextColor, smoochUserJwt)
   }
 
   /**
@@ -204,20 +199,20 @@ class OkkamiSdk {
    * @param smoochAppToken
    * @returns {Promise.<int>}
    */
-  async getUnreadMessageCount(smoochAppToken, userID){
-    return await OkkamiSdkManager.getUnreadMessageCount(smoochAppToken, userID);
+  async getUnreadMessageCount (smoochAppToken, userID) {
+    return await OkkamiSdkManager.getUnreadMessageCount(smoochAppToken, userID)
   }
 
   /**
    * Closese the current chat window
    * @returns {Promise}
    */
-  async logoutChatWindow(){
-    return await OkkamiSdkManager.logoutChatWindow();
+  async logoutChatWindow () {
+    return await OkkamiSdkManager.logoutChatWindow()
   }
 
-  async convertTime(time){
-    return await OkkamiSdkManager.convertTime(time);
+  async convertTime (time) {
+    return await OkkamiSdkManager.convertTime(time)
   }
 
   /**
@@ -225,23 +220,21 @@ class OkkamiSdk {
    * @param pName Android package name
    * @returns {*}
    */
-  openAndroidExternalApp(pName){
-    console.log("Open android package name ", pName)
-    return OkkamiSdkManager.openAndroidExternalApp(pName);
+  openAndroidExternalApp (pName) {
+    console.log('Open android package name ', pName)
+    return OkkamiSdkManager.openAndroidExternalApp(pName)
   }
 
-  onAppLanded(){
-    console.log("On app landed")
-    OkkamiSdkManager.onAppLanded();
+  onAppLanded () {
+    console.log('On app landed')
+    OkkamiSdkManager.onAppLanded()
   }
 
-  shutdownApp(){
-    console.log("shutting down the app...")
-    OkkamiSdkManager.shutdownApp();
+  shutdownApp () {
+    console.log('shutting down the app...')
+    OkkamiSdkManager.shutdownApp()
   }
 }
-let okkamiSdk = new OkkamiSdk();
-export default okkamiSdk;
-
-
+let okkamiSdk = new OkkamiSdk()
+export default okkamiSdk
 

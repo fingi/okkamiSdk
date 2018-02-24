@@ -3,7 +3,6 @@ import UserConnectActions from '../Redux/UserConnectRedux'
 
 // attempts to login
 export function * userConnect ({ appToken }) {
-
   console.log(appToken)
   if (appToken === '') {
     // dispatch failure

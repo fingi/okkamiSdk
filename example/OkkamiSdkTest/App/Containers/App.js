@@ -7,10 +7,6 @@ import RootContainer from './RootContainer'
 import createStore from '../Redux'
 import applyConfigSettings from '../Config'
 
-
-
-
-
 // Apply config overrides
 applyConfigSettings()
 // create our store

@@ -21,17 +21,16 @@ import ApiUserConn from '../Services/ApiUserConn'
 import UserConnectActions, { isAppToken, isLoggedIn } from '../Redux/UserConnectRedux'
 import FJSON from 'format-json'
 
-
 // I18n
 import I18n from 'react-native-i18n'
 
 class EditProfileScreen extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       selectLanguage: '',
-      first_name: "",
+      first_name: '',
       last_name: '',
       email: '',
       password: '',
@@ -43,8 +42,8 @@ class EditProfileScreen extends React.Component {
       city: '',
       response: '',
       wait: false,
-      appToken:null,
-      userToken:null,
+      appToken: null,
+      userToken: null
     }
     // this.getAppToken()
   }
@@ -55,10 +54,10 @@ class EditProfileScreen extends React.Component {
 
   componentWillMount () {
     this.setEditProfile()
-    if(!this.props.appTokenStatus){
+    if (!this.props.appTokenStatus) {
       this.getAppToken()
-    }else{
-      this.setState({appToken:this.props.appToken})
+    } else {
+      this.setState({appToken: this.props.appToken})
     }
   }
 
@@ -67,7 +66,7 @@ class EditProfileScreen extends React.Component {
 
   setEditProfile = () => {
     const { userProfile } = this.props
-    if(userProfile != null){
+    if (userProfile != null) {
       this.setState({
         selectLanguage: userProfile.language,
         first_name: userProfile.first_name,
@@ -79,56 +78,54 @@ class EditProfileScreen extends React.Component {
         avatar: userProfile.avatar,
         country: userProfile.country,
         state: userProfile.state,
-        city: userProfile.city,
+        city: userProfile.city
       })
     }
   }
 
-
   getAppToken = () => {
     let obj = {}
     this.api = ApiUserConn.appToken(obj)
-    this.api['getAppToken'].apply(this, ['']).then((res)=>{
-      if(res.status == 200){
+    this.api['getAppToken'].apply(this, ['']).then((res) => {
+      if (res.status == 200) {
         this.setState({appToken: res.data.access_token})
         this.props.attemptAppToken(res.data)
       }
     })
-
   }
 
   createUser = () => {
     let obj = {
       appToken: this.state.appToken,
       data: {
-        user:{
-          "first_name" : this.state.first_name,
-          "last_name":  this.state.last_name,
-          "email":  this.state.email,
-          "password" : this.state.password,
-          "password_confirmation":  this.state.password_confirmation,
-          "phone":  this.state.phone,
-          "country":  this.state.country,
-          "state":  this.state.state,
-          "city" : this.state.city,
-          "language" : this.state.language
+        user: {
+          'first_name': this.state.first_name,
+          'last_name': this.state.last_name,
+          'email': this.state.email,
+          'password': this.state.password,
+          'password_confirmation': this.state.password_confirmation,
+          'phone': this.state.phone,
+          'country': this.state.country,
+          'state': this.state.state,
+          'city': this.state.city,
+          'language': this.state.language
         }
       }
     }
     this.api = ApiUserConn.appCreateUser(obj)
-    this.api['getCreateUser'].apply(this, ['']).then((res)=>{
-      this.setState({wait: false}) //Close wait
-      if(res.status == 200){
+    this.api['getCreateUser'].apply(this, ['']).then((res) => {
+      this.setState({wait: false}) // Close wait
+      if (res.status == 200) {
         // attemptUser
-        if(res.data.status != false){
-          //updatae user data
+        if (res.data.status != false) {
+          // updatae user data
           this.props.attemptUpdateUserData(res.data)
           window.alert(FJSON.plain(res.data))
-          NavigationActions.landingScreen({type: "reset"});
-        }else{
+          NavigationActions.landingScreen({type: 'reset'})
+        } else {
           window.alert(FJSON.plain(res.data.error))
         }
-      }else{
+      } else {
         window.alert(FJSON.plain(res))
       }
     })
@@ -136,7 +133,7 @@ class EditProfileScreen extends React.Component {
 
   handlePressSave = () => {
     this.setState({wait: true})
-    //TODO Upate user
+    // TODO Upate user
   }
 
   handleChangeFirstname = (text) => {
@@ -180,27 +177,27 @@ class EditProfileScreen extends React.Component {
   }
 
   _renderWait = () => {
-    if(this.state.wait){
+    if (this.state.wait) {
       console.log('Render wait')
       return (
         <View style={Styles.indicatorView}>
           <ActivityIndicator
-            color="#EA4335"
+            color='#EA4335'
             // animating={this.state.wait}
             style={[{'transform': [{scale: 1.5}]}]}
-            size="large"
+            size='large'
              />
         </View>
       )
-    }else{
+    } else {
       return null
     }
   }
 
-  render() {
+  render () {
     const {
       first_name,
-      last_name ,
+      last_name,
       email,
       password,
       password_confirmation,
@@ -211,23 +208,22 @@ class EditProfileScreen extends React.Component {
       city
     } = this.state
 
-    let index = 0;
+    let index = 0
     const data = [
         { key: '', section: true, label: 'Prefer Languages' },
         { key: 'en', label: 'English' },
         { key: 'ch', label: 'Chinese' },
         { key: 'jp', label: 'Japanese' },
-        { key: 'ru', label: 'Russian' },
-    ];
+        { key: 'ru', label: 'Russian' }
+    ]
 
     var lookupLanguage = {}
-    for (var i=0, len = data.length; i < len; i++) {
+    for (var i = 0, len = data.length; i < len; i++) {
       lookupLanguage[data[i].key] = data[i].label
     }
     const { appTokenStatus, loggedIn, appToken } = this.props
 
     return (
-
 
       <View style={Styles.mainContainer}>
         <Image source={Img.backgroundOkkami} style={Styles.backgroundImage} />
@@ -322,15 +318,15 @@ class EditProfileScreen extends React.Component {
             </View>
 
             <ModalPicker
-                style={Styles.selectInput}
-                selectTextStyle={Styles.sectionTextStyle}
-                sectionTextStyle={Styles.sectionTextStyle}
-                selectStyle={{height:100}}
-                data={data}
-                initValue={lookupLanguage[this.state.selectLanguage]}
-                onChange={(lang) => this.setState({selectLanguage: lang.key})}
+              style={Styles.selectInput}
+              selectTextStyle={Styles.sectionTextStyle}
+              sectionTextStyle={Styles.sectionTextStyle}
+              selectStyle={{height: 100}}
+              data={data}
+              initValue={lookupLanguage[this.state.selectLanguage]}
+              onChange={(lang) => this.setState({selectLanguage: lang.key})}
             >
-            {/* <View>
+              {/* <View>
                  <Text>{this.state.selectLanguage === '' ? 'Prefer Languages' : this.state.selectLanguageLabel}</Text>
             </View> */}
             </ModalPicker>
@@ -369,7 +365,7 @@ EditProfileScreen.defaultProps = {
 }
 
 const mapStateToProps = state => {
-  let appToken = (state.userConnect.appToken != null)?state.userConnect.appToken.access_token:null
+  let appToken = (state.userConnect.appToken != null) ? state.userConnect.appToken.access_token : null
   return {
     appTokenStatus: isAppToken(state.userConnect),
     loggedIn: isLoggedIn(state.userConnect.userData),

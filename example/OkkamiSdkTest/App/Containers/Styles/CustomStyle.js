@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import { Fonts, Colors, Metrics } from '../../Themes'
 
-const formWidth = Metrics.screenWidth/1.3;
+const formWidth = Metrics.screenWidth / 1.3
 
 export default StyleSheet.create({
   container: {
@@ -12,7 +12,7 @@ export default StyleSheet.create({
   backgroundImage: {
     width: Metrics.screenWidth,
     height: Metrics.screenHeight,
-    position: "absolute"
-  },
+    position: 'absolute'
+  }
 
 })

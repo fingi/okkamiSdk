@@ -8,6 +8,6 @@ export function * facebookLogin ({ username, password, facebookData }) {
     yield put(FacebookLoginActions.facebookLoginFailure('WRONG'))
   } else {
     // dispatch successful logins
-    yield put(FacebookLoginActions.facebookLoginSuccess(username,facebookData))
+    yield put(FacebookLoginActions.facebookLoginSuccess(username, facebookData))
   }
 }

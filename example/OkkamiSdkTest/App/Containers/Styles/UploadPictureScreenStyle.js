@@ -3,14 +3,14 @@ import { Fonts, Colors, Metrics, ApplicationStyles } from '../../Themes'
 
 const width = Metrics.screenWidth
 const height = Metrics.screenHeight
-const inputWidth = width*0.75 //width 75%
+const inputWidth = width * 0.75 // width 75%
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   backgroundImage: {
     width: width,
     height: height,
-    position: "absolute"
+    position: 'absolute'
   },
   container: {
     flex: 1,
@@ -25,25 +25,25 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   avatar: {
-    marginTop:50,
-    marginBottom:50,
+    marginTop: 50,
+    marginBottom: 50,
     alignSelf: 'center',
     width: inputWidth,
     height: inputWidth,
-    borderRadius: inputWidth/2,
+    borderRadius: inputWidth / 2
   },
   formButton: {
     width: inputWidth,
     marginTop: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   buttonFireSplitTwo: {
-    width: inputWidth/2.5,
+    width: inputWidth / 2.5,
     height: 40,
     borderRadius: 5,
-    marginTop:10,
+    marginTop: 10,
     backgroundColor: Colors.fire,
     justifyContent: 'center'
   },
@@ -53,6 +53,6 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     fontSize: Fonts.size.medium,
     marginVertical: Metrics.baseMargin
-  },
+  }
 
 })

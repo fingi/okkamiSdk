@@ -5,7 +5,7 @@ import {ScrollView, Text, Image, View} from 'react-native'
 import {Images} from '../Themes'
 import RoundedButton from '../Components/RoundedButton'
 import {Actions as NavigationActions} from 'react-native-router-flux'
-import OkkamiSdk from 'okkami-sdk';
+import OkkamiSdk from 'okkami-sdk'
 
 import {DeviceEventEmitter} from 'react-native'
 
@@ -16,48 +16,43 @@ export default class PresentationScreen extends React.Component {
 
   subscriptions = [];
 
-  constructor(props) {
+  constructor (props) {
     super(props);
 
-
-    /*----a sample for how to use the sdk calls :) ---*/
+    /* ----a sample for how to use the sdk calls :) --- */
     (async function () {
       try {
-
         console.log('calling : connectToHub')
-        var result = await OkkamiSdk.connectToHub();
-
+        var result = await OkkamiSdk.connectToHub()
       } catch (e) {
-        console.log("connectToRoom failed . error : " + e.message)
+        console.log('connectToRoom failed . error : ' + e.message)
       }
-    })();//call myself !
-
+    })()// call myself !
   }
 
-  componentWillMount() {
+  componentWillMount () {
     console.log('subscribe here')
     aSubscription = DeviceEventEmitter.addListener('onHubCommand', function (e) {
-      console.log('onHubCommand --> ',e, e.command)
-    });
+      console.log('onHubCommand --> ', e, e.command)
+    })
 
     this.subscriptions.push(aSubscription)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     console.log('unsubscribe here ' + this.subscriptions.length)
     for (var i = 0; i < this.subscriptions.length; i++) {
-      //subscriptions[i].remove();
+      // subscriptions[i].remove();
     }
   }
 
-
-  render() {
+  render () {
     return (
       <View style={styles.mainContainer}>
-        <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch'/>
+        <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
         <ScrollView style={styles.container}>
           <View style={styles.centered}>
-            <Image source={Images.clearLogo} style={styles.logo}/>
+            <Image source={Images.clearLogo} style={styles.logo} />
           </View>
 
           <View style={styles.section}>

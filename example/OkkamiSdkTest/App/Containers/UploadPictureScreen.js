@@ -8,7 +8,7 @@ import {
   Image,
   Keyboard,
   LayoutAnimation,
-  Picker,
+  Picker
 } from 'react-native'
 import {connect} from 'react-redux'
 import Styles from './Styles/UploadPictureScreenStyle'
@@ -22,15 +22,14 @@ import I18n from 'react-native-i18n'
 
 class UploadPictureScreen extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-      selectLanguage: '',
+      selectLanguage: ''
     }
   }
 
-  render() {
-
+  render () {
     return (
 
       <View style={Styles.mainContainer}>
@@ -48,7 +47,7 @@ class UploadPictureScreen extends React.Component {
               <TouchableOpacity style={Styles.buttonFireSplitTwo} >
                 <Text style={Styles.buttonText}>Save</Text>
               </TouchableOpacity>
-            </View> 
+            </View>
           </View>
         </ScrollView>
       </View>

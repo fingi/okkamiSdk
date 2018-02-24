@@ -1,6 +1,6 @@
 import apisauce from 'apisauce'
 
-//import '../../shim.js'
+// import '../../shim.js'
 // react-native-crypto
 // import crypto from 'crypto'
 
@@ -13,10 +13,9 @@ const callApi = ({
     apiURL = '',
     apiToken = '',
     apiSecret = '',
-    data = '',//json
-    type = 'get', //get or post
+    data = '', // json
+    type = 'get' // get or post
   }) => {
-
     // let timestamp = Math.round(Date.now()/1000);
     // let sign = apiURL + timestamp + data
     // let hash = crypto.createHmac('sha1',apiSecret).update(sign).digest('hex')
@@ -32,16 +31,15 @@ const callApi = ({
     //   timeout: 30000 // 30 sec
     // })
 
-    conn = apisauce.create({
-      baseURL,
-      headers: {
-        'Cache-Control': 'no-cache'
-      },
-      timeout: 30000 // 30 sec
-    })
+  conn = apisauce.create({
+    baseURL,
+    headers: {
+      'Cache-Control': 'no-cache'
+    },
+    timeout: 30000 // 30 sec
+  })
 
-    return conn
-
+  return conn
 }
 
 // function setHeader(contentType='application/x-www-form-urlencoded',Accepts='application/json'){
@@ -52,24 +50,23 @@ const callApi = ({
 //   return header
 // }
 
-function setHeader(){
+function setHeader () {
   const header = {
-    'Cache-Control' : 'no-cache',
-    'Accept'       : 'application/json',
+    'Cache-Control': 'no-cache',
+    'Accept': 'application/json'
   }
   return header
 }
 
 const appToken = (obj) => {
-
   let baseUrl = (obj.siteUrl != null) ? obj.siteUrl : BASE_URL
-  let apiUrl = baseUrl + "/oauth/token"
+  let apiUrl = baseUrl + '/oauth/token'
   let clientId = (obj.clientId != null) ? obj.clientId : CLIENT_ID
   let clientSecret = (obj.clientSecret) ? obj.clientSecret : CLIENT_SECRET
   let data = {
-    "client_id" : CLIENT_ID,
-    "client_secret" : CLIENT_SECRET,
-    "grant_type" : "client_credentials",
+    'client_id': CLIENT_ID,
+    'client_secret': CLIENT_SECRET,
+    'grant_type': 'client_credentials'
   }
 
   console.log(apiUrl)
@@ -87,13 +84,11 @@ const appToken = (obj) => {
   return {
     getAppToken
   }
-
 }
 
 const appCreateUser = (obj) => {
-
   let baseUrl = (obj.siteUrl != null) ? obj.siteUrl : BASE_URL
-  let apiUrl = baseUrl + "/v4/users?access_token=" + obj.appToken
+  let apiUrl = baseUrl + '/v4/users?access_token=' + obj.appToken
 
   console.log(apiUrl)
 
@@ -104,27 +99,25 @@ const appCreateUser = (obj) => {
     timeout: 30000 // 30 sec
   })
 
-  const getCreateUser = () => conn.post(apiUrl,obj.data)
+  const getCreateUser = () => conn.post(apiUrl, obj.data)
   console.log(getCreateUser())
 
   return {
     getCreateUser
   }
-
 }
 
 const userToken = (obj) => {
-
   let baseUrl = (obj.siteUrl != null) ? obj.siteUrl : BASE_URL
-  let apiUrl = baseUrl + "/oauth/token"
+  let apiUrl = baseUrl + '/oauth/token'
   let clientId = (obj.clientId != null) ? obj.clientId : CLIENT_ID
   let clientSecret = (obj.clientSecret) ? obj.clientSecret : CLIENT_SECRET
   let data = {
-    "client_id" : CLIENT_ID,
-    "client_secret" : CLIENT_SECRET,
-    "email" : obj.email,
-    "grant_type" : "password",
-    "password" : obj.password
+    'client_id': CLIENT_ID,
+    'client_secret': CLIENT_SECRET,
+    'email': obj.email,
+    'grant_type': 'password',
+    'password': obj.password
   }
   console.log(apiUrl)
   const header = setHeader()
@@ -140,13 +133,11 @@ const userToken = (obj) => {
   return {
     getUserToken
   }
-
 }
 
 const appUserProfile = (obj) => {
-
   let baseUrl = (obj.siteUrl != null) ? obj.siteUrl : BASE_URL
-  let apiUrl = baseUrl + "/v4/users/profile?access_token=" + obj.userToken
+  let apiUrl = baseUrl + '/v4/users/profile?access_token=' + obj.userToken
 
   console.log(apiUrl)
 
@@ -163,13 +154,11 @@ const appUserProfile = (obj) => {
   return {
     getProfile
   }
-
 }
 
 const createUserWithFacebook = (obj) => {
-
   let baseUrl = (obj.siteUrl != null) ? obj.siteUrl : BASE_URL
-  let apiUrl = baseUrl + "/v4/users?access_token=" + obj.appToken
+  let apiUrl = baseUrl + '/v4/users?access_token=' + obj.appToken
 
   console.log(apiUrl)
   const header = setHeader()
@@ -185,21 +174,19 @@ const createUserWithFacebook = (obj) => {
   return {
     getCreateUserWithFacebook
   }
-
 }
 
 const userTokenWithFacebook = (obj) => {
-
   let baseUrl = (obj.siteUrl != null) ? obj.siteUrl : BASE_URL
-  let apiUrl = baseUrl + "/oauth/token"
+  let apiUrl = baseUrl + '/oauth/token'
   let clientId = (obj.clientId != null) ? obj.clientId : CLIENT_ID
   let clientSecret = (obj.clientSecret) ? obj.clientSecret : CLIENT_SECRET
   let data = {
-    "client_id" : CLIENT_ID,
-    "client_secret" : CLIENT_SECRET,
-    "grant_type" : "password",
-    "provider" : "facebook",
-    "uid" : obj.uid
+    'client_id': CLIENT_ID,
+    'client_secret': CLIENT_SECRET,
+    'grant_type': 'password',
+    'provider': 'facebook',
+    'uid': obj.uid
   }
   console.log(apiUrl)
   const header = setHeader()
@@ -215,8 +202,6 @@ const userTokenWithFacebook = (obj) => {
   return {
     getUserTokenWithFacebook
   }
-
 }
-
 
 export default { appToken, appCreateUser, userToken, appUserProfile, createUserWithFacebook, userTokenWithFacebook }

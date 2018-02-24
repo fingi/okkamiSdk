@@ -6,8 +6,8 @@ import { Metrics, ApplicationStyles } from '../../Themes/'
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   logo: {
-    height: Metrics.images.logo+20,
-    width: Metrics.images.logo+20,
+    height: Metrics.images.logo + 20,
+    width: Metrics.images.logo + 20,
     resizeMode: 'contain'
   },
   centered: {

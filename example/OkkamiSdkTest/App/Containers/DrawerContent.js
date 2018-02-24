@@ -1,29 +1,28 @@
 // @flow
 
 import React, { Component, PropTypes } from 'react'
-import { ScrollView, Image, BackAndroid, View, Text, ListView,TouchableOpacity,TouchableHighlight } from 'react-native'
+import { ScrollView, Image, BackAndroid, View, Text, ListView, TouchableOpacity, TouchableHighlight } from 'react-native'
 import Styles from './Styles/DrawerContentStyle'
 import { Images, Colors, Metrics } from '../Themes'
 import DrawerButton from '../Components/DrawerButton'
 import { Actions as NavigationActions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { connect } from 'react-redux'
-import Panel from '../Components/Panel';
+import Panel from '../Components/Panel'
 import UserConnectActions, { isLoggedIn } from '../Redux/UserConnectRedux'
 import FacebookLoginActions from '../Redux/FacebookLoginRedux'
 import Img from './Styles/Images'
 import {FBLoginManager} from 'react-native-facebook-login'
 
-
 class DrawerContent extends Component {
 
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
-      login: "llllllll",
-      first_name: "Fingi",
-      last_name: "Test",
-      userImage: Img.avatar,
+      login: 'llllllll',
+      first_name: 'Fingi',
+      last_name: 'Test',
+      userImage: Img.avatar
     }
   }
 
@@ -42,7 +41,7 @@ class DrawerContent extends Component {
   }
 
   toggleDrawer () {
-    this.setState({login:"oooooooo"})
+    this.setState({login: 'oooooooo'})
     this.context.drawer.toggle()
   }
 
@@ -66,9 +65,9 @@ class DrawerContent extends Component {
     NavigationActions.promotionScreen()
   }
 
-  handleWebview(url){
+  handleWebview (url) {
     this.toggleDrawer()
-    NavigationActions.openWebView({url:url})
+    NavigationActions.openWebView({url: url})
   }
 
   handleLandingScreen = () => {
@@ -116,7 +115,7 @@ class DrawerContent extends Component {
     this.props.logoutStateFb()
     this.logoutFacebook()
     this.toggleDrawer()
-    NavigationActions.promotionScreen({type: "reset"})
+    NavigationActions.promotionScreen({type: 'reset'})
   }
 
   handleEditProfile = () => {
@@ -125,26 +124,26 @@ class DrawerContent extends Component {
   }
 
   _renderButtonLogout = () => {
-    if(this.props.loggedIn){
+    if (this.props.loggedIn) {
       return (
-        <Panel title="Logout" child="false" onPress={this.handlePressLogout}>
-          <View></View>
+        <Panel title='Logout' child='false' onPress={this.handlePressLogout}>
+          <View />
         </Panel>
-      );
-    }else{
-      return null;
+      )
+    } else {
+      return null
     }
   }
 
   logoutFacebook = () => {
-    FBLoginManager.logout(function(error, data){
+    FBLoginManager.logout(function (error, data) {
       if (!error) {
         // _this.props.onLogout && _this.props.onLogout();
         console.log(data)
       } else {
-        console.log(error, data);
+        console.log(error, data)
       }
-    });
+    })
   }
 
   render () {
@@ -163,15 +162,15 @@ class DrawerContent extends Component {
           <View style={Styles.headerRight}>
             <View style={Styles.headerRightTextTop}>
               <Text style={Styles.headerRightTextName}>Vivianne White</Text>
-              <View style={{flex:1,height:30}}>
+              <View style={{flex: 1, height: 30}}>
                 {/* <Image
                   source={require('../Images/option.png')}
                   style={{width:30,height:30}}
                 /> */}
                 <Icon name='gear'
-                      size={Metrics.icons.medium}
-                      color={Colors.snow}
-                      onPress={this.handleEditProfile}
+                  size={Metrics.icons.medium}
+                  color={Colors.snow}
+                  onPress={this.handleEditProfile}
                 />
               </View>
             </View>
@@ -184,53 +183,53 @@ class DrawerContent extends Component {
 
         <View style={Styles.mainMenu}>
           <ScrollView style={{
-              flex            : 1,
-              backgroundColor : Colors.fire,
-              paddingTop      : 0}}
+            flex: 1,
+            backgroundColor: Colors.fire,
+            paddingTop: 0}}
           >
 
-             <Panel title="My Account" child="false" onPress={this.handleLandingScreen} >
-              <TouchableHighlight  underlayColor="#ffffff" onPress={this.handlePromotionScreen} >
+            <Panel title='My Account' child='false' onPress={this.handleLandingScreen} >
+              <TouchableHighlight underlayColor='#ffffff' onPress={this.handlePromotionScreen} >
                 <View style={Styles.panelRow}>
                   <Text style={Styles.panelText}>Detail account</Text>
                 </View>
               </TouchableHighlight>
-              <TouchableHighlight  underlayColor="#ffffff" onPress={this.handleLandingScreen} >
+              <TouchableHighlight underlayColor='#ffffff' onPress={this.handleLandingScreen} >
                 <View style={Styles.panelRow}>
                   <Text style={Styles.panelText}>Landing Screen</Text>
                 </View>
               </TouchableHighlight>
             </Panel>
 
-            <Panel title="Okkami Conclerge" child="false" onPress={this.handlePressLobby}>
-              <View></View>
+            <Panel title='Okkami Conclerge' child='false' onPress={this.handlePressLobby}>
+              <View />
             </Panel>
 
-            <Panel title="My Booking" child="true" >
-              <TouchableHighlight  underlayColor="#ffffff" onPress={this.handleWebview.bind(this,'http://whitelabel.dohop.com/w/okkami/')} >
+            <Panel title='My Booking' child='true' >
+              <TouchableHighlight underlayColor='#ffffff' onPress={this.handleWebview.bind(this, 'http://whitelabel.dohop.com/w/okkami/')} >
                 <View style={Styles.panelRow}>
                   <Text style={Styles.panelText}>Flights</Text>
                 </View>
               </TouchableHighlight>
-              <TouchableHighlight  underlayColor="#ffffff" onPress={this.handleWebview.bind(this,'http://www.booking.com/?aid=1151726')} >
+              <TouchableHighlight underlayColor='#ffffff' onPress={this.handleWebview.bind(this, 'http://www.booking.com/?aid=1151726')} >
                 <View style={Styles.panelRow}>
                   <Text style={Styles.panelText}>Hotels</Text>
                 </View>
               </TouchableHighlight>
-              <TouchableHighlight  underlayColor="#ffffff" onPress={this.handleWebview.bind(this,'https://www.partner.viator.com/en/19488')} >
+              <TouchableHighlight underlayColor='#ffffff' onPress={this.handleWebview.bind(this, 'https://www.partner.viator.com/en/19488')} >
                 <View style={Styles.panelRow}>
                   <Text style={Styles.panelText}>Activities</Text>
                 </View>
               </TouchableHighlight>
             </Panel>
-            <Panel title="Concierge Chat" child="false" onPress={this.handlePressLobby}>
-              <View></View>
+            <Panel title='Concierge Chat' child='false' onPress={this.handlePressLobby}>
+              <View />
             </Panel>
-            <Panel title="Check Out" child="false" onPress={this.handlePressLobby}>
-              <View></View>
+            <Panel title='Check Out' child='false' onPress={this.handlePressLobby}>
+              <View />
             </Panel>
-            <Panel title="Languages" child="false" onPress={this.handlePressLogin}>
-              <View></View>
+            <Panel title='Languages' child='false' onPress={this.handlePressLogin}>
+              <View />
             </Panel>
             {/* <Panel title="Facebook Login" child="false" onPress={this.handleFacebookLogin}>
               <View></View>
@@ -246,33 +245,30 @@ class DrawerContent extends Component {
 
 }
 
-
 DrawerContent.propTypes = {
   loggedIn: PropTypes.bool,
   logout: PropTypes.func,
   first_name: PropTypes.string,
   last_name: PropTypes.string,
-  logoutStateFb: PropTypes.func,
+  logoutStateFb: PropTypes.func
 }
 
 const mapStateToProps = (state) => {
-
-  let first_name = (state.userConnect.userData != null)?state.userConnect.userData.first_name:"Guest"
-  let last_name = (state.userConnect.userData != null)?state.userConnect.userData.last_name:""
+  let first_name = (state.userConnect.userData != null) ? state.userConnect.userData.first_name : 'Guest'
+  let last_name = (state.userConnect.userData != null) ? state.userConnect.userData.last_name : ''
   return {
     loggedIn: isLoggedIn(state.userConnect.userData),
     first_name: first_name,
-    last_name: last_name,
+    last_name: last_name
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => dispatch(UserConnectActions.logout()),
-    logoutStateFb: () => dispatch(FacebookLoginActions.logout()),
+    logoutStateFb: () => dispatch(FacebookLoginActions.logout())
   }
 }
-
 
 DrawerContent.contextTypes = {
   drawer: React.PropTypes.object

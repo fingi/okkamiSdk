@@ -10,33 +10,32 @@ import {
 import {connect} from 'react-redux'
 import {Images, Metrics, Colors} from '../Themes'
 import {Actions as NavigationActions} from 'react-native-router-flux'
-import Dimensions from 'Dimensions';
+import Dimensions from 'Dimensions'
 
 const WEBVIEW_REF = 'webview'
 
-
 class OpenWebView extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       url: props.url,
       backButtonEnabled: false,
       status: 'No Page Loaded',
-      loading: true,
+      loading: true
     }
   }
 
-  render() {
+  render () {
     return (
 
       <View style={styles.container}>
 
         <View>
           <TouchableOpacity
-             onPress={this.goBack}
-             style={this.state.backButtonEnabled ? styles.navButton : styles.disabledButton}>
-             <Text> {'<'} </Text>
+            onPress={this.goBack}
+            style={this.state.backButtonEnabled ? styles.navButton : styles.disabledButton}>
+            <Text> {'<'} </Text>
           </TouchableOpacity>
         </View>
 
@@ -45,10 +44,10 @@ class OpenWebView extends React.Component {
           source={{uri: this.state.url}}
           // style={{width: Metrics.screenWidth, height: Metrics.screenHeight}}
           style={{width: Metrics.screenWidth}}
-          javaScriptEnabled={true}
+          javaScriptEnabled
           onNavigationStateChange={this.onNavigationStateChange}
           onShouldStartLoadWithRequest={this.onShouldStartLoadWithRequest}
-          startInLoadingState={true}
+          startInLoadingState
         />
 
         <View style={styles.statusBar}>
@@ -60,12 +59,12 @@ class OpenWebView extends React.Component {
   }
 
   goBack = () => {
-    this.refs[WEBVIEW_REF].goBack();
+    this.refs[WEBVIEW_REF].goBack()
   };
 
   onShouldStartLoadWithRequest = (event) => {
     // Implement any custom loading logic here, don't forget to return!
-    return true;
+    return true
   };
 
   onNavigationStateChange = (navState) => {
@@ -76,7 +75,7 @@ class OpenWebView extends React.Component {
       status: navState.title,
       // loading: navState.loading,
       scalesPageToFit: true
-    });
+    })
   };
 
 }
@@ -88,14 +87,14 @@ var styles = StyleSheet.create({
     flex: 1
   },
   navButton: {
-   width: 20,
-   padding: 3,
-   marginRight: 3,
-   alignItems: 'center',
-   justifyContent: 'center',
-   backgroundColor: '#111111',
-   borderColor: 'transparent',
-   borderRadius: 3,
+    width: 20,
+    padding: 3,
+    marginRight: 3,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#111111',
+    borderColor: 'transparent',
+    borderRadius: 3
   },
   disabledButton: {
     width: 20,
@@ -105,20 +104,20 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#555555',
     borderColor: 'transparent',
-    borderRadius: 3,
+    borderRadius: 3
   },
   statusBar: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingLeft: 5,
     height: 22,
-    backgroundColor: '#000000',
+    backgroundColor: '#000000'
   },
   statusBarText: {
     color: 'white',
-    fontSize: 13,
-  },
-});
+    fontSize: 13
+  }
+})
 
 OpenWebView.propTypes = {
 

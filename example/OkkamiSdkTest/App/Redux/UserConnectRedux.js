@@ -22,9 +22,9 @@ export default Creators
 export const INITIAL_STATE = Immutable({
   appToken: null,
   userToken: null,
-  userData:null,
+  userData: null,
   error: null,
-  fetching: false,
+  fetching: false
 })
 
 /* ------------- Reducers ------------- */
@@ -45,7 +45,7 @@ export const userConnectUserData = (state: Object, { userData }: Object) =>
   state.merge({ fetching: false, error: null, userData })
 
 export const userConnectUserToken = (state: Object, { userToken }: Object) =>
-    state.merge({ fetching: false, error: null, userData: "get from core", userToken })
+    state.merge({ fetching: false, error: null, userData: 'get from core', userToken })
 
 // we've logged out
 export const logout = (state: Object) => INITIAL_STATE

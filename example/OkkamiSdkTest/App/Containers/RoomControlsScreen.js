@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Image,
   Switch,
-  DeviceEventEmitter,
+  DeviceEventEmitter
 } from 'react-native'
 import {connect} from 'react-redux'
 import Styles from './Styles/RoomControlsScreenStyle'
@@ -22,27 +22,25 @@ import OkkamiSdk from 'okkami-sdk'
 import I18n from 'react-native-i18n'
 
 handlePress = () => {
-  //command
+  // command
 }
 
 class RoomControlsScreen extends React.Component {
 
   subscriptions = [];
 
-  constructor(props) {
+  constructor (props) {
     super(props);
 
-    /*----a sample for how to use the sdk calls :) ---*/
+    /* ----a sample for how to use the sdk calls :) --- */
     (async function () {
       try {
-
         console.log('calling : connectToHub')
-        var result = await OkkamiSdk.connectToHub();
-
+        var result = await OkkamiSdk.connectToHub()
       } catch (e) {
-        console.log("connectToRoom failed . error : " + e.message)
+        console.log('connectToRoom failed . error : ' + e.message)
       }
-    })();//call myself !
+    })()// call myself !
 
     this.state = {
       selectLanguage: '',
@@ -52,27 +50,23 @@ class RoomControlsScreen extends React.Component {
       ac1Speed: 'LOW',
       tvPower: false
     }
-
-
   }
 
-  componentWillMount() {
+  componentWillMount () {
     console.log('subscribe here')
     aSubscription = DeviceEventEmitter.addListener('onHubCommand', function (e) {
-      console.log('onHubCommand --> ',e, e.command)
-    });
+      console.log('onHubCommand --> ', e, e.command)
+    })
 
     this.subscriptions.push(aSubscription)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     console.log('unsubscribe here')
     for (var i = 0; i < this.subscriptions.length; i++) {
-      //subscriptions[i].remove();
+      // subscriptions[i].remove();
     }
   }
-
-
 
   // componentWillMount() {
   //   var _myself = this;
@@ -98,8 +92,7 @@ class RoomControlsScreen extends React.Component {
   //   });
   // }
 
-  render() {
-
+  render () {
     return (
 
       <View style={Styles.mainContainer}>
@@ -114,9 +107,9 @@ class RoomControlsScreen extends React.Component {
               </Text>
               <Switch
                 onValueChange={(value) => {
-                  this.setState({light6: value});
+                  this.setState({light6: value})
                 }}
-                value={this.state.light6}/>
+                value={this.state.light6} />
             </View>
 
             <View style={Styles.formButton}>
@@ -125,24 +118,24 @@ class RoomControlsScreen extends React.Component {
               </Text>
               <Switch
                 onValueChange={(value) => {
-                  //command
-                  //this.setState({ac1: value});
+                  // command
+                  // this.setState({ac1: value});
                 }}
-                value={this.state.ac1}/>
+                value={this.state.ac1} />
             </View>
 
-            <View style={Styles.spaceLine}></View>
+            <View style={Styles.spaceLine} />
 
-             <View style={Styles.formButton}>
+            <View style={Styles.formButton}>
               <Text style={{fontSize: 18, color: Colors.snow, fontWeight: 'bold'}}>
                 TV Innvue Power ( tv-2 )
               </Text>
               <Switch
                 onValueChange={(value) => {
-                  //command
-                  //this.setState({tvPower: value});
+                  // command
+                  // this.setState({tvPower: value});
                 }}
-                value={this.state.tvPower}/>
+                value={this.state.tvPower} />
             </View>
 
             <View style={Styles.formButton}>
@@ -153,23 +146,23 @@ class RoomControlsScreen extends React.Component {
 
                 <TouchableOpacity onPress={this.handlePress} >
                   <Icon name='volume-up'
-                        size={Metrics.icons.medium}
-                        color={Colors.snow}
+                    size={Metrics.icons.medium}
+                    color={Colors.snow}
                   />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this.handlePress} >
                   <Icon name='volume-down'
-                        size={Metrics.icons.medium}
-                        color={Colors.snow}
+                    size={Metrics.icons.medium}
+                    color={Colors.snow}
                   />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this.handlePress} >
                   <Icon name='volume-off'
-                        size={Metrics.icons.medium}
-                        color={Colors.snow}
+                    size={Metrics.icons.medium}
+                    color={Colors.snow}
                   />
                 </TouchableOpacity>
-    
+
               </View>
             </View>
 
@@ -181,17 +174,17 @@ class RoomControlsScreen extends React.Component {
 
                 <TouchableOpacity onPress={this.handlePress} >
                   <Icon name='angle-up'
-                        size={Metrics.icons.medium}
-                        color={Colors.snow}
+                    size={Metrics.icons.medium}
+                    color={Colors.snow}
                   />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this.handlePress} >
                   <Icon name='angle-down'
-                        size={Metrics.icons.medium}
-                        color={Colors.snow}
+                    size={Metrics.icons.medium}
+                    color={Colors.snow}
                   />
                 </TouchableOpacity>
-    
+
               </View>
             </View>
 
@@ -199,42 +192,42 @@ class RoomControlsScreen extends React.Component {
               <Text style={{fontSize: 18, color: Colors.snow, fontWeight: 'bold'}}>
                 DIRECTIONAL ( tv-2 )
               </Text>
-              <View style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center',}}>
+              <View style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
-                <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',}}>
+                <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                   <TouchableOpacity onPress={this.handlePress}>
                     <Icon name='angle-up'
-                          size={Metrics.icons.large}
-                          color={Colors.snow}
+                      size={Metrics.icons.large}
+                      color={Colors.snow}
                     />
                   </TouchableOpacity>
                 </View>
-                <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between',}}>
-                  <TouchableOpacity  style={{padding:10,marginRight:20}} onPress={this.handlePress}>
+                <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
+                  <TouchableOpacity style={{padding: 10, marginRight: 20}} onPress={this.handlePress}>
                     <Icon name='angle-left'
-                          size={Metrics.icons.large}
-                          color={Colors.snow}
+                      size={Metrics.icons.large}
+                      color={Colors.snow}
                     />
                   </TouchableOpacity>
-                  <TouchableOpacity  style={{padding:10}} onPress={this.handlePress}>
+                  <TouchableOpacity style={{padding: 10}} onPress={this.handlePress}>
                     <Icon name='check'
-                          size={Metrics.icons.medium}
-                          color={Colors.snow}
+                      size={Metrics.icons.medium}
+                      color={Colors.snow}
                     />
                   </TouchableOpacity>
-                  <TouchableOpacity  style={{padding:10,marginLeft:20}} onPress={this.handlePress}>
+                  <TouchableOpacity style={{padding: 10, marginLeft: 20}} onPress={this.handlePress}>
                     <Icon name='angle-right'
-                          size={Metrics.icons.large}
-                          color={Colors.snow}
+                      size={Metrics.icons.large}
+                      color={Colors.snow}
                     />
                   </TouchableOpacity>
                 </View>
 
-                <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',}}>
+                <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                   <TouchableOpacity onPress={this.handlePress}>
                     <Icon name='angle-down'
-                          size={Metrics.icons.large}
-                          color={Colors.snow}
+                      size={Metrics.icons.large}
+                      color={Colors.snow}
                     />
                   </TouchableOpacity>
                 </View>
@@ -243,7 +236,6 @@ class RoomControlsScreen extends React.Component {
             </View>
 
           </View>
-
 
         </ScrollView>
 
@@ -255,11 +247,11 @@ class RoomControlsScreen extends React.Component {
 }
 
 RoomControlsScreen.propTypes = {
-  //commandToRoomRequest: PropTypes.func
+  // commandToRoomRequest: PropTypes.func
 }
 
 RoomControlsScreen.defaultProps = {
-  //sendingCommand: false,
+  // sendingCommand: false,
 }
 
 const mapStateToProps = state => {
@@ -270,7 +262,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    //commandToRoomRequest: (command) => dispatch(OkkamiSdk.commandToRoomRequest(command))
+    // commandToRoomRequest: (command) => dispatch(OkkamiSdk.commandToRoomRequest(command))
   }
 }
 

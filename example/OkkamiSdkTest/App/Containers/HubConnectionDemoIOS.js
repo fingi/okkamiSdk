@@ -11,7 +11,7 @@ import RoundedButton from '../Components/RoundedButton'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Animatable from 'react-native-animatable'
 import { Actions as NavigationActions } from 'react-native-router-flux'
-import OkkamiSdk from 'okkami-sdk';
+import OkkamiSdk from 'okkami-sdk'
 
 // Styles
 import styles from './Styles/HubConnectionDemoIOSStyle'
@@ -22,198 +22,182 @@ import {DeviceEventEmitter} from 'react-native'
 
 var subscriptions = Array()
 
-
 class HubConnectionDemoIOS extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.preconnect();
+  constructor (props) {
+    super(props)
+    this.preconnect()
   }
-  async preconnect(){
+  async preconnect () {
     try {
-        var result = await OkkamiSdk.start();
-        console.log("preconnect successful..." + result );
-        
+      var result = await OkkamiSdk.start()
+      console.log('preconnect successful...' + result)
     } catch (e) {
-        console.log("preconnect failed . error : " + e.message)
+      console.log('preconnect failed . error : ' + e.message)
     }
   }
-  componentWillMount() {
+  componentWillMount () {
     console.log('subscribe here')
-        
+
     aSubscription = DeviceEventEmitter.addListener('onStart', function (e) {
-          console.log('Command --> ',e, e.command)
-    }); 
+      console.log('Command --> ', e, e.command)
+    })
 
     aSubscription = DeviceEventEmitter.addListener('connectToRoom', function (e) {
-          console.log('Command --> ',e, e.command)
-    });
+      console.log('Command --> ', e, e.command)
+    })
 
     aSubscription = DeviceEventEmitter.addListener('disconnectFromRoom', function (e) {
-          console.log('Command --> ',e, e.command)
-    });
+      console.log('Command --> ', e, e.command)
+    })
 
     aSubscription = DeviceEventEmitter.addListener('onHubCommand', function (e) {
-        console.log('Command -->', e, e.currentData);
-    });
+      console.log('Command -->', e, e.currentData)
+    })
 
     aSubscription = DeviceEventEmitter.addListener('onHubLoggedIn', function (e) {
-          console.log('Command --> ',e, e.command)
-    });
+      console.log('Command --> ', e, e.command)
+    })
 
     aSubscription = DeviceEventEmitter.addListener('downloadPresets', function (e) {
-          console.log('Command --> ',e, e.command)
-    });
+      console.log('Command --> ', e, e.command)
+    })
 
     aSubscription = DeviceEventEmitter.addListener('downloadRoomInfo', function (e) {
-          console.log('Command --> ',e, e.command)
-    });
+      console.log('Command --> ', e, e.command)
+    })
 
     aSubscription = DeviceEventEmitter.addListener('guestService', function (e) {
-          console.log('Command --> ',e, e.command)
-    });
+      console.log('Command --> ', e, e.command)
+    })
 
     subscriptions.push(aSubscription)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     console.log('unsubscribe here')
     for (var i = 0; i < subscriptions.length; i++) {
-      subscriptions[i].remove();
+      subscriptions[i].remove()
     }
   }
 
-  connectToHub(){
-    /*<RoundedButton onPress={NavigationActions.HubConnectionEventDemoIOS}>
+  connectToHub () {
+    /* <RoundedButton onPress={NavigationActions.HubConnectionEventDemoIOS}>
             Hub Connection Event Demo IOS
           </RoundedButton>
 
       try {
         var result = OkkamiSdk.connectToHub();
         console.log("connectToHub successful..." + result );
-        
+
       } catch (e) {
         console.log("connectToHub failed . error : " + e.message)
-      }*/
-      try {
-        var result = OkkamiSdk.connectToHub();
-        console.log("connectToHub successful..." + result );
+      } */
+    try {
+      var result = OkkamiSdk.connectToHub()
+      console.log('connectToHub successful...' + result)
 
-        /*aSubscription = DeviceEventEmitter.addListener('onHubConnected', function (e) {
+        /* aSubscription = DeviceEventEmitter.addListener('onHubConnected', function (e) {
             console.log('onHubCommand --> ',e, e.currentData)
         });
-        subscriptions.push(aSubscription)*/
-        
-      } catch (e) {
-        console.log("connectToHub failed . error : " + e.message)
-      }
+        subscriptions.push(aSubscription) */
+    } catch (e) {
+      console.log('connectToHub failed . error : ' + e.message)
+    }
   }
-  disconnectFromHub(){
-      try {
-        var result = OkkamiSdk.disconnectFromHub();
-        console.log("disconnectFromHub successful..." + result );
-        
-      } catch (e) {
-        console.log("disconnectFromHub failed . error : " + e.message)
-      }
-  }
-  sendCommandToHub(){
+  disconnectFromHub () {
     try {
-        var result = OkkamiSdk.sendCommandToHub("Power");
+      var result = OkkamiSdk.disconnectFromHub()
+      console.log('disconnectFromHub successful...' + result)
+    } catch (e) {
+      console.log('disconnectFromHub failed . error : ' + e.message)
+    }
+  }
+  sendCommandToHub () {
+    try {
+      var result = OkkamiSdk.sendCommandToHub('Power')
 //        var hubLoggedIn = await OkkamiSdk.isHubLoggedIn();
-        console.log("sendCommandToHub successful..." + result );
-        
-      } catch (e) {
-        console.log("sendCommandToHub failed . error : " + e.message)
-      }
+      console.log('sendCommandToHub successful...' + result)
+    } catch (e) {
+      console.log('sendCommandToHub failed . error : ' + e.message)
+    }
   }
 
-  isHubLoggedIn(){
+  isHubLoggedIn () {
     try {
-        var result = OkkamiSdk.isHubLoggedIn();
-        console.log("onHubLoggedIn successful..." + result );
-        
-        /*aSubscription = DeviceEventEmitter.addListener('onHubLoggedIn', function (e) {
+      var result = OkkamiSdk.isHubLoggedIn()
+      console.log('onHubLoggedIn successful...' + result)
+
+        /* aSubscription = DeviceEventEmitter.addListener('onHubLoggedIn', function (e) {
           console.log('onHubCommand --> ',e, e.command)
         });
 
-        subscriptions.push(aSubscription)*/
-        
-      } catch (e) {
-        console.log("onHubLoggedIn failed . error : " + e.message)
-      }
+        subscriptions.push(aSubscription) */
+    } catch (e) {
+      console.log('onHubLoggedIn failed . error : ' + e.message)
+    }
   }
-  isHubConnected(){
+  isHubConnected () {
     try {
-        var result = OkkamiSdk.isHubConnected();
-        console.log("onHubConnected successful..." + result );
-        
-      } catch (e) {
-        console.log("onHubConnected failed . error : " + e.message)
-      }
-
+      var result = OkkamiSdk.isHubConnected()
+      console.log('onHubConnected successful...' + result)
+    } catch (e) {
+      console.log('onHubConnected failed . error : ' + e.message)
+    }
   }
 
-  connectToRoom(){
+  connectToRoom () {
     try {
-        var result = OkkamiSdk.connectToRoom();
-        console.log("connectToRoom successful..." + result );
-        
-      } catch (e) {
-        console.log("connectToRoom failed . error : " + e.message)
-      }
-
+      var result = OkkamiSdk.connectToRoom()
+      console.log('connectToRoom successful...' + result)
+    } catch (e) {
+      console.log('connectToRoom failed . error : ' + e.message)
+    }
   }
 
-  disconnectFromRoom(){
+  disconnectFromRoom () {
     try {
-        var result = OkkamiSdk.disconnectFromRoom();
-        console.log("disconnectToRoom successful..." + result );
-        
-      } catch (e) {
-        console.log("disconnectToRoom failed . error : " + e.message)
-      }
-
+      var result = OkkamiSdk.disconnectFromRoom()
+      console.log('disconnectToRoom successful...' + result)
+    } catch (e) {
+      console.log('disconnectToRoom failed . error : ' + e.message)
+    }
   }
-  /*preconnect(){
+  /* preconnect(){
     try {
         var result = OkkamiSdk.start();
         console.log("preconnect successful..." + result );
-        
+
       } catch (e) {
         console.log("preconnect failed . error : " + e.message)
-    }    
-  }*/
+    }
+  } */
 
-  downloadPresets(){
+  downloadPresets () {
     try {
-        var result = OkkamiSdk.downloadPresets(1);
-        console.log("downloadPresets successful..." + result );
-        
-      } catch (e) {
-        console.log("downloadPresets failed . error : " + e.message)
-      }
-
+      var result = OkkamiSdk.downloadPresets(1)
+      console.log('downloadPresets successful...' + result)
+    } catch (e) {
+      console.log('downloadPresets failed . error : ' + e.message)
+    }
   }
-  downloadRoomInfo(){
-      try {
-        var result = OkkamiSdk.downloadRoomInfo(1);
-        console.log("downloadRoomInfo successful..." + result );
-        
-      } catch (e) {
-        console.log("downloadRoomInfo failed . error : " + e.message)
-      }
+  downloadRoomInfo () {
+    try {
+      var result = OkkamiSdk.downloadRoomInfo(1)
+      console.log('downloadRoomInfo successful...' + result)
+    } catch (e) {
+      console.log('downloadRoomInfo failed . error : ' + e.message)
+    }
   }
-  guestService(){
-      try {
-        var result = OkkamiSdk.connectToHub();
-        console.log("guestService successful..." + result );
-        
-      } catch (e) {
-        console.log("guestService failed . error : " + e.message)
-      }
+  guestService () {
+    try {
+      var result = OkkamiSdk.connectToHub()
+      console.log('guestService successful...' + result)
+    } catch (e) {
+      console.log('guestService failed . error : ' + e.message)
+    }
   }
-  /*<RoundedButton onPress={this.preconnect}>
+  /* <RoundedButton onPress={this.preconnect}>
             preconnect
           </RoundedButton>
           <RoundedButton onPress={this.connectToHub}>
@@ -240,7 +224,7 @@ class HubConnectionDemoIOS extends React.Component {
     return (
       <View style={styles.mainContainer}>
         <ScrollView style={styles.container}>
-          
+
           <RoundedButton onPress={this.connectToRoom}>
             Connect To Room
           </RoundedButton>
@@ -250,18 +234,17 @@ class HubConnectionDemoIOS extends React.Component {
           </RoundedButton>
 
           <RoundedButton onPress={this.downloadPresets}>
-            Download Presets 
+            Download Presets
           </RoundedButton>
 
           <RoundedButton onPress={this.downloadRoomInfo}>
-            Download Room Info 
+            Download Room Info
           </RoundedButton>
 
           <RoundedButton onPress={this.guestService}>
-            Guest Service 
+            Guest Service
           </RoundedButton>
 
-        
         </ScrollView>
       </View>
     )

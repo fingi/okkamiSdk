@@ -22,7 +22,7 @@ export const INITIAL_STATE = Immutable({
   error: null,
   fetching: false,
   facebookId: null,
-  facebookData:null
+  facebookData: null
 })
 
 /* ------------- Reducers ------------- */

@@ -22,24 +22,22 @@ import FacebookLoginActions, { isLoggedIn } from '../Redux/FacebookLoginRedux'
 import UserConnectActions, { isAppToken } from '../Redux/UserConnectRedux'
 import FJSON from 'format-json'
 
-
 // I18n
 import I18n from 'react-native-i18n'
 
-import Dimensions from 'Dimensions';
-
+import Dimensions from 'Dimensions'
 
 class FacebookLoginScreen extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       user: null,
       facebookProfile: null,
       uid: null,
       appToken: null,
       userToken: null,
-      wait: false,
+      wait: false
     }
   }
 
@@ -47,36 +45,33 @@ class FacebookLoginScreen extends React.Component {
     const { facebookAction } = this.props
     let _this = this
 
-    FBLoginManager.setLoginBehavior(FBLoginManager.LoginBehaviors.Native); // defaults to Native , web
-    FBLoginManager.loginWithPermissions(["email","user_friends"], function(error, data){
-
-      _this.setState({wait:true})
+    FBLoginManager.setLoginBehavior(FBLoginManager.LoginBehaviors.Native) // defaults to Native , web
+    FBLoginManager.loginWithPermissions(['email', 'user_friends'], function (error, data) {
+      _this.setState({wait: true})
 
       if (!error) {
         userProfile = JSON.parse(data.profile)
-        _this.setState({ user : data.credentials , facebookProfile: userProfile})
-        _this.props.attemptLogin(userProfile.name, "xxx", userProfile)
+        _this.setState({ user: data.credentials, facebookProfile: userProfile})
+        _this.props.attemptLogin(userProfile.name, 'xxx', userProfile)
 
-        if(facebookAction == "signup"){
+        if (facebookAction == 'signup') {
           _this.sendCreateUser()
-        }else{
+        } else {
           _this.sendSignInWithFacebook()
         }
-
       } else {
         window.alert(error.message)
-        NavigationActions.promotionScreen({type: "reset"})
+        NavigationActions.promotionScreen({type: 'reset'})
       }
-
     })
   }
 
   componentWillMount () {
-    this.setState({appToken:this.props.appToken})
+    this.setState({appToken: this.props.appToken})
     this.facebookLogin()
   }
 
-  componentDidMount() {
+  componentDidMount () {
 
   }
 
@@ -85,10 +80,10 @@ class FacebookLoginScreen extends React.Component {
       userToken: this.state.userToken
     }
     this.api = ApiUserConn.appUserProfile(obj)
-    this.api['getProfile'].apply(this, ['']).then((res)=>{
-      if(res.status == 200){
+    this.api['getProfile'].apply(this, ['']).then((res) => {
+      if (res.status == 200) {
         this.props.attemptUpdateUserData(res.data)
-      }else{
+      } else {
         window.alert('Cannot update profile')
       }
     })
@@ -96,19 +91,19 @@ class FacebookLoginScreen extends React.Component {
 
   sendSignInWithFacebook = () => {
     let obj = {
-      uid: this.state.facebookProfile.id,
+      uid: this.state.facebookProfile.id
     }
     this.api = ApiUserConn.userTokenWithFacebook(obj)
-    this.api['getUserTokenWithFacebook'].apply(this, ['']).then((res)=>{
+    this.api['getUserTokenWithFacebook'].apply(this, ['']).then((res) => {
       // this.setState({wait:false})
-      if(res.status == 200){
-        this.setState({userToken:res.data.access_token})
+      if (res.status == 200) {
+        this.setState({userToken: res.data.access_token})
         this.getUserProfile()
         this.props.attemptUpdateUserToken(res.data)
-        NavigationActions.landingScreen({type: "reset"})
-      }else{
+        NavigationActions.landingScreen({type: 'reset'})
+      } else {
         window.alert('Please check your facebook or Signup')
-        NavigationActions.promotionScreen({type: "reset"})
+        NavigationActions.promotionScreen({type: 'reset'})
       }
     })
   }
@@ -117,48 +112,48 @@ class FacebookLoginScreen extends React.Component {
     let obj = {
       appToken: this.state.appToken,
       data: {
-        user:{
-          "first_name" : this.state.facebookProfile.first_name,
-          "last_name":  this.state.facebookProfile.last_name,
-          "email":  this.state.facebookProfile.email,
-          "password" : "12345678",
-          "password_confirmation":  "12345678",
-          "phone":  "087654321",
-          "country": "Thailand",
-          "country_code":  "US",
-          "state": "Nevada",
-          "city" : "Las Vagas",
-          "language" : "en",
-          "provider" : "facebook",
-          "uid" : this.state.facebookProfile.id
+        user: {
+          'first_name': this.state.facebookProfile.first_name,
+          'last_name': this.state.facebookProfile.last_name,
+          'email': this.state.facebookProfile.email,
+          'password': '12345678',
+          'password_confirmation': '12345678',
+          'phone': '087654321',
+          'country': 'Thailand',
+          'country_code': 'US',
+          'state': 'Nevada',
+          'city': 'Las Vagas',
+          'language': 'en',
+          'provider': 'facebook',
+          'uid': this.state.facebookProfile.id
         }
       }
     }
 
     this.api = ApiUserConn.createUserWithFacebook(obj)
-    this.api['getCreateUserWithFacebook'].apply(this, ['']).then((res)=>{
-      if(res.status == 200){
-        if(res.data.status != false){
-          //updatae user data
+    this.api['getCreateUserWithFacebook'].apply(this, ['']).then((res) => {
+      if (res.status == 200) {
+        if (res.data.status != false) {
+          // updatae user data
           this.props.attemptUpdateUserData(res.data)
-          NavigationActions.landingScreen({type: "reset"})
-        }else{
+          NavigationActions.landingScreen({type: 'reset'})
+        } else {
           window.alert(FJSON.plain(res.data.error))
-          NavigationActions.promotionScreen({type: "reset"})
+          NavigationActions.promotionScreen({type: 'reset'})
         }
-      }else{
+      } else {
         window.alert('Please check facebook')
-        NavigationActions.promotionScreen({type: "reset"})
+        NavigationActions.promotionScreen({type: 'reset'})
       }
     })
   }
 
   handlePressSignup = () => {
-    NavigationActions.signUpScreen({type: "replace"})
+    NavigationActions.signUpScreen({type: 'replace'})
   }
 
   handlePressLogin = () => {
-    NavigationActions.landingScreen({type: "replace"})
+    NavigationActions.landingScreen({type: 'replace'})
   }
 
   handleFacebookLogin = (data) => {
@@ -166,68 +161,67 @@ class FacebookLoginScreen extends React.Component {
     password = 'xxx'
     facebookData = data.profile
 
-    this.setState({ user : data.credentials , facebookProfile: data.profile})
+    this.setState({ user: data.credentials, facebookProfile: data.profile})
     this.props.attemptLogin(username, password, facebookData)
     this.sendCreateUser()
   }
 
   handleFacebookLogout = () => {
-    this.setState({ user : null, facebookProfile: null })
+    this.setState({ user: null, facebookProfile: null })
     this.props.logout()
-    NavigationActions.promotionScreen({type: "reset"})
+    NavigationActions.promotionScreen({type: 'reset'})
   }
 
   handleFacebookLoginFound = (data) => {
-    console.log("Existing login found.");
-    console.log(data);
-    this.setState({ user : data.credentials});
+    console.log('Existing login found.')
+    console.log(data)
+    this.setState({ user: data.credentials})
   }
 
   handleFacebookLoginNotFound = () => {
-    console.log("No user logged in.");
-    this.setState({ user : null });
+    console.log('No user logged in.')
+    this.setState({ user: null })
   }
 
   handleFacebookLoginError = (data) => {
-    console.log("ERROR");
-    console.log(data);
+    console.log('ERROR')
+    console.log(data)
   }
 
   handleFacebookLoginCancel = (data) => {
-    console.log("User cancelled.");
+    console.log('User cancelled.')
   }
 
   handleFacebookLoginPermissionsMissing = (data) => {
-    console.log("Check permissions!");
-    console.log(data);
+    console.log('Check permissions!')
+    console.log(data)
   }
 
   _renderWait = () => {
-    if(this.state.wait){
+    if (this.state.wait) {
       console.log('Render wait')
       return (
         <View style={Styles.indicatorView}>
           <ActivityIndicator
-            color="#EA4335"
+            color='#EA4335'
             style={[{'transform': [{scale: 1.5}]}]}
-            size="large"
+            size='large'
              />
         </View>
       )
-    }else{
+    } else {
       return null
     }
   }
 
-  render() {
-
+  render () {
     return (
 
       <View style={Styles.mainContainer}>
         <Image source={Img.backgroundOkkami} style={Styles.backgroundImage} />
 
         <ScrollView style={Styles.container} >
-        <View style={Styles.formOver}>
+          <View style={Styles.formOver}>
 
             {/* <FBLogin
               ref={(fbLogin) => { this.fbLogin = fbLogin }}
@@ -242,7 +236,7 @@ class FacebookLoginScreen extends React.Component {
               onPermissionsMissing={() => this.handleFacebookLoginPermissionsMissing()}
             /> */}
 
-        </View>
+          </View>
         </ScrollView>
 
         {this._renderWait()}
@@ -267,7 +261,7 @@ FacebookLoginScreen.defaultProps = {
 }
 
 const mapStateToProps = state => {
-  let appToken = (state.userConnect.appToken != null)?state.userConnect.appToken.access_token:null
+  let appToken = (state.userConnect.appToken != null) ? state.userConnect.appToken.access_token : null
   return {
     loggedIn: isLoggedIn(state.facebookLogin),
     username: state.facebookLogin.username,

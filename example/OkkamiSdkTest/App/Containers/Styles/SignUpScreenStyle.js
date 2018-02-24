@@ -3,14 +3,14 @@ import { Fonts, Colors, Metrics, ApplicationStyles } from '../../Themes'
 
 const width = Metrics.screenWidth
 const height = Metrics.screenHeight
-const inputWidth = width*0.75 //width 75%
+const inputWidth = width * 0.75 // width 75%
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   backgroundImage: {
     width: width,
     height: height,
-    position: "absolute"
+    position: 'absolute'
   },
   container: {
     flex: 1,
@@ -30,21 +30,21 @@ export default StyleSheet.create({
     borderRadius: 2,
     backgroundColor: Colors.snow,
     marginTop: 10,
-    textAlign: 'center',
+    textAlign: 'center'
   },
-  selectInput:{
+  selectInput: {
     width: inputWidth,
     height: 40,
     borderRadius: 2,
     backgroundColor: Colors.snow,
-    marginTop:10,
+    marginTop: 10
   },
   buttonSnow: {
     width: inputWidth,
     height: 40,
     borderRadius: 5,
     marginHorizontal: Metrics.section,
-    marginTop:10,
+    marginTop: 10,
     backgroundColor: Colors.snow,
     justifyContent: 'center'
   },
@@ -76,27 +76,27 @@ export default StyleSheet.create({
     height: 45,
     borderRadius: 5,
     marginHorizontal: Metrics.section,
-    marginTop:30,
+    marginTop: 30,
     backgroundColor: Colors.fire,
     justifyContent: 'center'
   },
-  sectionTextStyle:{
+  sectionTextStyle: {
     fontWeight: 'bold',
-    fontSize: Fonts.size.large,
+    fontSize: Fonts.size.large
   },
-  selectTextStyle:{
+  selectTextStyle: {
     fontWeight: 'bold',
-    fontSize: Fonts.size.medium,
+    fontSize: Fonts.size.medium
   },
   indicatorView: {
     marginTop: -50,
     width: width,
     height: height,
-    position: "absolute",
+    position: 'absolute',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
     // backgroundColor: Colors.windowTint
-  },
+  }
 
 })

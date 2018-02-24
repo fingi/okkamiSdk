@@ -23,14 +23,13 @@ import FacebookLoginActions from '../Redux/FacebookLoginRedux'
 import FJSON from 'format-json'
 import {FBLoginManager} from 'react-native-facebook-login'
 
-
 // I18n
 import I18n from 'react-native-i18n'
 
 class SignUpScreen extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       selectLanguage: '',
       first_name: 'yo',
@@ -45,8 +44,8 @@ class SignUpScreen extends React.Component {
       city: 'bangkok',
       response: '',
       wait: false,
-      appToken:null,
-      userToken:null,
+      appToken: null,
+      userToken: null
     }
   }
 
@@ -56,10 +55,10 @@ class SignUpScreen extends React.Component {
   componentWillMount () {
     this.logoutFacebook()
 
-    if(!this.props.appTokenStatus){
+    if (!this.props.appTokenStatus) {
       this.getAppToken()
-    }else{
-      this.setState({appToken:this.props.appToken})
+    } else {
+      this.setState({appToken: this.props.appToken})
     }
   }
 
@@ -70,8 +69,8 @@ class SignUpScreen extends React.Component {
   getAppToken = () => {
     let obj = {}
     this.api = ApiUserConn.appToken(obj)
-    this.api['getAppToken'].apply(this, ['']).then((res)=>{
-      if(res.status == 200){
+    this.api['getAppToken'].apply(this, ['']).then((res) => {
+      if (res.status == 200) {
         this.setState({appToken: res.data.access_token})
         this.props.attemptAppToken(res.data)
       }
@@ -82,37 +81,37 @@ class SignUpScreen extends React.Component {
     let obj = {
       appToken: this.state.appToken,
       data: {
-        user:{
-          "first_name" : this.state.first_name,
-          "last_name":  this.state.last_name,
-          "email":  this.state.email,
-          "password" : this.state.password,
-          "password_confirmation":  this.state.password_confirmation,
-          "phone":  this.state.phone,
-          "country":  this.state.country,
-          "state":  this.state.state,
-          "city" : this.state.city,
-          "language" : this.state.language
+        user: {
+          'first_name': this.state.first_name,
+          'last_name': this.state.last_name,
+          'email': this.state.email,
+          'password': this.state.password,
+          'password_confirmation': this.state.password_confirmation,
+          'phone': this.state.phone,
+          'country': this.state.country,
+          'state': this.state.state,
+          'city': this.state.city,
+          'language': this.state.language
         }
       }
     }
 
     this.api = ApiUserConn.appCreateUser(obj)
-    this.api['getCreateUser'].apply(this, ['']).then((res)=>{
-      this.setState({wait: false}) //Close wait
-      if(res.status == 200){
+    this.api['getCreateUser'].apply(this, ['']).then((res) => {
+      this.setState({wait: false}) // Close wait
+      if (res.status == 200) {
         // attemptUser
-        if(res.data.status != false){
-          //updatae user data
+        if (res.data.status != false) {
+          // updatae user data
           this.props.attemptUpdateUserData(res.data)
           window.alert(FJSON.plain(res.data))
-          NavigationActions.landingScreen({type: "reset"});
-        }else{
+          NavigationActions.landingScreen({type: 'reset'})
+        } else {
           this.logoutFacebook()
           this.props.logoutStateFb()
           window.alert(FJSON.plain(res.data.error))
         }
-      }else{
+      } else {
         this.logoutFacebook()
         this.props.logoutStateFb()
         window.alert(FJSON.plain(res))
@@ -166,37 +165,37 @@ class SignUpScreen extends React.Component {
   }
 
   _renderWait = () => {
-    if(this.state.wait){
+    if (this.state.wait) {
       return (
         <View style={Styles.indicatorView}>
           <ActivityIndicator
-            color="#EA4335"
+            color='#EA4335'
             // animating={this.state.wait}
             style={[{'transform': [{scale: 1.5}]}]}
-            size="large"
+            size='large'
              />
         </View>
       )
-    }else{
+    } else {
       return null
     }
   }
 
   logoutFacebook = () => {
-    FBLoginManager.logout(function(error, data){
+    FBLoginManager.logout(function (error, data) {
       if (!error) {
         // _this.props.onLogout && _this.props.onLogout();
         console.log(data)
       } else {
-        console.log(error, data);
+        console.log(error, data)
       }
-    });
+    })
   }
 
-  render() {
+  render () {
     const {
       first_name,
-      last_name ,
+      last_name,
       email,
       password,
       password_confirmation,
@@ -207,21 +206,21 @@ class SignUpScreen extends React.Component {
       city
     } = this.state
 
-    let index = 0;
+    let index = 0
     const data = [
         { key: '', section: true, label: 'Prefer Languages' },
         { key: 'en', label: 'English' },
         { key: 'ch', label: 'Chinese' },
         { key: 'jp', label: 'Japanese' },
-        { key: 'ru', label: 'Russian' },
-    ];
+        { key: 'ru', label: 'Russian' }
+    ]
 
     const { appTokenStatus, loggedIn, appToken } = this.props
 
-    if(loggedIn){
+    if (loggedIn) {
       console.log('User login')
-    }else{
-      console.log('User not login [' + appToken +']')
+    } else {
+      console.log('User not login [' + appToken + ']')
     }
 
     return (
@@ -318,13 +317,13 @@ class SignUpScreen extends React.Component {
             </View>
 
             <ModalPicker
-                style={Styles.selectInput}
-                selectTextStyle={Styles.sectionTextStyle}
-                sectionTextStyle={Styles.sectionTextStyle}
-                selectStyle={{height:100}}
-                data={data}
-                initValue="Prefer Languages"
-                onChange={(lang) => this.setState({selectLanguage: lang.key})} />
+              style={Styles.selectInput}
+              selectTextStyle={Styles.sectionTextStyle}
+              sectionTextStyle={Styles.sectionTextStyle}
+              selectStyle={{height: 100}}
+              data={data}
+              initValue='Prefer Languages'
+              onChange={(lang) => this.setState({selectLanguage: lang.key})} />
 
             <TouchableOpacity style={Styles.buttonSnow} onPress={NavigationActions.socialConnectionScreen}>
               <Text style={Styles.buttonTextSnow}>Social Connection</Text>
@@ -352,7 +351,7 @@ SignUpScreen.propTypes = {
   appTokenStatus: PropTypes.bool,
   loggedIn: PropTypes.bool,
   appToken: PropTypes.string,
-  logoutStateFb: PropTypes.func,
+  logoutStateFb: PropTypes.func
 }
 
 SignUpScreen.defaultProps = {
@@ -360,7 +359,7 @@ SignUpScreen.defaultProps = {
 }
 
 const mapStateToProps = state => {
-  let appToken = (state.userConnect.appToken != null)?state.userConnect.appToken.access_token:null
+  let appToken = (state.userConnect.appToken != null) ? state.userConnect.appToken.access_token : null
   return {
     appTokenStatus: isAppToken(state.userConnect),
     loggedIn: isLoggedIn(state.userConnect.userData),

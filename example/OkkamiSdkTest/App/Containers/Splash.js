@@ -18,16 +18,16 @@ const height = Metrics.screenHeight
 
 class Splash extends React.Component {
 
-  componentDidMount(){
-    setTimeout(function(){
-      NavigationActions.promotionScreen({type: "reset"});
-    },2000)
+  componentDidMount () {
+    setTimeout(function () {
+      NavigationActions.promotionScreen({type: 'reset'})
+    }, 2000)
   }
 
-  render() {
+  render () {
     return (
-      <View style={{ width: width,height: height }}>
-        <Image source={Img.backgroundOkkami} style={{width: width,height: height}} />
+      <View style={{ width: width, height: height }}>
+        <Image source={Img.backgroundOkkami} style={{width: width, height: height}} />
       </View>
     )
   }

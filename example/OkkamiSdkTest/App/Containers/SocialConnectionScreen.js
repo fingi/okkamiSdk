@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Image,
   Keyboard,
-  LayoutAnimation,
+  LayoutAnimation
 } from 'react-native'
 import {connect} from 'react-redux'
 import Styles from './Styles/SocialConnectionScreenStyle'
@@ -19,40 +19,38 @@ import CheckBox from 'react-native-icon-checkbox'
 // I18n
 import I18n from 'react-native-i18n'
 
-import Dimensions from 'Dimensions';
+import Dimensions from 'Dimensions'
 
 class SocialConnectionScreen extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       selectLanguage: 'TH',
       checkedFacebook: false,
       checkedLine: false,
-      checkedWechat: false,
+      checkedWechat: false
     }
   }
 
-  handlePressCheckedBox(obj){
-
-    //clear all checkbox
+  handlePressCheckedBox (obj) {
+    // clear all checkbox
     this.state.checkedFacebook = false
     this.state.checkedLine = false
     this.state.checkedWechat = false
 
-    this.setState(obj);
+    this.setState(obj)
   }
 
   handlePressSignIn = () => {
-    if(this.state.checkedFacebook){
-      NavigationActions.facebookLoginScreen({facebookAction: "signup"})
-    }else{
+    if (this.state.checkedFacebook) {
+      NavigationActions.facebookLoginScreen({facebookAction: 'signup'})
+    } else {
       NavigationActions.socialConnectionSignInScreen({social: this.state})
     }
   }
 
-  render() {
-
+  render () {
     return (
 
       <View style={Styles.mainContainer}>
@@ -60,7 +58,7 @@ class SocialConnectionScreen extends React.Component {
 
         <ScrollView style={Styles.container} >
           <View style={Styles.formOver}>
-            <View style={{justifyContent: 'center',marginTop: 15,}}>
+            <View style={{justifyContent: 'center', marginTop: 15 }}>
               <TextInput
                 ref='name'
                 style={Styles.textInput}
@@ -74,10 +72,10 @@ class SocialConnectionScreen extends React.Component {
                 keyboardType='default'
                 placeholder='Detail'
                 underlineColorAndroid='transparent'
-                multiline = {true}
+                multiline
                 />
             </View>
-              {/* <CheckBox
+            {/* <CheckBox
                 label='facebook'
                 checked={true}
                 onChange={(checked) => console.log('wow checked',checked)}/> */}
@@ -87,8 +85,8 @@ class SocialConnectionScreen extends React.Component {
               <CheckBox
                 size={40}
                 checked={this.state.checkedFacebook}
-                onPress={(checked) => this.handlePressCheckedBox({checkedFacebook: checked}) }
-                iconStyle={{color:'#ffffff'}}
+                onPress={(checked) => this.handlePressCheckedBox({checkedFacebook: checked})}
+                iconStyle={{color: '#ffffff'}}
               />
             </View>
             <View style={Styles.formCheckBox}>
@@ -96,16 +94,16 @@ class SocialConnectionScreen extends React.Component {
               <CheckBox
                 size={40}
                 checked={this.state.checkedLine}
-                onPress={(checked) => this.handlePressCheckedBox({checkedLine: checked}) }
-                iconStyle={{color:'#ffffff'}}/>
+                onPress={(checked) => this.handlePressCheckedBox({checkedLine: checked})}
+                iconStyle={{color: '#ffffff'}} />
             </View>
             <View style={Styles.formCheckBox}>
               <Text style={Styles.textForm} >Wechat</Text>
               <CheckBox
                 size={40}
                 checked={this.state.checkedWechat}
-                onPress={(checked) => this.handlePressCheckedBox({checkedWechat: checked}) }
-                iconStyle={{color:'#ffffff'}}/>
+                onPress={(checked) => this.handlePressCheckedBox({checkedWechat: checked})}
+                iconStyle={{color: '#ffffff'}} />
             </View>
 
             <TouchableOpacity style={Styles.buttonFire} onPress={this.handlePressSignIn} >

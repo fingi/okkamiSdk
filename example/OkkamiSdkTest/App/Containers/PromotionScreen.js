@@ -19,7 +19,7 @@ import I18n from 'react-native-i18n'
 
 class PromotionScreen extends React.Component {
 
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       items: []
@@ -29,9 +29,9 @@ class PromotionScreen extends React.Component {
   componentWillMount () {
     const {loggedIn } = this.props
     let _this = this
-    if(loggedIn){
-      NavigationActions.landingScreen({type: "reset"});
-    }else{
+    if (loggedIn) {
+      NavigationActions.landingScreen({type: 'reset'})
+    } else {
     //   FBLoginManager.logout(function(error, data){
     //     if (!error) {
     //       // _this.props.onLogout && _this.props.onLogout();
@@ -43,22 +43,21 @@ class PromotionScreen extends React.Component {
     }
   }
 
-
   componentDidMount () {
     this.setState({
       items: [
         { title: 'Title 1', image: require('../Images/promotion/okkami_slide_01.jpg') },
         { title: 'Title 2', image: require('../Images/promotion/okkami_slide_02.jpg') },
         { title: 'Title 3', image: require('../Images/promotion/okkami_slide_03.jpg') },
-        { title: 'Title 4', image: require('../Images/promotion/okkami_slide_04.jpg') },
+        { title: 'Title 4', image: require('../Images/promotion/okkami_slide_04.jpg') }
       ]
     })
   }
 
-  render() {
+  render () {
     return (
       <View style={Styles.container}>
-        <Swiper showsButtons autoplay dotColor={'#ffffff'} loop={true} autoplayTimeout={5} height={Metrics.screenHeight - 50}>
+        <Swiper showsButtons autoplay dotColor={'#ffffff'} loop autoplayTimeout={5} height={Metrics.screenHeight - 50}>
           {this.state.items.map((item, key) => {
             return (
               <View key={key} style={Styles.slide} >
@@ -72,12 +71,12 @@ class PromotionScreen extends React.Component {
           })}
         </Swiper>
         <View style={Styles.mainButton} >
-            <TouchableOpacity style={Styles.button} onPress={NavigationActions.signUpScreen}>
-              <Text style={Styles.buttonText}>Sign Up</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={Styles.button} onPress={NavigationActions.signInScreen}>
-              <Text style={Styles.buttonText}>Sign In</Text>
-            </TouchableOpacity>
+          <TouchableOpacity style={Styles.button} onPress={NavigationActions.signUpScreen}>
+            <Text style={Styles.buttonText}>Sign Up</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={Styles.button} onPress={NavigationActions.signInScreen}>
+            <Text style={Styles.buttonText}>Sign In</Text>
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -86,10 +85,9 @@ class PromotionScreen extends React.Component {
 
 }
 
-
 PromotionScreen.propTypes = {
   loggedIn: PropTypes.bool,
-  onLogout: PropTypes.func,
+  onLogout: PropTypes.func
 }
 
 const mapStateToProps = (state) => {
