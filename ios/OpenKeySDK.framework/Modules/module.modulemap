@@ -1,0 +1,6 @@
+framework module OpenKeySDK {
+  umbrella header "OpenKeySDK.h"
+
+  export *
+  module * { export * }
+}
