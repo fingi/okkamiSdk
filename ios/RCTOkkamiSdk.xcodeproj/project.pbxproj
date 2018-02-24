@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		453BAB5C1FC571CB001DE2B2 /* Smooch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453BAB5B1FC571CB001DE2B2 /* Smooch.framework */; };
+		45B7490E2041C9EA0060F619 /* BerTlv.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45FDD81D203DD1B4009CAD36 /* BerTlv.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45B7490F2041C9EA0060F619 /* CocoaLumberjack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45FDD822203DD1B7009CAD36 /* CocoaLumberjack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45B749102041C9EA0060F619 /* JSONModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45FDD820203DD1B6009CAD36 /* JSONModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45B749112041C9EA0060F619 /* Mixpanel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45FDD81E203DD1B5009CAD36 /* Mixpanel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45B749122041C9EA0060F619 /* OpenKeySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45FDD81F203DD1B6009CAD36 /* OpenKeySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45B749142041C9EA0060F619 /* SeosMobileKeysSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45FDD821203DD1B7009CAD36 /* SeosMobileKeysSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45B749172041CAE50060F619 /* OpenSSL-Universal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B749162041CAE50060F619 /* OpenSSL-Universal.framework */; };
+		45B749182041CB120060F619 /* OpenSSL-Universal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45B749162041CAE50060F619 /* OpenSSL-Universal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45FDD824203DD1B9009CAD36 /* BerTlv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FDD81D203DD1B4009CAD36 /* BerTlv.framework */; };
+		45FDD825203DD1B9009CAD36 /* Mixpanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FDD81E203DD1B5009CAD36 /* Mixpanel.framework */; };
+		45FDD826203DD1B9009CAD36 /* OpenKeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FDD81F203DD1B6009CAD36 /* OpenKeySDK.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		45FDD827203DD1B9009CAD36 /* JSONModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FDD820203DD1B6009CAD36 /* JSONModel.framework */; };
+		45FDD828203DD1B9009CAD36 /* SeosMobileKeysSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FDD821203DD1B7009CAD36 /* SeosMobileKeysSDK.framework */; };
+		45FDD829203DD1B9009CAD36 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FDD822203DD1B7009CAD36 /* CocoaLumberjack.framework */; };
 		5D72D2EC1C16249000E22EC1 /* RCTOkkamiSdk.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5D72D2EB1C16249000E22EC1 /* RCTOkkamiSdk.h */; };
 		5D72D2EE1C16249000E22EC1 /* RCTOkkamiSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D72D2ED1C16249000E22EC1 /* RCTOkkamiSdk.m */; };
 		651237371EE48026004CD7F1 /* RCTokkamiiossdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651237361EE48026004CD7F1 /* RCTokkamiiossdk.framework */; };
@@ -36,6 +50,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		45B7490D2041C9D10060F619 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				45B7490E2041C9EA0060F619 /* BerTlv.framework in Embed Frameworks */,
+				45B7490F2041C9EA0060F619 /* CocoaLumberjack.framework in Embed Frameworks */,
+				45B749102041C9EA0060F619 /* JSONModel.framework in Embed Frameworks */,
+				45B749182041CB120060F619 /* OpenSSL-Universal.framework in Embed Frameworks */,
+				45B749112041C9EA0060F619 /* Mixpanel.framework in Embed Frameworks */,
+				45B749122041C9EA0060F619 /* OpenKeySDK.framework in Embed Frameworks */,
+				45B749142041C9EA0060F619 /* SeosMobileKeysSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5D72D2E61C16249000E22EC1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,6 +81,13 @@
 
 /* Begin PBXFileReference section */
 		453BAB5B1FC571CB001DE2B2 /* Smooch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Smooch.framework; sourceTree = "<group>"; };
+		45B749162041CAE50060F619 /* OpenSSL-Universal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "OpenSSL-Universal.framework"; sourceTree = "<group>"; };
+		45FDD81D203DD1B4009CAD36 /* BerTlv.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BerTlv.framework; sourceTree = "<group>"; };
+		45FDD81E203DD1B5009CAD36 /* Mixpanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mixpanel.framework; sourceTree = "<group>"; };
+		45FDD81F203DD1B6009CAD36 /* OpenKeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenKeySDK.framework; sourceTree = "<group>"; };
+		45FDD820203DD1B6009CAD36 /* JSONModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSONModel.framework; sourceTree = "<group>"; };
+		45FDD821203DD1B7009CAD36 /* SeosMobileKeysSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeosMobileKeysSDK.framework; sourceTree = "<group>"; };
+		45FDD822203DD1B7009CAD36 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaLumberjack.framework; sourceTree = "<group>"; };
 		5D72D2E81C16249000E22EC1 /* libRCTOkkamiSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTOkkamiSdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D72D2EB1C16249000E22EC1 /* RCTOkkamiSdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTOkkamiSdk.h; sourceTree = "<group>"; };
 		5D72D2ED1C16249000E22EC1 /* RCTOkkamiSdk.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTOkkamiSdk.m; sourceTree = "<group>"; };
@@ -139,15 +177,19 @@
 				651237371EE48026004CD7F1 /* RCTokkamiiossdk.framework in Frameworks */,
 				65F9CF4C1ED2948500315693 /* Foundation.framework in Frameworks */,
 				65F9CF561ED294A300315693 /* AssetsLibrary.framework in Frameworks */,
+				45FDD824203DD1B9009CAD36 /* BerTlv.framework in Frameworks */,
 				65F9CF541ED2949E00315693 /* AVFoundation.framework in Frameworks */,
 				453BAB5C1FC571CB001DE2B2 /* Smooch.framework in Frameworks */,
 				65F9CF521ED2949900315693 /* CFNetwork.framework in Frameworks */,
 				65F9CF501ED2949300315693 /* CoreGraphics.framework in Frameworks */,
 				65F9CF4E1ED2948D00315693 /* CoreText.framework in Frameworks */,
+				45FDD825203DD1B9009CAD36 /* Mixpanel.framework in Frameworks */,
 				65F9CF491ED2946F00315693 /* CoreTelephony.framework in Frameworks */,
 				65F9CF4A1ED2946F00315693 /* Photos.framework in Frameworks */,
+				45FDD827203DD1B9009CAD36 /* JSONModel.framework in Frameworks */,
 				65F9CF461ED2946200315693 /* QuartzCore.framework in Frameworks */,
 				65F9CF441ED2945E00315693 /* SystemConfiguration.framework in Frameworks */,
+				45FDD829203DD1B9009CAD36 /* CocoaLumberjack.framework in Frameworks */,
 				657817CE1ED573790079B076 /* UserNotifications.framework in Frameworks */,
 				657817CF1ED573790079B076 /* UserNotificationsUI.framework in Frameworks */,
 				65F9CF421ED2945700315693 /* UIKit.framework in Frameworks */,
@@ -159,6 +201,9 @@
 				FA7FD0A41EC09CAA00C7D8B9 /* FBSDKCoreKit.framework in Frameworks */,
 				FAF109061E48E2A0000B1E84 /* RCTOkkamiSdkImplementation.framework in Frameworks */,
 				FA3DC2351E6D954900866C11 /* LineSDK.framework in Frameworks */,
+				45FDD826203DD1B9009CAD36 /* OpenKeySDK.framework in Frameworks */,
+				45FDD828203DD1B9009CAD36 /* SeosMobileKeysSDK.framework in Frameworks */,
+				45B749172041CAE50060F619 /* OpenSSL-Universal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +329,13 @@
 		FAF229A71E141BE800F3C9C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45B749162041CAE50060F619 /* OpenSSL-Universal.framework */,
+				45FDD81D203DD1B4009CAD36 /* BerTlv.framework */,
+				45FDD822203DD1B7009CAD36 /* CocoaLumberjack.framework */,
+				45FDD820203DD1B6009CAD36 /* JSONModel.framework */,
+				45FDD81E203DD1B5009CAD36 /* Mixpanel.framework */,
+				45FDD81F203DD1B6009CAD36 /* OpenKeySDK.framework */,
+				45FDD821203DD1B7009CAD36 /* SeosMobileKeysSDK.framework */,
 				453BAB5B1FC571CB001DE2B2 /* Smooch.framework */,
 				652ED7D51EE9A4960036635E /* libReactNativeConfig.a */,
 				651237361EE48026004CD7F1 /* RCTokkamiiossdk.framework */,
@@ -325,6 +377,7 @@
 				5D72D2E41C16249000E22EC1 /* Sources */,
 				5D72D2E51C16249000E22EC1 /* Frameworks */,
 				5D72D2E61C16249000E22EC1 /* CopyFiles */,
+				45B7490D2041C9D10060F619 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -420,7 +473,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -468,6 +521,7 @@
 		5D72D2F21C16249000E22EC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -486,7 +540,9 @@
 					"$(SRCROOT)/../../ios/OKKAMI/**",
 					"$(SRCROOT)/../../node_modules/react-native-config/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $executable_path/Frameworks/OpenKeySDK.framework/Frameworks/SeosMobileKeysSDK.framework";
 				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -496,6 +552,7 @@
 		5D72D2F31C16249000E22EC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -514,7 +571,9 @@
 					"$(SRCROOT)/../../ios/OKKAMI/**",
 					"$(SRCROOT)/../../node_modules/react-native-config/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $executable_path/Frameworks/OpenKeySDK.framework/Frameworks/SeosMobileKeysSDK.framework";
 				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

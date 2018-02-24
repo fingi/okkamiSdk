@@ -1,0 +1,6 @@
+framework module SeosMobileKeysSDK {
+  umbrella header "SeosMobileKeysSDK.h"
+
+  export *
+  module * { export * }
+}

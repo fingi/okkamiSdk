@@ -1,23 +1,23 @@
 #import "RCTBridge.h"
-#import "Pusher.h"
 #import "RCTBridgeModule.h"
+#import "RCTEventDispatcher.h"
+#import "RCTBundleURLProvider.h"
+#import "RCTRootView.h"
+#import "ReactNativeConfig.h"
+#import "Language.h"
+#import "Pusher.h"
 #import <UserNotifications/UserNotifications.h>
 #import <LineSDK/LineSDK.h>
 #import <CoreLocation/CoreLocation.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <SafariServices/SafariServices.h>
 #import <Smooch/Smooch.h>
-#import "RCTEventDispatcher.h"
-#import "RCTBundleURLProvider.h"
-#import "RCTRootView.h"
-#import "ReactNativeConfig.h"
-#import "Language.h"
+#import <OpenKeySDK/OpenKeySDK.h>
 
 @import RCTokkamiiossdk;
 @class AppDelegate;
 
-@interface OkkamiSdk : NSObject <RCTBridgeModule, LineSDKLoginDelegate, CLLocationManagerDelegate,UNUserNotificationCenterDelegate, UIApplicationDelegate, SKTConversationDelegate, PTPusherDelegate, SFSafariViewControllerDelegate>
-
+@interface OkkamiSdk : NSObject <RCTBridgeModule, LineSDKLoginDelegate, CLLocationManagerDelegate,UNUserNotificationCenterDelegate, UIApplicationDelegate, SKTConversationDelegate, PTPusherDelegate, SFSafariViewControllerDelegate, OpenKeyManagerDelegate>
 
 @property (nonatomic, copy)NSString * accessToken;
 @property (nonatomic, copy)NSString * userId;

@@ -70,6 +70,23 @@ class OkkamiSdk {
   setLanguage(language){
     return OkkamiSdkManager.setLanguage(language);
   }
+
+
+  handleAuthOpenKey (token) {
+    return OkkamiSdkManager.handleAuthOpenKey(token)
+  }
+
+  handleInitOpenKey () {
+    return OkkamiSdkManager.handleInitOpenKey()
+  }
+
+  handleGetKey () {
+    return OkkamiSdkManager.handleGetKey()
+  }
+
+  handleOpenDoor () {
+    return OkkamiSdkManager.handleOpenDoor()
+  }
   /*---------------------------------------------------------------------------------------------------*/
 
   /*-------------------------------------- SMOOCH --------------------------------------------*/
