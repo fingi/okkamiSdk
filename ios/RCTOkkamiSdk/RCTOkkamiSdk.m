@@ -784,6 +784,7 @@ RCT_EXPORT_METHOD(logoutChatWindow
                   
                   :(RCTPromiseResolveBlock)resolve
                   :(RCTPromiseRejectBlock)reject) {
+    [Smooch close];
     [Smooch logoutWithCompletionHandler:^(NSError * _Nullable error, NSDictionary * _Nullable userInfo) {
         [Smooch destroy];
     }];
