@@ -186,6 +186,7 @@
 		5D72D2DF1C16249000E22EC1 = {
 			isa = PBXGroup;
 			children = (
+				FFAD77082154D005008D2C9F /* New Group */,
 				658956911ECFFF4B0080F354 /* SocketRocket */,
 				658956631ECFFF410080F354 /* libPusher */,
 				5D72D2EA1C16249000E22EC1 /* RCTOkkamiSdk */,
@@ -345,6 +346,13 @@
 				FAC9F8F31E14F38100EEFC1B /* RCTOkkamiSdkImplementation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFAD77082154D005008D2C9F /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

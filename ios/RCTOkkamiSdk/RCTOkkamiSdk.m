@@ -15,7 +15,6 @@
 #define IP_ADDR_IPv4    @"ipv4"
 #define IP_ADDR_IPv6    @"ipv6"
 
-
 @implementation OkkamiSdk
 
 // define macro
@@ -815,10 +814,12 @@ RCT_EXPORT_METHOD(logoutChatWindow
         [Smooch destroy];
     }];
     @try{
-        [[self.appdel.pusher nativePusher] unsubscribe:self.appdel.channel_name];
+        
+        [self.appdel unsubscribePusher:self.appdel.channel_name];
+        //[[self.appdel.pusher nativePusher] unsubscribe:self.appdel.channel_name];
         if (self.appdel.brand_name) {
-            [[self.appdel.pusher nativePusher] unsubscribe:self.appdel.brand_name];
-            
+           // [[self.appdel.pusher nativePusher] unsubscribe:self.appdel.brand_name];
+           [self.appdel unsubscribePusher:self.appdel.brand_name];
         }
     }
     @catch( NSException *exception){
@@ -848,7 +849,8 @@ RCT_EXPORT_METHOD(setUserId
     if (unsubscribeFrom && ![unsubscribeFrom isEqualToString:channelName]) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{ //do it in a thread as it seems to hang sometimes triyng to unsubscribe..
             NSLog(@"attempting to unsubscribe from : %@",unsubscribeFrom);
-            [[self.appdel.pusher nativePusher] unsubscribe:unsubscribeFrom];
+            [self.appdel unsubscribePusher:unsubscribeFrom];
+            //[[self.appdel.pusher nativePusher] unsubscribe:unsubscribeFrom];
         });
         
     }
@@ -859,14 +861,13 @@ RCT_EXPORT_METHOD(setUserId
     [self.appdel setChannel_name:channelName];
     [self.appdel setBrand_name:brandName];
     
-    [[self.appdel.pusher nativePusher] subscribe:channelName];
-    [[self.appdel.pusher nativePusher] subscribe:brandName];
+//    [[self.appdel.pusher nativePusher] subscribe:channelName];
+//    [[self.appdel.pusher nativePusher] subscribe:brandName];
     
-    /*if (!self.appdel.isOkkami) {
-     [self subscribeToInterest:channelName];
-     [self subscribeToInterest:brandName];
-     }*/
-    
+    [self.appdel subscribePusher:channelName];
+    [self.appdel subscribePusher:brandName];
+   
+
     NSError *error;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -904,10 +905,13 @@ RCT_EXPORT_METHOD(subscribePushser
     //NSString *uniqueIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString]; //<---------whhhyyy are we getting uuid here?? its passed from app already!
     NSString *lastIdentifier = [deviceUid stringByReplacingOccurrencesOfString:@"-" withString:@""];
     
+    if(self.appdel)
+        [self.appdel subscribePusher:[NSString stringWithFormat:@"mobile_device_%@", lastIdentifier]];
+   
     
-    if (self.appdel) {
-        [[self.appdel.pusher nativePusher] subscribe:[NSString stringWithFormat:@"mobile_device_%@", lastIdentifier]];
-    }
+//    if (self.appdel) {
+//        [[self.appdel.pusher nativePusher] subscribe:[NSString stringWithFormat:@"mobile_device_%@", lastIdentifier]];
+//    }
 }
 
 RCT_EXPORT_METHOD(subscribePushserPropertyChannel
@@ -934,7 +938,8 @@ RCT_EXPORT_METHOD(subscribePushserPropertyChannel
             for (NSDictionary * property in jsArray) {
                 NSString * propertyId = [property objectForKey:@"property_id"];
                 NSString * propertyName = [property objectForKey:@"property_name"];
-                [[self.appdel.pusher nativePusher] subscribe:[NSString stringWithFormat:@"mobile_message_property_%@", propertyId]];
+                [self.appdel subscribePusher:[NSString stringWithFormat:@"mobile_message_property_%@", propertyId]];
+                // [[self.appdel.pusher nativePusher] subscribe:[NSString stringWithFormat:@"mobile_message_property_%@", propertyId]];
             }
         }
     }
@@ -965,7 +970,8 @@ RCT_EXPORT_METHOD(unsubscribePushserPropertyChannel
             for (NSDictionary * property in jsArray) {
                 NSString * propertyId = [property objectForKey:@"property_id"];
                 NSString * propertyName = [property objectForKey:@"property_name"];
-                [[self.appdel.pusher nativePusher] unsubscribe:[NSString stringWithFormat:@"mobile_message_property_%@", propertyId]];
+                 [self.appdel unsubscribePusher:[NSString stringWithFormat:@"mobile_message_property_%@", propertyId]];
+               // [[self.appdel.pusher nativePusher] unsubscribe:[NSString stringWithFormat:@"mobile_message_property_%@", propertyId]];
             }
         }
     }
