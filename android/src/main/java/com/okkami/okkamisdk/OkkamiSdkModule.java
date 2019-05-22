@@ -9,7 +9,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -942,8 +944,12 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
             Smooch.setFirebaseCloudMessagingToken("nan");
 
             Intent chatWindow = new Intent();
+
             ComponentName cmp = new ComponentName(getReactApplicationContext().getPackageName(),
                     "com.okkami.android.app.OkkamiConversationActivity");
+
+            int orientationInt = getReactApplicationContext().getResources().getConfiguration().orientation;
+            String orientation = this.getOrientationString(orientationInt);
 
             chatWindow.setComponent(cmp);
             chatWindow.putExtra("SMOOCH_SDK_INITIALIZED", true);
@@ -955,12 +961,26 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
             chatWindow.putExtra("CHAT_WINDOW_COLOR", windowHexStringColor);
             chatWindow.putExtra("CHAT_WINDOW_TITLE_COLOR", titleHexStringColor);
             chatWindow.putExtra("CHAT_WINDOW_TITLE", windowTitle);
+            chatWindow.putExtra("SCREEN_ORIENTATION", orientation);
+
             chatWindow.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             mContext.startActivity(chatWindow);
         } catch (Exception e) {
             Log.e(TAG, "" + e);
         } finally {
             openChatWindowPromise.resolve(true);
+        }
+    }
+
+    private String getOrientationString(int orientation) {
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            return "LANDSCAPE";
+        } else if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            return "PORTRAIT";
+        } else if (orientation == Configuration.ORIENTATION_UNDEFINED) {
+            return "UNKNOWN";
+        } else {
+            return "null";
         }
     }
 
