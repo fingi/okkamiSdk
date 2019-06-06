@@ -4,12 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.Application;
 import android.bluetooth.BluetoothAdapter;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
+import android.content.*;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.net.ConnectivityManager;
@@ -26,19 +21,8 @@ import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
-
 import com.facebook.FacebookSdk;
-import com.facebook.react.bridge.ActivityEventListener;
-import com.facebook.react.bridge.Arguments;
-import com.facebook.react.bridge.BaseActivityEventListener;
-import com.facebook.react.bridge.Promise;
-import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContext;
-import com.facebook.react.bridge.ReactContextBaseJavaModule;
-import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.ReadableArray;
-import com.facebook.react.bridge.ReadableMap;
-import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.*;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.linecorp.linesdk.auth.LineLoginApi;
 import com.linecorp.linesdk.auth.LineLoginResult;
@@ -57,12 +41,22 @@ import com.okkami.android.sdk.model.DeviceAuth;
 import com.okkami.android.sdk.module.HubModule;
 import com.openkey.sdk.OpenKeyManager;
 import com.openkey.sdk.Utilities.Utilities;
-// import com.openkey.sdk.api.response.session.SessionResponse;
+import com.openkey.sdk.api.response.session.SessionResponse;
 import com.openkey.sdk.interfaces.OpenKeyCallBack;
-
+import github.nisrulz.easydeviceinfo.base.EasyBatteryMod;
+import github.nisrulz.easydeviceinfo.base.EasyConfigMod;
+import github.nisrulz.easydeviceinfo.base.EasyNetworkMod;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.smooch.core.*;
+import io.smooch.ui.ConversationActivity;
+import me.leolin.shortcutbadger.ShortcutBadger;
+import okhttp3.ResponseBody;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import retrofit2.Response;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -72,21 +66,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
-import github.nisrulz.easydeviceinfo.base.EasyBatteryMod;
-import github.nisrulz.easydeviceinfo.base.EasyConfigMod;
-import github.nisrulz.easydeviceinfo.base.EasyNetworkMod;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.smooch.core.InitializationStatus;
-import io.smooch.core.Message;
-import io.smooch.core.Smooch;
-import io.smooch.core.SmoochCallback;
-import io.smooch.core.SmoochConnectionStatus;
-import io.smooch.ui.ConversationActivity;
-import me.leolin.shortcutbadger.ShortcutBadger;
-import okhttp3.ResponseBody;
-import retrofit2.Response;
+// import com.openkey.sdk.api.response.session.SessionResponse;
 
 public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
         OnHubCommandReceivedListener, OpenKeyCallBack {
@@ -1368,7 +1348,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
             return;
         }
 
-        if (OpenKeyManager.getInstance(mContext).isKeyAvailable
+        if (OpenKeyManager.getInstance().isKeyAvailable
                 (this)) {
             if (mBluetoothAdapter.enable()) {
 //                showMessage("Scanning..");
@@ -1390,7 +1370,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
         isScanning = true;
         handler = new Handler();
         handler.postDelayed(stopper, 10000);
-        OpenKeyManager.getInstance(mContext).startScanning(this);
+        OpenKeyManager.getInstance().startScanning(this,"123");
     }
 
     /**
@@ -1417,11 +1397,12 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
         sendEvent((ReactContext) mContext, OPEN_KEY_EVENT, params);
     }
 
-//    @Override
-//    public void sessionResponse(SessionResponse sessionResponse) {
-//        Log.e(TAG, "sessionResponse: " + sessionResponse.toString());
-//
-//    }
+
+
+    @Override
+    public void sessionResponse(SessionResponse sessionResponse) {
+        Log.e(TAG, "sessionResponse: " + sessionResponse.toString());
+    }
 
     @Override
     public void initializationSuccess() {
@@ -1471,6 +1452,11 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
         sendEvent((ReactContext) mContext, OPEN_KEY_EVENT, params);
     }
 
+    @Override
+    public void getOKCMobileKeysResponse(ArrayList<String> arrayList) {
+
+    }
+
     /**
      * Authenticate Open Key
      * @param handleAuthOpenKeyPromise - Promise
@@ -1481,7 +1467,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
         try {
             if (!TextUtils.isEmpty(token)) {
 //                showMessage("Authenticating...");
-                OpenKeyManager.getInstance(mContext).authenticate(token, this, false);
+                OpenKeyManager.getInstance().authenticate(token, this, false);
                 Log.e(TAG, "handleAuthOpenKey: Authenticating...");
             } else {
 //                Utilities.getInstance().showToast(this, "Token should not be empty.");
@@ -1509,7 +1495,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
     public void handleInitOpenKey(Promise handleInitOpenKeyPromise) {
         Log.e(TAG, "handleInitOpenKey: ");
         try {
-            OpenKeyManager.getInstance(mContext).initialize(this);
+            OpenKeyManager.getInstance().initialize(this);
 
 //            WritableMap params = Arguments.createMap();
 //            params.putString("type", "initializeSDKResponse");
@@ -1533,7 +1519,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
     public void handleGetKey(Promise handleGetKeyPromise) {
         Log.e(TAG, "handleGetKey: ");
         try {
-            OpenKeyManager.getInstance(mContext).getKey(this);
+            OpenKeyManager.getInstance().getKey(this);
 
 //            WritableMap params = Arguments.createMap();
 //            params.putString("type", "fetchMobileKeysResponse");
