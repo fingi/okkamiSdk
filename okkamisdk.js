@@ -486,9 +486,9 @@ class OkkamiSdk {
    *
    * @returns {Promise<*>}
    */
-  async handleStartScanning () {
+  async handleStartScanning (roomNumber) {
     if (true) {
-      return OkkamiSdkManager.handleStartScanning()
+      return OkkamiSdkManager.handleStartScanning(roomNumber)
     }
   }
 

@@ -1277,6 +1277,8 @@ RCT_EXPORT_METHOD(handleGetKey
 
 RCT_EXPORT_METHOD(handleStartScanning
                   
+                  :(NSString *) roomNumber
+                  
                   :(RCTPromiseResolveBlock)resolve
                   :(RCTPromiseRejectBlock)reject)
 {
@@ -1303,7 +1305,7 @@ RCT_EXPORT_METHOD(handleStartScanning
 #else
     // Scan
     self.isScanning=@NO;
-    [[OpenKeyManager shared] startScanning:self];
+    [[OpenKeyManager shared] startScanning:roomNumber withDelegate:self];
     
     dispatch_time_t delay2 = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 7); // FD-7393
     dispatch_after(delay2, dispatch_get_main_queue(), ^(void){
