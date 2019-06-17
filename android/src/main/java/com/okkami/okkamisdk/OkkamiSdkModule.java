@@ -1336,7 +1336,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
      * ################################### OPEN KEY ############################################
      */
 
-    public void openDoor() {
+    public void openDoor(String roomNumber) {
         // Required for SDK
         if (ContextCompat.checkSelfPermission(mContext,
                 Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -1353,7 +1353,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
             if (mBluetoothAdapter.enable()) {
 //                showMessage("Scanning..");
                 Log.e(TAG, "openDoor: Scanning...");
-                startScanning();
+                startScanning(roomNumber);
             } else {
                 mContext.startActivity(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE));
             }
@@ -1366,11 +1366,11 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
     /**
      * Start lock opening process
      */
-    private void startScanning() {
+    private void startScanning(String roomNumber) {
         isScanning = true;
         handler = new Handler();
         handler.postDelayed(stopper, 10000);
-        OpenKeyManager.getInstance().startScanning(this,"123");
+        OpenKeyManager.getInstance().startScanning(this,roomNumber);
     }
 
     /**
@@ -1467,7 +1467,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
         try {
             if (!TextUtils.isEmpty(token)) {
 //                showMessage("Authenticating...");
-                OpenKeyManager.getInstance().authenticate(token, this, false);
+                OpenKeyManager.getInstance().authenticate(token, this, true);
                 Log.e(TAG, "handleAuthOpenKey: Authenticating...");
             } else {
 //                Utilities.getInstance().showToast(this, "Token should not be empty.");
@@ -1541,10 +1541,10 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
      * @param handleStartScanningPromise - Promise
      */
     @ReactMethod
-    public void handleStartScanning(Promise handleStartScanningPromise) {
+    public void handleStartScanning(String roomNumber , Promise handleStartScanningPromise) {
         try {
             Log.e(TAG, "handleStartScanning: ");
-            openDoor();
+            openDoor(roomNumber);
 
             WritableMap params = Arguments.createMap();
             params.putString("type", "startScanningResponse");
