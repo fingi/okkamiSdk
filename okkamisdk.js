@@ -204,8 +204,10 @@ class OkkamiSdk {
    * @returns {Promise}
    */
   async closeChatWindow () {
-    if (Metrics.platform === 'ios') //TODO: @MARUT implement it in android
+    if (Metrics.platform === 'ios') // TODO: @MARUT implement it in android
+      {
       return await OkkamiSdkManager.closeChatWindow()
+    }
   }
 
   async convertTime (time) {
@@ -245,8 +247,9 @@ class OkkamiSdk {
    * Restart pusher subscription
    */
   restartPusher () {
-    if (Metrics.platform === 'ios')
+    if (Metrics.platform === 'ios') {
       OkkamiSdkManager.restartPusher()
+    }
   }
 
   /**
@@ -331,8 +334,9 @@ class OkkamiSdk {
    */
   async reconenctToSoti () {
     try {
-      if (Metrics.platform === 'ios')
+      if (Metrics.platform === 'ios') {
         await OkkamiSdkManager.reconenctToSoti()
+      }
     } catch (e) {
       return e
     }
@@ -466,10 +470,10 @@ class OkkamiSdk {
    * Initialize the sdk with the token.
    * @returns {Promise<*>}
    */
-  async handleInitOpenKey () {
-    if (true) {
-      return OkkamiSdkManager.handleInitOpenKey()
-    }
+  async handleInitOpenKey (uuid) {
+    if(!uuid)
+      uuid=""
+    return OkkamiSdkManager.handleInitOpenKey(uuid)
   }
 
   /**

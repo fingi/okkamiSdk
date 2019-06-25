@@ -1401,7 +1401,9 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     @Override
     public void sessionResponse(SessionResponse sessionResponse) {
-        Log.e(TAG, "sessionResponse: " + sessionResponse.toString());
+        Log.e(TAG, "sessionResponse: " + sessionResponse.toString() + "\n, now going to call initialize");
+
+        OpenKeyManager.getInstance().initialize(this);
     }
 
     @Override
@@ -1492,10 +1494,11 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
      * @param handleInitOpenKeyPromise - Promise
      */
     @ReactMethod
-    public void handleInitOpenKey(Promise handleInitOpenKeyPromise) {
+    public void handleInitOpenKey(String uuid, Promise handleInitOpenKeyPromise) {
         Log.e(TAG, "handleInitOpenKey: ");
         try {
-            OpenKeyManager.getInstance().initialize(this);
+            OpenKeyManager.getInstance().init(mApp,uuid);
+
 
 //            WritableMap params = Arguments.createMap();
 //            params.putString("type", "initializeSDKResponse");
