@@ -1469,7 +1469,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
         try {
             if (!TextUtils.isEmpty(token)) {
 //                showMessage("Authenticating...");
-                OpenKeyManager.getInstance().authenticate(token, this, true);
+                OpenKeyManager.getInstance().authenticate(token, this, false);
                 Log.e(TAG, "handleAuthOpenKey: Authenticating...");
             } else {
 //                Utilities.getInstance().showToast(this, "Token should not be empty.");
@@ -1490,7 +1490,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
     }
 
     /**
-     * Initialize Open Key
+     * Initialize Open Key`
      * @param handleInitOpenKeyPromise - Promise
      */
     @ReactMethod
