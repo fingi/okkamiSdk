@@ -1109,6 +1109,34 @@ RCT_EXPORT_METHOD(reconenctToSoti
     }
 }
 
+RCT_EXPORT_METHOD( enableIpadLandscape
+                  :(RCTPromiseResolveBlock)resolve
+                  :(RCTPromiseRejectBlock)reject) {
+    @try{
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setObject:@"true" forKey:@"ipadLandscape"];
+        resolve(@{});
+        exit(9);
+    }
+    @catch( NSException *exception){
+        resolve(@{});
+    }
+}
+
+RCT_EXPORT_METHOD( disableIpadLandscape
+                  :(RCTPromiseResolveBlock)resolve
+                  :(RCTPromiseRejectBlock)reject) {
+    @try{
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setObject:@"" forKey:@"ipadLandscape"];
+        resolve(@{});
+        exit(9);
+    }
+    @catch( NSException *exception){
+        resolve(@{});
+    }
+}
+
 RCT_EXPORT_METHOD(getWifiSSID
                   :(RCTPromiseResolveBlock)resolve
                   :(RCTPromiseRejectBlock)reject) {

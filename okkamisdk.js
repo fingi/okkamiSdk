@@ -205,7 +205,7 @@ class OkkamiSdk {
    */
   async closeChatWindow () {
     if (Metrics.platform === 'ios') // TODO: @MARUT implement it in android
-      {
+    {
       return await OkkamiSdkManager.closeChatWindow()
     }
   }
@@ -471,8 +471,8 @@ class OkkamiSdk {
    * @returns {Promise<*>}
    */
   async handleInitOpenKey (uuid) {
-    if(!uuid)
-      uuid=""
+    if (!uuid)
+      uuid = ''
     return OkkamiSdkManager.handleInitOpenKey(uuid)
   }
 
@@ -483,6 +483,18 @@ class OkkamiSdk {
   async handleGetKey () {
     if (true) {
       return OkkamiSdkManager.handleGetKey()
+    }
+  }
+
+  async enableIpadLandscape () {
+    if (Metrics.platform === 'ios') {
+      return OkkamiSdkManager.enableIpadLandscape()
+    }
+  }
+
+  async disableIpadLandscape () {
+    if (Metrics.platform === 'ios') {
+      return OkkamiSdkManager.disableIpadLandscape()
     }
   }
 
