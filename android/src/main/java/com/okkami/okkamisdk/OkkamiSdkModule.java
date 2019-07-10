@@ -90,18 +90,27 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     public interface MethodInvokeListener {
         void invokeSubscribePusherUserChannel(String userId, String brandId);
+
         void invokeSubscribePusherDeviceChannel(String deviceId);
+
         void invokeSubscribePusherPropertyChannel(String propertyId);
+
         void invokeUnsubscribePusher();
+
         void invokeUnsubscribePusherDeviceChannel(String deviceId);
+
         void invokeUnsubscribePusherPropertyChannel(String propertyId);
+
         void onAppLanded();
+
         void invokeInitSmooch(String token, String userId, String smoochAppId, String smoochJwt);
+
         void setIsUserInMyRequestScreen(boolean isUserOnMyRequestScreen);
+
         String invokeGetLastReceivedPushNotification();
+
         String invokeGetLastFCMRegistrationStatus();
     }
-
 
 
     private MethodInvokeListener mMethodInvoker;
@@ -232,7 +241,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
         return jsonObj;
     }
 
-/*-------------------------------------- Utility   --------------------------------------------------*/
+    /*-------------------------------------- Utility   --------------------------------------------------*/
 
     /**
      * @return the name of this module. This will be the name used to {@code require()} this module
@@ -336,7 +345,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
         getCurrentActivity().startActivityForResult(loginIntent, LINE_LOGIN_REQUEST_CODE);
     }
 
-/*-------------------------------------- Hub -------------------------------------------------*/
+    /*-------------------------------------- Hub -------------------------------------------------*/
 
     /**
      * The purpose of this method is to provide general purpose way to call any core endpoint.
@@ -588,7 +597,6 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
         this.hubPort = hubPort;
 
 
-
         Log.d(TAG, "this.userId=" + this.userId);
         Log.d(TAG, "userId=" + userId);
 
@@ -628,7 +636,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
             @Override
             public void run() {
                 try {
-                    if(__myself.hubModule != null) {
+                    if (__myself.hubModule != null) {
                         __myself.hubModule.disconnect();
                         __myself.hubModule = null;
                         hubDisconnectionPromise.resolve(true);
@@ -697,8 +705,8 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
                 //connectToHub(final String userId, String secret, String token, final String hubUrl, final String hubPort, final Promise hubConnectionPromise) {
                 connectToHub(this.userId, this.secret, this.token, this.hubUrl, this.hubPort, null);
-            }else{
-                Log.d(TAG,"Successfully sent command to hub..");
+            } else {
+                Log.d(TAG, "Successfully sent command to hub..");
             }
 
             sendMessageToHubPromise.resolve(true);
@@ -779,7 +787,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
     }
 
     private void sendEvent(ReactContext reactContext, String eventName, @Nullable WritableMap params) {
-        Log.e(TAG, "sendEvent: "+eventName);
+        Log.e(TAG, "sendEvent: " + eventName);
         reactContext
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                 .emit(eventName, params);
@@ -798,7 +806,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
             ArrayList<JSONObject> okkamiChatList = new ArrayList<>();
             ArrayList<JSONObject> activeChatList = new ArrayList<>();
             ArrayList<JSONObject> inactiveChatList = new ArrayList<>();
-            Log.e(TAG, "getConversationsList: "+smoochAllAppTokenArray.size());
+            Log.e(TAG, "getConversationsList: " + smoochAllAppTokenArray.size());
 
             for (int i = 0; i < smoochAllAppTokenArray.size(); i++) {
 
@@ -896,8 +904,8 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
                                String titleHexStringColor,
                                boolean windowInRgb,
                                boolean titleInRgb,
-                                String smoochJwt,
-                                Promise openChatWindowPromise) {
+                               String smoochJwt,
+                               Promise openChatWindowPromise) {
         try {
 
             String smoochAppToken = smoochAppId;
@@ -911,12 +919,12 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
             String sInitStatus = smoochInitStatus != null ? smoochInitStatus.toString() : "n/a";
             String sConnStatus = smoochConnStatus != null ? smoochConnStatus.toString() : "n/a";
 
-            Log.e(TAG, "InitializationStatus: "+sInitStatus+" , SmoochConnectionStatus: "+sConnStatus );
+            Log.e(TAG, "InitializationStatus: " + sInitStatus + " , SmoochConnectionStatus: " + sConnStatus);
             Boolean isSameToken;
             if ((smoochInitStatus == null && smoochConnStatus == null) || !sInitStatus.equals(InitializationStatus.Success.name()) || !sConnStatus.equals(SmoochConnectionStatus.Connected.name())) {
                 isSameToken = false;
             } else {
-                Log.e(TAG, "openChatWindowiiiii: "+Smooch.getSettings().getAppId());
+                Log.e(TAG, "openChatWindowiiiii: " + Smooch.getSettings().getAppId());
                 isSameToken = TextUtils.isEmpty(Smooch.getSettings().getAppId()) ? false : Smooch.getSettings().getAppId().equals(smoochAppId);
             }
 
@@ -1000,7 +1008,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
     @ReactMethod
     public void getUnreadMessageCount(String smoochAppToken, String userId, Promise getUnreadMessageCountPromise) {
         try {
-            Log.e(TAG, "getUnreadMessageCount: "+smoochAppToken);
+            Log.e(TAG, "getUnreadMessageCount: " + smoochAppToken);
             String smoochAppId = (String) BuildConfigUtil.getBuildConfigValue(getReactApplicationContext(), "SMOOCH_APP_ID");
             mMethodInvoker.invokeInitSmooch(smoochAppToken, userId, smoochAppId, "");
             Smooch.setFirebaseCloudMessagingToken("nan");
@@ -1028,7 +1036,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
                 Smooch.logout(new SmoochCallback() {
                     @Override
                     public void run(Response response) {
-                        Log.e(TAG, "run: Response after logout: "+response.toString() );
+                        Log.e(TAG, "run: Response after logout: " + response.toString());
                     }
                 });
                 ConversationActivity.close();
@@ -1043,6 +1051,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Open an external app with a given android package name
+     *
      * @param pName Android package name
      */
     @ReactMethod
@@ -1077,6 +1086,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
      * This does not kill the entire app.
      * Finish current activity as well as all activities immediately below it
      * in the current task that have the same affinity.
+     *
      * @param shutdownAppPromise
      */
     @ReactMethod
@@ -1086,6 +1096,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Subscribe pusher channel with device id
+     *
      * @param deviceId
      * @param subscribePushser
      */
@@ -1096,6 +1107,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Subscribe pusher property channel with array of property channel
+     *
      * @param propertiesJsonArrayString
      * @param subscribePushser
      */
@@ -1119,6 +1131,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Unsubscribe pusher channel with device id
+     *
      * @param deviceId
      * @param unsubscribePushser
      */
@@ -1128,6 +1141,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Unsubscribe pusher property channel with array of property channel
+     *
      * @param propertiesJsonArrayString
      * @param unsubscribePushser
      */
@@ -1151,7 +1165,8 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Use to indicate user is on my request screen
-     * @param isUserInMyRequesScreen - boolean to indicate whether user is on my request screen
+     *
+     * @param isUserInMyRequesScreen         - boolean to indicate whether user is on my request screen
      * @param onUserInMyRequestScreenPromise - Promise
      */
     @ReactMethod
@@ -1161,6 +1176,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Return last received push notification string
+     *
      * @param getLastReceivedPushNotificationPromise - Promise
      */
     @ReactMethod
@@ -1176,6 +1192,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Return last FCM Registration status
+     *
      * @param getLastFcmRegistrationStatusPromise - Promise
      */
     @ReactMethod
@@ -1191,6 +1208,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Get the current battery level
+     *
      * @param getBatteryLevelPromise - Promise
      */
     @ReactMethod
@@ -1212,6 +1230,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Returns milliseconds since boot, not counting time spent in deep sleep.
+     *
      * @param getUptimeMillisPromise - Promise
      */
     @ReactMethod
@@ -1229,6 +1248,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Returns WIFI signal strength and link speed in Mbps.
+     *
      * @param getWifiSignalStrengthPromise - Promise
      */
     @ReactMethod
@@ -1238,9 +1258,9 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
             int strengthInPercentage = 0;
             String signalStrengthStr = "n/a";
             WifiManager wifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
-            if(wifiManager.isWifiEnabled()) {
+            if (wifiManager.isWifiEnabled()) {
                 WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-                if(wifiInfo != null) {
+                if (wifiInfo != null) {
                     dbm = wifiInfo.getRssi();
                     strengthInPercentage = WifiManager.calculateSignalLevel(dbm, 100);
 
@@ -1270,6 +1290,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Returns WIFI SSID String
+     *
      * @param getWifiSSIDPromise - Promise
      */
     @ReactMethod
@@ -1286,6 +1307,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Returns IPv4 String
+     *
      * @param getIPv4Promise - Promise
      */
     @ReactMethod
@@ -1302,6 +1324,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Returns IPv6 String
+     *
      * @param getIPv6Promise - Promise
      */
     @ReactMethod
@@ -1318,6 +1341,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Returns WIFI Mac Address String
+     *
      * @param getWifiMacPromise - Promise
      */
     @ReactMethod
@@ -1370,7 +1394,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
         isScanning = true;
         handler = new Handler();
         handler.postDelayed(stopper, 10000);
-        OpenKeyManager.getInstance().startScanning(this,roomNumber);
+        OpenKeyManager.getInstance().startScanning(this, roomNumber);
     }
 
     /**
@@ -1386,24 +1410,28 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
     }
 
 
-    //@Override
-    public void authenticated(boolean isAuthenticated, String description) {
-        Log.e(TAG, "authenticated: "+description);
+    @Override
+    public void sessionResponse(SessionResponse sessionResponse) {
+        Log.e(TAG, "sessionResponse: " + sessionResponse.toString());
+        //  [self.bridge.eventDispatcher sendAppEventWithName:@"OPEN_KEY_EVENT" body:@{@"type":@"authenticateResponse",@"response":response,@"status":status?@YES:@NO}];
 
         WritableMap params = Arguments.createMap();
         params.putString("type", "authenticateResponse");
-        params.putString("response", description);
-        params.putBoolean("status", isAuthenticated);
+        params.putString("response", sessionResponse.toString());
+        params.putBoolean("status", true);
         sendEvent((ReactContext) mContext, OPEN_KEY_EVENT, params);
     }
 
-
-
     @Override
-    public void sessionResponse(SessionResponse sessionResponse) {
-        Log.e(TAG, "sessionResponse: " + sessionResponse.toString() + "\n, now going to call initialize");
+    public void sessionFailure(String s, String s1) {
+        Log.e(TAG, "sessionFailure: " + s + " |-| " + s1);
 
-        OpenKeyManager.getInstance().initialize(this);
+        WritableMap params = Arguments.createMap();
+        params.putString("type", "authenticateResponse");
+        params.putString("response", s);
+        params.putBoolean("status", false);
+        sendEvent((ReactContext) mContext, OPEN_KEY_EVENT, params);
+
     }
 
     @Override
@@ -1417,15 +1445,10 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     }
 
-    // @Override
-    public void sessionFailure(String s, String s1) {
-        Log.e(TAG, "sessionFailure: "+ s + " |-| " + s1);
-
-    }
 
     @Override
     public void initializationFailure(String errorDescription) {
-        Log.e(TAG, "initializationFailure: "+errorDescription);
+        Log.e(TAG, "initializationFailure: " + errorDescription);
 
         WritableMap params = Arguments.createMap();
         params.putString("type", "initializeSDKResponse");
@@ -1436,7 +1459,8 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     @Override
     public void stopScan(boolean b, String s) {
-        Log.e(TAG, "stopScan: "+s);
+        Log.e(TAG, "stopScan: " + s);
+
         WritableMap params = Arguments.createMap();
         params.putString("type", "stopScanningResponse");
         params.putString("response", s);
@@ -1446,7 +1470,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     @Override
     public void isKeyAvailable(boolean haveKey, String description) {
-        Log.e(TAG, "isKeyAvailable: "+description);
+        Log.e(TAG, "isKeyAvailable: " + description);
         WritableMap params = Arguments.createMap();
         params.putString("type", "fetchMobileKeysResponse");
         params.putString("response", description);
@@ -1456,30 +1480,23 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     @Override
     public void getOKCMobileKeysResponse(ArrayList<String> arrayList) {
-
+        Log.e(TAG, "getOKCMobileKeysResponse: " + arrayList.toString());
     }
 
     /**
      * Authenticate Open Key
+     *
      * @param handleAuthOpenKeyPromise - Promise
      */
     @ReactMethod
-    public void handleAuthOpenKey(String token, Promise handleAuthOpenKeyPromise) {
-        Log.e(TAG, "handleAuthOpenKey: "+token);
+    public void handleAuthOpenKey(String uuid, String token, String dev, Promise handleAuthOpenKeyPromise) {
+        Log.e(TAG, "handleAuthOpenKey: " + token);
         try {
-            if (!TextUtils.isEmpty(token)) {
-//                showMessage("Authenticating...");
-                OpenKeyManager.getInstance().authenticate(token, this, false);
-                Log.e(TAG, "handleAuthOpenKey: Authenticating...");
-            } else {
-//                Utilities.getInstance().showToast(this, "Token should not be empty.");
-            }
 
-//            WritableMap params = Arguments.createMap();
-//            params.putString("type", "authenticateResponse");
-//            params.putString("response", "xxxxxxxxx");
-//            params.putBoolean("status", true);
-//            sendEvent((ReactContext) mContext, OPEN_KEY_EVENT, params);
+            // init the openKey first..
+            boolean isDev = !dev.equals("DEV");
+            OpenKeyManager.getInstance().init(mApp, uuid);
+            OpenKeyManager.getInstance().authenticate(token, this, isDev);
 
             WritableMap map = Arguments.createMap();
             map.putString("Authenticating", "Authenticating");
@@ -1491,21 +1508,14 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Initialize Open Key`
+     *
      * @param handleInitOpenKeyPromise - Promise
      */
     @ReactMethod
-    public void handleInitOpenKey(String uuid, Promise handleInitOpenKeyPromise) {
-        Log.e(TAG, "handleInitOpenKey: ");
+    public void handleInitOpenKey(Promise handleInitOpenKeyPromise) {
+        Log.e(TAG, "handleInitOpenKey , no arg");
         try {
-            OpenKeyManager.getInstance().init(mApp,uuid);
-
-
-//            WritableMap params = Arguments.createMap();
-//            params.putString("type", "initializeSDKResponse");
-//            params.putString("response", "MOCK_RESPONSE");
-//            params.putBoolean("status", true);
-//            sendEvent((ReactContext) mContext, OPEN_KEY_EVENT, params);
-
+            OpenKeyManager.getInstance().initialize(this);
             WritableMap map = Arguments.createMap();
             map.putString("Initializing", "Initializing");
             handleInitOpenKeyPromise.resolve(map);
@@ -1516,6 +1526,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Get Open Key's key
+     *
      * @param handleGetKeyPromise - Promise
      */
     @ReactMethod
@@ -1523,13 +1534,6 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
         Log.e(TAG, "handleGetKey: ");
         try {
             OpenKeyManager.getInstance().getKey(this);
-
-//            WritableMap params = Arguments.createMap();
-//            params.putString("type", "fetchMobileKeysResponse");
-//            params.putString("response", "MOCK_RESPONSE");
-//            params.putBoolean("status", true);
-//            sendEvent((ReactContext) mContext, OPEN_KEY_EVENT, params);
-
             WritableMap map = Arguments.createMap();
             map.putString("Fetching key", "Fetching key");
             handleGetKeyPromise.resolve(map);
@@ -1541,12 +1545,13 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Start lock opening process
+     *
      * @param handleStartScanningPromise - Promise
      */
     @ReactMethod
-    public void handleStartScanning(String roomNumber , Promise handleStartScanningPromise) {
+    public void handleStartScanning(String roomNumber, Promise handleStartScanningPromise) {
         try {
-            Log.e(TAG, "handleStartScanning: ");
+            Log.e(TAG, "handleStartScanning: " + roomNumber);
             openDoor(roomNumber);
 
             WritableMap params = Arguments.createMap();
@@ -1565,6 +1570,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      * Stop lock opening process
+     *
      * @param handleStopScanningPromise - Promise
      */
     @ReactMethod

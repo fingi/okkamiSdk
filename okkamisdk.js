@@ -457,12 +457,14 @@ class OkkamiSdk {
   /* --------------------------------------------------------------------------------------------------- */
   /**
    * Authenticate the sdk . Strangely, this needs to run before initializing..??
+   * @param uuid
    * @param token
+   * @param isDevSystem
    * @returns {Promise<*>}
    */
-  async handleAuthOpenKey (token) {
+  async handleAuthOpenKey (uuid,token, isDevSystem) {
     if (true) {
-      return OkkamiSdkManager.handleAuthOpenKey(token)
+      return OkkamiSdkManager.handleAuthOpenKey(uuid,token,isDevSystem)
     }
   }
 
@@ -470,10 +472,8 @@ class OkkamiSdk {
    * Initialize the sdk with the token.
    * @returns {Promise<*>}
    */
-  async handleInitOpenKey (uuid) {
-    if (!uuid)
-      uuid = ''
-    return OkkamiSdkManager.handleInitOpenKey(uuid)
+  async handleInitOpenKey () {
+    return OkkamiSdkManager.handleInitOpenKey()
   }
 
   /**
@@ -508,7 +508,7 @@ class OkkamiSdk {
     }
   }
 
-  /**
+  /**handleStartScanning
    *
    * @returns {Promise<*>}
    */

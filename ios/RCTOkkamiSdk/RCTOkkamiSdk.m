@@ -1,6 +1,6 @@
 #import "RCTOkkamiSdk.h"
 #import "AppDelegate.h"
-#import <NetworkExtension/NetworkExtension.h> 
+#import <NetworkExtension/NetworkExtension.h>
 #import <CommonCrypto/CommonCrypto.h>
 #include <ifaddrs.h>
 #include <arpa/inet.h>
@@ -1240,8 +1240,9 @@ RCT_EXPORT_METHOD(getLastReceivedPushNotification
 
 
 RCT_EXPORT_METHOD(handleAuthOpenKey
-                  
+                  :(NSString *) uuid
                   :(NSString *) token
+                  :(NSString *) dev
                   
                   :(RCTPromiseResolveBlock)resolve
                   :(RCTPromiseRejectBlock)reject)
@@ -1255,7 +1256,10 @@ RCT_EXPORT_METHOD(handleAuthOpenKey
         [self.bridge.eventDispatcher sendAppEventWithName:@"OPEN_KEY_EVENT" body:@{@"type":@"authenticateResponse",@"response":@"xxxxxxxxx",@"status":@YES}];
     });
 #else
-    [[OpenKeyManager shared] authenticate:token withDelegate:self];
+    [[OpenKeyManager shared] initializeOpenKeySDK:uuid withDelegate:self];
+    Boolean isDevSystem = [dev isEqualToString:@"DEV"] ? 0 : 1 ;
+    [[OpenKeyManager shared] authenticate:token envioronmentType:isDevSystem withDelegate:self];
+    // authenticate : (NSString *) secretKey envioronmentType:(EnvironmentType) type withDelegate:(id) inputDelegate;
 #endif
     resolve(@"");
     
