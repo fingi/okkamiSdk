@@ -1109,7 +1109,7 @@ RCT_EXPORT_METHOD(reconenctToSoti
     }
 }
 
-RCT_EXPORT_METHOD( enableIpadLandscape
+RCT_EXPORT_METHOD( enableDeviceLandscape
                   :(RCTPromiseResolveBlock)resolve
                   :(RCTPromiseRejectBlock)reject) {
     @try{
@@ -1123,7 +1123,7 @@ RCT_EXPORT_METHOD( enableIpadLandscape
     }
 }
 
-RCT_EXPORT_METHOD( disableIpadLandscape
+RCT_EXPORT_METHOD( disableDeviceLandscape
                   :(RCTPromiseResolveBlock)resolve
                   :(RCTPromiseRejectBlock)reject) {
     @try{

@@ -486,16 +486,13 @@ class OkkamiSdk {
     }
   }
 
-  async enableIpadLandscape () {
-    if (Metrics.platform === 'ios') {
-      return OkkamiSdkManager.enableIpadLandscape()
-    }
+  async enableDeviceLandscape () {
+      return OkkamiSdkManager.enableDeviceLandscape()
+
   }
 
-  async disableIpadLandscape () {
-    if (Metrics.platform === 'ios') {
-      return OkkamiSdkManager.disableIpadLandscape()
-    }
+  async disableDeviceLandscape () {
+      return OkkamiSdkManager.disableDeviceLandscape()
   }
 
   /**

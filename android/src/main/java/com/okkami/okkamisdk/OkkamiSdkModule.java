@@ -1507,6 +1507,55 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
     }
 
     /**
+     *
+     *
+     * @param enableDeviceLandscapePromise - Promise
+     */
+    @ReactMethod
+    public void enableDeviceLandscape(Promise enableDeviceLandscapePromise) {
+        Log.e(TAG, "enableDeviceLandscape");
+        try {
+
+            SharedPreferences sharedPref = mContext.getSharedPreferences(
+                    "OkkamiPreferences", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("deviceLandscape", "true");
+            editor.commit();
+            WritableMap map = Arguments.createMap();
+            enableDeviceLandscapePromise.resolve(map);
+            android.os.Process.killProcess(android.os.Process.myPid());
+        } catch (Exception e) {
+            enableDeviceLandscapePromise.reject("-1", e.getMessage());
+        }
+    }
+
+    /**
+     *
+     *
+     * @param enableDeviceLandscapePromise - Promise
+     */
+    @ReactMethod
+    public void disableDeviceLandscape(Promise enableDeviceLandscapePromise) {
+        Log.e(TAG, "enableDeviceLandscape");
+        try {
+
+            SharedPreferences sharedPref = mContext.getSharedPreferences(
+                    "OkkamiPreferences", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("deviceLandscape", "false");
+            editor.commit();
+            WritableMap map = Arguments.createMap();
+            enableDeviceLandscapePromise.resolve(map);
+            android.os.Process.killProcess(android.os.Process.myPid());
+        } catch (Exception e) {
+            enableDeviceLandscapePromise.reject("-1", e.getMessage());
+        }
+    }
+
+
+
+
+    /**
      * Initialize Open Key`
      *
      * @param handleInitOpenKeyPromise - Promise
