@@ -1114,7 +1114,7 @@ RCT_EXPORT_METHOD( enableDeviceLandscape
                   :(RCTPromiseRejectBlock)reject) {
     @try{
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        [prefs setObject:@"true" forKey:@"ipadLandscape"];
+        [prefs setObject:@"true" forKey:@"deviceLandscape"];
         resolve(@{});
         exit(9);
     }
@@ -1128,7 +1128,7 @@ RCT_EXPORT_METHOD( disableDeviceLandscape
                   :(RCTPromiseRejectBlock)reject) {
     @try{
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        [prefs setObject:@"" forKey:@"ipadLandscape"];
+        [prefs setObject:@"" forKey:@"deviceLandscape"];
         resolve(@{});
         exit(9);
     }
