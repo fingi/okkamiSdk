@@ -1110,11 +1110,12 @@ RCT_EXPORT_METHOD(reconenctToSoti
 }
 
 RCT_EXPORT_METHOD( enableDeviceLandscape
+                  :(NSString *) orientation
                   :(RCTPromiseResolveBlock)resolve
                   :(RCTPromiseRejectBlock)reject) {
     @try{
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        [prefs setObject:@"true" forKey:@"deviceLandscape"];
+        [prefs setObject:orientation forKey:@"deviceLandscape"];
         resolve(@{});
         exit(9);
     }
@@ -1128,7 +1129,7 @@ RCT_EXPORT_METHOD( disableDeviceLandscape
                   :(RCTPromiseRejectBlock)reject) {
     @try{
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        [prefs setObject:@"" forKey:@"deviceLandscape"];
+        [prefs setObject:@"false" forKey:@"deviceLandscape"];
         resolve(@{});
         exit(9);
     }

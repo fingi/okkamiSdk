@@ -462,9 +462,9 @@ class OkkamiSdk {
    * @param isDevSystem
    * @returns {Promise<*>}
    */
-  async handleAuthOpenKey (uuid,token, isDevSystem) {
+  async handleAuthOpenKey (uuid, token, isDevSystem) {
     if (true) {
-      return OkkamiSdkManager.handleAuthOpenKey(uuid,token,isDevSystem)
+      return OkkamiSdkManager.handleAuthOpenKey(uuid, token, isDevSystem)
     }
   }
 
@@ -486,13 +486,13 @@ class OkkamiSdk {
     }
   }
 
-  async enableDeviceLandscape () {
-      return OkkamiSdkManager.enableDeviceLandscape()
+  async enableDeviceLandscape (orientation) { // orientation : LEFT , RIGHT
+    return OkkamiSdkManager.enableDeviceLandscape(orientation)
 
   }
 
   async disableDeviceLandscape () {
-      return OkkamiSdkManager.disableDeviceLandscape()
+    return OkkamiSdkManager.disableDeviceLandscape()
   }
 
   /**

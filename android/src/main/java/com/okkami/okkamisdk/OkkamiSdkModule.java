@@ -1508,11 +1508,11 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
 
     /**
      *
-     *
+     * @param orientation - LEFT , RIGHT
      * @param enableDeviceLandscapePromise - Promise
      */
     @ReactMethod
-    public void enableDeviceLandscape(Promise enableDeviceLandscapePromise) {
+    public void enableDeviceLandscape(String orientation , Promise enableDeviceLandscapePromise) {
         Log.e(TAG, "enableDeviceLandscape");
         try {
 
