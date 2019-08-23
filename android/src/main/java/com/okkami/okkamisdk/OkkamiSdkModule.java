@@ -1519,7 +1519,7 @@ public class OkkamiSdkModule extends ReactContextBaseJavaModule implements
             SharedPreferences sharedPref = mContext.getSharedPreferences(
                     "OkkamiPreferences", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putString("deviceLandscape", "true");
+            editor.putString("deviceLandscape", orientation);
             editor.commit();
             WritableMap map = Arguments.createMap();
             enableDeviceLandscapePromise.resolve(map);
